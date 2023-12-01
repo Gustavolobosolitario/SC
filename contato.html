@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu com Submenus</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica+Neue+Light&display=swap">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+        /* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue Light', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #293377;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+/* Header Styles */
+.header-container {
+    background-color: #293377;
+    padding: 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+nav {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin-right: 100px; /* Adicionei uma margem esquerda para mover o menu para a esquerda */
+}
+
+.menu a {
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    color: #fefdfd;
+    font-size: 18px;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 15px;
+    cursor: pointer; /* Adiciona cursor pointer para indicar que é clicável */
+    list-style: none;
+    display: flex;
+    margin-left: 20; /* Adiciona uma margem esquerda para mover o menu para a esquerda */
+    
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(16, 16, 16, 0.5);
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(252, 251, 251, 0);
+    z-index: 2;
+    color: rgb(7, 7, 7);
+    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+    transition: background-color 0.3s; /* Adiciona transição para o efeito de destaque */
+    margin-bottom: 0px; /* Ajuste o valor conforme necessário */
+}
+
+.submenu li:hover {
+    background-color: #ffdc0a; /* Cor de destaque quando passa o mouse sobre o item do submenu */
+}
+
+.submenu.active {
+    display: block;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+
+
+/* Estilo da página */
+/* Estilo para a seção de Tabelas */
+/* Estilo para a seção de Tabelas */
+/* Estilo para a seção de Tabelas */
+
+.tables-section {
+    text-align: center;
+    margin: 20px;
+    background-color: white;
+}
+
+.table-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: auto;
+    height: auto;
+    display: inline-block;
+    margin-right: 10px; /* Ajuste conforme necessário */
+    color: #ffdc0a;
+}
+
+
+
+.description {
+    margin-left: 10px;
+    /* Adicione estilos para a descrição aqui */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.contact-section {
+    margin: 0 20px; /* Adjust margin as needed */
+    text-align: center;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin-bottom: 60px;
+    background-color: white;
+}
+
+.contact-table {
+    display: inline-block;
+    text-align: left;
+    border: none;
+    outline: none;
+    margin-right: 100px;
+    background-color: white;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust as needed */
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.icon img {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+
+
+
+
+
+
+.tables-section {
+    background-color: white;
+    padding: 40px 20px;
+    margin: 100px;
+    text-align: center;
+}
+
+.table-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que as tabelas quebrem para a próxima linha se não houver espaço suficiente */
+    margin-top: 20px;
+    background-color: white;
+}
+
+.table-with-header {
+    text-align: justify;
+    margin: 150px; /* Adicionando uma margem para separação entre as tabelas */
+    flex: 1; /* Para que as tabelas ocupem a mesma largura */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%; /* Alterando a largura das tabelas para ocupar 100% da largura do contêiner pai */
+    border: 1px solid #ddd; /* Adiciona uma borda à tabela */
+}
+
+table th, table td {
+    border: 1px solid #ddd; /* Adiciona uma borda às células */
+    padding: 8px; /* Adiciona algum espaço interno para melhorar a aparência */
+}
+
+
+table tbody td {
+    text-align: left;
+}
+
+h2, h3, h4 {
+    color: #293377;
+    margin: 22px 0;
+    padding-right: 10px;
+    
+}
+
+
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Estilo para a seção de Formulário */
+.form-section {
+    background-color: white; /* Set the background color to white */
+    text-align: center; /* Center the text */
+    padding: 20px; /* Add padding for better spacing */
+    margin-bottom: 40px; /* Adjust as needed for vertical spacing */
+}
+
+
+/* Formulário Section Heading Styles */
+.form-section h2, .form-section h3, .form-section p {
+    margin-bottom: 10px; /* Add some margin below each heading and paragraph */
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+/* Formulário Section Form Styles */
+.form-section form {
+    max-width: 600px; /* Set a max-width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+
+/* Formulário Section Form Row Styles */
+.form-section .form-row {
+    display: flex;
+    justify-content: space-between; /* Add space between form groups */
+}
+
+/* Formulário Section Form Group Styles */
+.form-section .form-group {
+    flex: 1; /* Allow each form group to grow and take equal space */
+    margin-right: 10px; /* Add spacing between form groups */
+}
+
+/* Increase the width of the "Telefone" and "Assunto" fields */
+.form-section #telefone, .form-section #assunto {
+    width: calc(205% - 5px); /* Set the width to 50% minus spacing */
+    
+}
+
+.form-section #assunto {
+    
+    margin-bottom: 50px; /* Adjust the value as needed for more or less spacing */
+}
+
+
+/* Add space between the heading and paragraph */
+.form-section h3 {
+    margin-bottom: 40px; /* Adjust the margin as needed */
+}
+
+.form-section p {
+    margin-bottom: 40px; /* Adjust the margin as needed */
+}
+
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    width: 48%;
+}
+
+/* Center the submit button */
+.form-section .form-group {
+    text-align: center;
+}
+
+/* Style the submit button */
+.form-section button {
+    padding: 15px 30px; /* Adjust the padding to increase the button size */
+    font-size: 18px; /* Adjust the font size as needed */
+    background-color: #293377; /* Your button color */
+    color: #fff; /* Text color */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+/* Add a hover effect */
+.form-section button:hover {
+    background-color: #1a214c; /* Your hover color */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #293377;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #293377;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d2d4a;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styles */
+/* Additional Footer Styles */
+.custom-footer {
+    background-color: #293377;
+    color: #ffffff;
+    padding: 30px 0;
+}
+
+.custom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.custom-column {
+    flex: 1;
+}
+
+.custom-column a {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.custom-separator {
+    height: 20px;
+}
+
+.custom-icon-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha se não houver espaço suficiente */
+}
+
+.custom-icon-item {
+    text-align: center;
+    flex: 1;
+    max-width: 150px;
+}
+
+.custom-icon-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.custom-contact-copyright-container {
+    max-width: 600px; /* Defina a largura máxima conforme necessário */
+    margin:  auto; /* Isso centralizará o contêiner na página */
+    text-align: center; /* Centralize o texto dentro do contêiner */
+}
+
+
+
+
+
+
+
+/* Responsive Styles */
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0; /* Adjust the margin-right for mobile */
+    }
+
+    .menu-item {
+        margin: 10px 0;
+    }
+
+    .submenu {
+        top: 0;
+        width: 100%; /* Make the submenu full width for mobile */
+        box-shadow: none; /* Remove box-shadow for mobile */
+    }
+
+    .submenu li {
+        text-align: center; /* Center the text in submenu items */
+    }
+
+    .slick-carousel-container {
+        max-width: 100%;
+    }
+
+    .content-container {
+        max-width: 100%;
+    }
+
+    .contact-section .contact-table {
+        margin-right: 0; /* Adjust the margin for mobile */
+    }
+
+    .form-section #assunto {
+        width: 100%; /* Make the "Assunto" field full width for mobile */
+        margin-bottom: 20px; /* Adjust the margin for mobile */
+    }
+
+    .form-section button {
+        width: 100%; /* Make the button full width for mobile */
+    }
+
+    .icon-item {
+        max-width: 100%; /* Make the icon items full width for mobile */
+    }
+}
+
+       
+
+
+    </style>
+</head>
+    
+        <!-- Header Section -->
+        <div class="header-container">
+            <header>
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+                    </a>
+                </div>
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="index.html">Quem Somos</a>
+                        <ul class="submenu">
+                            
+                            <li><a href="historia.html">História</a></li>
+                            <li><a href="PilareseValores.html">Pilares e Valores</a></li>
+                            <li><a href="estrutura.html">Nossa Estrutura</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Ensinos</a>
+                        <ul class="submenu">
+                            <li><a href="niveisdeensino.html">Níveis Ensino</a></li>
+                            <li><a href="bilingue.html">Projeto Bilíngue</a></li>
+                            <li><a href="materiais.html">Material SAS</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Contato</a>
+                        <ul class="submenu">
+                            <li><a href="contato.html" class="custom-text">Contato</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- JavaScript code moved to an external file -->
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Selecione todos os itens do menu e submenu
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            // Adicione um ouvinte de evento para cada item do menu
+            menuItems.forEach(function (menuItem) {
+                const submenu = menuItem.querySelector('.submenu');
+
+                menuItem.addEventListener('mouseenter', function () {
+                    // Adicione uma classe de destaque quando o mouse entra
+                    menuItem.classList.add('highlight');
+                    submenu.classList.add('active');
+                });
+
+                menuItem.addEventListener('mouseleave', function () {
+                    // Remova a classe de destaque quando o mouse sai
+                    menuItem.classList.remove('highlight');
+                    submenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+
+
+
+    <!-- Body Section -->
+    
+    <!-- Contact Section -->
+<section class="contact-section">
+    <h2>Contato</h2>
+    <div class="contact-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Ensino Fundamental</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <img src="localizacao.png" alt="Localizacao Icon">
+                                </div>
+                                <div class="description">Rua Episcopal, Centro, São Carlos, SP</div>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <img src="comunicacao.png" alt="Phone Icon">
+                                </div>
+                                <div class="description">(16) 3362-5044</div>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <img src="email.png" alt="Email Icon">
+                                </div>
+                                <div class="description">suporte@colsaocarlos.com.br</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    
+    <div class="contact-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Ensino Médio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <img src="localizacao.png" alt="Localizacao Icon">
+                                </div>
+                                <div class="description">Rua Episcopal, Centro, São Carlos, SP</div>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <img src="comunicacao.png" alt="Phone Icon">
+                                </div>
+                                <div class="description">(16) 3362-5044</div>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <img src="email.png" alt="Email Icon">
+                                </div>
+                                <div class="description">suporte@colsaocarlos.com.br</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+                    
+                    
+                    
+                    
+
+
+
+    
+    <!-- Formulário Section -->
+    <section class="form-section">
+        <h3>Alguma dúvida?</h3>
+        <p>Entre em contato com a nossa equipe e tire todas as duvidas.</p>
+        
+        <form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone">
+            </div>
+            <div class="form-group">
+                <label for="assunto">Assunto:</label>
+                <textarea id="assunto" name="assunto"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </section>
+
+
+
+
+        <!-- Footer Section -->
+<footer class="custom-footer">
+
+    <!-- Logo and Subtitle -->
+    <div class="custom-container">
+        <div class="logo-container">
+            <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+        </div>
+
+        <div class="subtitle">
+            Valores eternos,<br>tempos modernos
+        </div>
+    </div>
+
+    <!-- Three Columns -->
+    <div class="custom-container">
+        <!-- Column 1 -->
+        <div class="custom-column">
+            <a href="index.html" class="custom-text">Quem Somos</a>
+            <a href="historia.html" class="custom-text">Historia</a>
+            <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
+            <a href="quem_somos.html" class="custom-text">Estrutura</a>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="custom-column">
+            <a href="niveisdeensino.html" class="custom-text">Níveis de Ensino</a>
+            <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
+            <a href="materiais.html" class="custom-text">Material SAS</a>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="custom-column">
+            <a href="contato.html" class="custom-text">Contato</a>
+        </div>
+    </div>
+
+    <div class="custom-separator"></div>
+
+    <!-- Icon Container -->
+    <div class="custom-icon-container">
+        <!-- Icon 1 -->
+        <div class="custom-icon-item">
+            <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
+            <div class="description">ActiveSoft- Siga</div>
+            <div class="text">Acesso às informações pedagógicas administrativas.</div>
+        </div>
+
+        <!-- Icon 2 -->
+        <div class="custom-icon-item">
+            <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
+            <div class="description">Class App</div>
+            <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
+        </div>
+
+        <!-- Icon 3 -->
+        <div class="custom-icon-item">
+            <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
+            <div class="description">Portal SAS</div>
+            <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
+        </div>
+
+        <!-- Icon 4 -->
+        <div class="custom-icon-item">
+            <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
+            <div class="description">StandFlor Evolution</div>
+            <div class="text">Informações sobre o nosso programa bilíngue.</div>
+        </div>
+    </div>
+
+    <div class="custom-separator"></div>
+    <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
+    <div class="custom-contact-copyright-container">
+        <!-- Contact Information -->
+        Rua Episcopal, 1859 - Centro. São Carlos/SP
+        <div class="custom-separator"></div>
+        (16) 3362-5044
+        <div class="custom-separator"></div>
+        <!-- Copyright Notice -->
+        Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a sua segurança online.
+    </div>
+</footer>
+<img src="Sem título3.png" alt="imagem" style="width: 1500px; height: 300px;">

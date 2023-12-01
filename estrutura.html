@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu com Submenus</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica+Neue+Light&display=swap">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+        /* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue Light', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #293377;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+.header-container {
+    background-color: #293377;
+    padding: 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+nav {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin-right: 100px; /* Adicionei uma margem esquerda para mover o menu para a esquerda */
+}
+
+.menu a {
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    color: #fafafa;
+    font-size: 18px;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 15px;
+    cursor: pointer; /* Adiciona cursor pointer para indicar que é clicável */
+    list-style: none;
+    display: flex;
+    margin-left: 20; /* Adiciona uma margem esquerda para mover o menu para a esquerda */
+    
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(16, 16, 16, 0.5);
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(252, 251, 251, 0);
+    z-index: 2;
+    color: rgb(7, 7, 7);
+    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+    transition: background-color 0.3s; /* Adiciona transição para o efeito de destaque */
+    margin-bottom: 0px; /* Ajuste o valor conforme necessário */
+}
+
+.submenu li:hover {
+    background-color: #ffdc0a; /* Cor de destaque quando passa o mouse sobre o item do submenu */
+}
+
+.submenu.active {
+    display: block;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+
+
+
+/* Body Styles */
+/* Estilos Gerais */
+.body-container {
+    background-color: white;
+    padding: 20px;
+    color: #293377;
+}
+
+.content {
+    text-align: center;
+    margin: 20px;
+}
+
+.content-container {
+    max-width: 60%;
+    margin: 20px auto;
+}
+
+/* Estilos do Contêiner do Carrossel */
+.slick-carousel-container {
+    margin: 20px 0;
+}
+
+/* Estilos Gerais para Todos os Contêineres do Carrossel */
+.slick-carousel-container {
+    margin-bottom: 20px;
+}
+
+/* Estilos Específicos para Cada Contêiner do Carrossel */
+#piscina-container {
+    background-color: white;
+}
+
+#salas-container {
+    background-color: white;
+}
+
+#laboratorio-container {
+    background-color: white;
+}
+
+#biblioteca-container {
+    background-color: white;
+}
+
+#danca-container {
+    background-color: white;
+}
+
+#diversas-container {
+    background-color: white;
+}
+
+/* Estilos Compartilhados para o Carrossel */
+.slick-carousel h2 {
+    text-align: center;
+}
+
+.slick-carousel {
+    position: relative;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.image-item {
+    position: relative;
+    margin: 0 10px;
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.next-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 50px;
+    height: 30px;
+    background-color: rgba(249, 249, 249, 0.954);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.next-arrow:hover {
+    background-color: rgb(254, 254, 254);
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #293377;
+    color: white;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.column {
+    flex: 1;
+}
+
+.column a {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.separator {
+    height: 20px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha se não houver espaço suficiente */
+    
+}
+
+.icon-item {
+    text-align: center;
+    flex: 1;
+    max-width: 150px;
+}
+
+.icon-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.contact-copyright-container {
+    max-width: 600px; /* Defina a largura máxima conforme necessário */
+    margin: 0 auto; /* Isso centralizará o contêiner na página */
+    text-align: center; /* Centralize o texto dentro do contêiner */
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* ou o tamanho desejado */
+    }
+
+    h2 {
+        font-size: 24px; /* ou o tamanho desejado */
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        margin: 10px 0;
+    }
+
+    .submenu {
+        top: 0;
+    }
+
+    .slick-carousel-container {
+        max-width: 100%;
+    }
+
+    .content-container {
+        max-width: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+        .menu {
+            margin-right: 0;
+        }
+    
+        .menu li {
+            margin: 10px 0;
+        }
+    }
+    
+
+    
+}
+
+
+
+
+    </style>
+    
+        <!-- Header Section -->
+        <div class="header-container">
+            <header>
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+                    </a>
+                </div>
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="index.html">Quem Somos</a>
+                        <ul class="submenu">
+                            
+                            <li><a href="historia.html">História</a></li>
+                            <li><a href="PilareseValores.html">Pilares e Valores</a></li>
+                            <li><a href="estrutura.html">Nossa Estrutura</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Ensinos</a>
+                        <ul class="submenu">
+                            <li><a href="niveisdeensino.html">Níveis Ensino</a></li>
+                            <li><a href="bilingue.html">Projeto Bilíngue</a></li>
+                            <li><a href="materiais.html">Material SAS</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Contato</a>
+                        <ul class="submenu">
+                            <li><a href="contato.html" class="custom-text">Contato</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- JavaScript code moved to an external file -->
+    <script src="script.js" defer></script>
+    <script>
+
+        // Adicione o seguinte script JavaScript
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            // Selecione todos os itens do menu e submenu
+            const menuItems = document.querySelectorAll('.menu-item');
+    
+            // Adicione um ouvinte de evento para cada item do menu
+            menuItems.forEach(function (menuItem) {
+                const submenu = menuItem.querySelector('.submenu');
+    
+                menuItem.addEventListener('mouseenter', function () {
+                    // Adicione uma classe de destaque quando o mouse entra
+                    menuItem.classList.add('highlight');
+                    submenu.classList.add('active');
+                });
+    
+                menuItem.addEventListener('mouseleave', function () {
+                    // Remova a classe de destaque quando o mouse sai
+                    menuItem.classList.remove('highlight');
+                    submenu.classList.remove('active');
+                });
+            });
+        });
+
+    </script>
+    <body>
+
+
+    <!-- Body Section -->
+    <div class="body-container">
+        <div class="content">
+            <h2>Nossa Infraestrutura</h2>
+            <div class="content-container" style="max-width: 60%; margin: 20px auto; text-align: justify;">
+
+                <p>No Colégio São Carlos, proporcionamos muito mais do que uma educação excepcional - oferecemos uma
+                    ambiente educacional verdadeiramente enriquecedor. Nossa escola é um espaço emplo e dinâmico,
+                    projetado para inspirar o aprendizado e o crescimento tanto acadêmico quanto pessoal. A Infraestrutura
+                    do Colégio São Carlos é cuidadosamente planejada para garantir que os alunos tenham acesso a uma
+                    ampla gama de recursos que estimulem sua curiosidade e criatividade.</p>
+                <p>A piscina coberta e aquecida além de um local para atividades físicas, é também um espaço onde os
+                    alunos podem aprender sobre segurança na água e técnicas de natação.</p>
+                <p>A biblioteca é um oásis de conhecimento, repleto de uma vasta coleção de livros e revistas
+                    proporcionando um ambiente tranquilo para a leitura e pesquisa.</p>
+                <p>O laboratório de ciências é equipado com tecnologia de ponta, permitindo que os estudantes realizem
+                    experimentos práticos e descubram o mundo da química, física e biologia de forma envolvente.</p>
+                <p>Nas quadras cobertas e descobertas os alunos participam de atividades esportivas que promovem o
+                    trabalho em equipe, a disciplina e o espírito esportivo.</p>
+                <p>No salão de dança, a criatividade floresce, onde os alunos podem explorar diferentes estilos de
+                    dança, expressar emoções e desenvolver habilidades motoras enquanto se divertem.</p>
+                <p>As salas de aula modernas são equipadas com tecnologia de ponta, proporcionando um ambiente propício
+                    para a aprendizagem colaborativa e interativa.</p>
+
+                    <!-- Adicione IDs únicos para cada contêiner -->
+                <div id="piscina-container" class="slick-carousel-container">
+                    <h2>Piscina coberta e aquecida</h2>
+                    <div class="slick-carousel">
+                        <div class="image-item">
+                            <img src="Natacao menino corrigido.png" alt="Imagem 1">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="IMG_9694.png" alt="Imagem 2">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="IMG_9113.png" alt="Imagem 3">
+                            <img src="ceta amarela.png" alt="Next" class="next-arrow">
+                        </div>
+                        <!-- Adicione os itens de slide conforme necessário -->
+                    </div>
+                </div>
+
+                <div id="salas-container" class="slick-carousel-container">
+                    <h2>Salas de aulas modernas</h2>
+                    <div class="slick-carousel">
+                        <div class="image-item">
+                            <img src="Sala de aula Médio Corrigido.png" alt="Imagem 1">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="sala de aula corrigido.png" alt="Imagem 3">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="sala de aula.png" alt="Imagem 3">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <!-- Adicione os itens de slide conforme necessário -->
+                    </div>
+                </div>
+
+                <div id="laboratorio-container" class="slick-carousel-container">
+                    <h2>Laboratório</h2>
+                    <div class="slick-carousel">
+                        <!-- Add carousel items for Laboratório -->
+                        <div class="image-item">
+                            <img src="6B.png" alt="Imagem 2">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="IMG_5314.png" alt="Imagem 3">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="laboratorio corrigido.png" alt="Imagem 3">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <!-- Add more carousel items if needed -->
+                    </div>
+                </div>
+            
+                <div id="biblioteca-container" class="slick-carousel-container">
+                    <h2>Biblioteca</h2>
+                    <div class="slick-carousel">
+                        <!-- Add carousel items for Biblioteca -->
+                        <div class="image-item">
+                            <img src="Biblioteca Corrigido.png" alt="Imagem 1">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="IMG_0304.png" alt="Imagem 2">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <!-- Add more carousel items if needed -->
+                    </div>
+                </div>
+            
+                <div id="danca-container" class="slick-carousel-container">
+                    <h2>Sala de dança</h2>
+                    <div class="slick-carousel">
+                        <!-- Add carousel items for Sala de dança -->
+                        <div class="image-item">
+                            <img src="danca corrigido.png" alt="Imagem 1">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="IMG_0986.png" alt="Imagem 2">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="IMG_2610.png" alt="Imagem 3">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <!-- Add more carousel items if needed -->
+                    </div>
+                </div>
+            
+                <div id="diversas-container" class="slick-carousel-container">
+                    <h2>Diversas</h2>
+                    <div class="slick-carousel">
+                        <!-- Add carousel items for Diversas -->
+                        <div class="image-item">
+                            <img src="IMG_9432.png" alt="Imagem 1">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="alunos pembolim corrigido.png" alt="Imagem 2">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <div class="image-item">
+                            <img src="Amplo espaco interno.png" alt="Imagem 3">
+                            <img src="8.png" alt="Next" class="next-arrow">
+                        </div>
+                        <!-- Add more carousel items if needed -->
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+    <script src="scripts.js" defer></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.slick-carousel').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+                arrows: false,
+            });
+
+            $('.next-arrow').click(function () {
+                $('.slick-carousel').slick('slickNext');
+            });
+        });
+
+    </script>
+</body>
+
+
+    </section>
+        <!-- Footer Section -->
+        <footer>
+
+            <!-- Logo and Subtitle -->
+            <div class="container">
+                <div class="logo-container">
+                    <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+                </div>
+
+                <div class="subtitle">
+                    Valores eternos,<br>tempos modernos
+                </div>
+            </div>
+
+            <!-- Three Columns -->
+            <div class="container">
+                <!-- Column 1 -->
+                <div class="column">
+                    <a href="index.html" class="custom-text">Quem Somos</a>
+                    <a href="historia.html" class="custom-text">Historia</a>
+                    <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
+                    <a href="quem_somos.html" class="custom-text">Estrutura</a>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="column">
+                    <a href="niveisdeensino.html" class="custom-text">Níveis de Ensino</a>
+                    <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
+                    <a href="materiais.html" class="custom-text">Material SAS</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="column">
+                    <a href="contato.html" class="custom-text">Contato</a>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <!-- Icon Container -->
+            <div class="icon-container">
+                <!-- Icon 1 -->
+                <div class="icon-item">
+                    <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
+                    <div class="description">ActiveSoft- Siga</div>
+                    <div class="text">Acesso às informações pedagógicas administrativas.</div>
+                </div>
+
+                <!-- Icon 2 -->
+                <div class="icon-item">
+                    <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
+                    <div class="description">Class App</div>
+                    <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
+                </div>
+
+                <!-- Icon 3 -->
+                <div class="icon-item">
+                    <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
+                    <div class="description">Portal SAS</div>
+                    <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
+                </div>
+
+                <!-- Icon 4 -->
+                <div class="icon-item">
+                    <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
+                    <div class="description">StandFlor Evolution</div>
+                    <div class="text">Informações sobre o nosso programa bilíngue.</div>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+            <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
+            <div class="contact-copyright-container">
+            <!-- Contact Information -->
+
+            <!-- Contact Information -->
+            Rua Episcopal, 1859 - Centro. São Carlos/SP
+            <div class="separator"></div>
+            (16) 3362-5044
+            <div class="separator"></div>
+
+            <!-- Copyright Notice -->
+            Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir
+            a sua segurança online.
+        </footer>
+
+    </section>
+    <img src="Sem título3.png" alt="imagem" style="width: 1500px; height: 300px;">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" async></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="scripts.js" async defer></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.slick-carousel').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+                arrows: false,
+            });
+
+            $('.next-arrow').click(function () {
+                $('.slick-carousel').slick('slickNext');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

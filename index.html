@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Menu com Submenus</title>
+    
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica+Neue+Light&display=swap">
+    
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+        <!-- Slick Carousel -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+        <style>
+    
+        /* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue Light', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #293377;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+/* Header Styles */
+.header-container {
+    background-color: #293377;
+    padding: 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+nav {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin-right: 100px; /* Adicionei uma margem esquerda para mover o menu para a esquerda */
+}
+
+.menu a {
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    color: #fafafa;
+    font-size: 18px;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 15px;
+    cursor: pointer; /* Adiciona cursor pointer para indicar que é clicável */
+    list-style: none;
+    display: flex;
+    margin-left: 20; /* Adiciona uma margem esquerda para mover o menu para a esquerda */
+    
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(16, 16, 16, 0.5);
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(252, 251, 251, 0);
+    z-index: 2;
+    color: rgb(7, 7, 7);
+    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+    transition: background-color 0.3s; /* Adiciona transição para o efeito de destaque */
+    margin-bottom: 0px; /* Ajuste o valor conforme necessário */
+}
+
+.submenu li:hover {
+    background-color: #ffdc0a; /* Cor de destaque quando passa o mouse sobre o item do submenu */
+}
+
+.submenu.active {
+    display: block;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+
+
+
+
+
+.video-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+}
+
+
+
+.mission-section {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    background-color: white;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.title-line {
+    height: 3px;
+    background-color: #293377;
+    margin: 0 10px;
+    display: block;
+}
+
+.title-line::before,
+.title-line::after {
+    content: "";
+    height: 3px;
+    background-color: #293377;
+    margin: 0 10px;
+    display: block;
+}
+
+.title-line p {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 20px;
+    color: #293377;
+}
+
+.title-line::before {
+    content: "";
+    height: 3px;
+    background-color: #293377;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.title-line::after {
+    content: "";
+    height: 3px;
+    background-color: #293377;
+    margin-top: 10px;
+    display: block;
+}
+
+
+.saiba-mais-buttona {
+    display: block;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffcc00;
+    background-color: transparent;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    margin: 20px auto;
+    font-size: 14px;
+    width: 100px;
+}
+
+.saiba-mais-buttona:hover {
+    background-color: #293377;
+}
+
+
+.centered-section {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.centered-image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    max-width: 100%; 
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+p {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    color: #293377;
+    margin: 10px 0;
+}
+
+h2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    color: #293377;
+    font-size: 1.5em;
+}
+
+.subtitle {
+    margin-bottom: 20px;
+    position: relative;
+    top: 0;
+    text-align: center;
+}
+
+
+.blue-section {
+    background-color: #293377; /* Cor azul de fundo */
+    color: #ffcc00; /* Cor do texto */
+    padding: 70px 0; /* Adicione espaçamento interno */
+}
+
+.content-section {
+    margin-top: 30px; /* Ajuste conforme necessário */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+}
+
+.image-side img {
+    max-width: 100%; /* Mantém a proporção original da imagem */
+    height: auto; /* Permite ajustar a largura sem distorcer a proporção */
+    max-height: 700px; /* Altura máxima desejada para a imagem */
+    margin-bottom: 20px; /* Adiciona espaço inferior para a primeira imagem */
+}
+
+.image-side.right-image img {
+    margin-top: 70px; /* Adiciona margem superior para a segunda imagem */
+}
+
+
+
+
+/* Estilos específicos para a seção com a classe personalizada */
+.custom-section-title {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    color: #ffcc00;
+    font-size: 1.5em;
+    /* Adicione estilos específicos para o título aqui */
+}
+
+.custom-section-subtitle {
+    margin-bottom: 20px;
+    position: relative;
+    top: 0;
+    left: 50%; /* Centralizar na horizontal */
+    transform: translateX(-50%); /* Centralizar na horizontal */
+    color: #ffcc00;
+    margin-top: 20px; /* Adapte conforme necessário */
+   
+    /* Adicione estilos específicos para o subtitulo aqui */
+}
+
+.custom-section-text {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    color: #ffcc00;
+    margin: 10px 0;
+    /* Adicione estilos específicos para o texto aqui */
+}
+
+
+/* Estilos específicos para os containers personalizados */
+.custom-container {
+    text-align: center; /* Centralizar o conteúdo na horizontal */
+    margin-top: 20px; /* Espaçamento superior entre os blocos (ajuste conforme necessário) */
+}
+
+/* Estilos específicos para o container de imagens */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento inferior entre as imagens e o botão (ajuste conforme necessário) */
+}
+
+/* Estilos específicos para as imagens */
+.image {
+    width: 500px; /* Largura desejada para as imagens */
+    height: auto; /* Mantém a proporção original da imagem */
+    margin: 0 10px; /* Espaçamento horizontal entre as imagens (ajuste conforme necessário) */
+}
+
+/* Estilos específicos para o botão */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #293377; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+/* Estilos específicos para o container da seção */
+.section-container {
+    text-align: center; /* Centralizar o conteúdo na horizontal */
+}
+
+/* Estilos específicos para o container personalizado */
+.custom-section {
+    display: inline-block; /* Permite centralizar o conteúdo usando text-align */
+}
+
+/* Estilos específicos para a imagem */
+.custom-image {
+    width: 1100px; /* Largura desejada para a imagem */
+    height: auto; /* Mantém a proporção original da imagem */
+    display: block; /* Remove margens indesejadas ao redor da imagem */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+/* Estilos específicos para o botão */
+.button1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #293377; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    text-decoration: none;
+    font-size: 16px;
+    position: absolute;
+    bottom: -3742px; /* Distância do fundo da imagem */
+    right: 804px; /* Distância da direita da imagem */
+    z-index: 1; /* Garante que o botão fica sobreposto à imagem */
+}
+
+.button1:hover {
+    background-color: #293377;
+}
+
+img {
+    
+    margin-top: 0;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #293377;
+    color: #ffffff;
+    padding: 20px 0;
+    margin-bottom: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.column {
+    flex: 1;
+}
+
+.column a {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.separator {
+    height: 20px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha se não houver espaço suficiente */
+    
+}
+
+.icon-item {
+    text-align: center;
+    flex: 1;
+    max-width: 150px;
+}
+
+.icon-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.contact-copyright-container {
+    max-width: 600px; /* Defina a largura máxima conforme necessário */
+    margin: 0 auto; /* Isso centralizará o contêiner na página */
+    text-align: center; /* Centralize o texto dentro do contêiner */
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* ou o tamanho desejado */
+    }
+
+    h2 {
+        font-size: 24px; /* ou o tamanho desejado */
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        margin: 10px 0;
+    }
+
+    .submenu {
+        top: 0;
+    }
+
+    .slick-carousel-container {
+        max-width: 100%;
+    }
+
+    .content-container {
+        max-width: 100%;
+    }
+
+
+    .mobile-menu-icon {
+        display: none; /* Inicialmente oculto em telas maiores */
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff; /* Cor do ícone do menu */
+    }
+    
+    /* Adapte o estilo do menu responsivo */
+    .responsive-menu {
+        display: none; /* Inicialmente oculto em telas maiores */
+    }
+    
+}
+
+    /* Adicione uma regra de mídia para telas menores que 768 pixels */
+    @media screen and (max-width: 768px) {
+        body {
+            font-size: 14px; /* ou o tamanho desejado */
+        }
+    
+        h2 {
+            font-size: 24px; /* ou o tamanho desejado */
+        }
+    
+        .menu {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .menu-item {
+            margin: 10px 0;
+        }
+    
+        .submenu {
+            top: 0;
+        }
+    
+        .slick-carousel-container {
+            max-width: 100%;
+        }
+    
+        .content-container {
+            max-width: 100%;
+        }
+        .video-section video {
+        width: 100%; /* Torne o vídeo responsivo */
+        }
+
+        .mission-section img {
+        width: 100%; /* Torne a imagem da missão responsiva */
+        }
+
+        .saiba-mais-buttona {
+        margin: 20px auto; /* Centralize o botão "Saiba Mais" */
+        }
+
+        .content-section h2 {
+        font-size: 1.2em; /* Reduza o tamanho do título */
+        }
+
+        .content-section .image-side img {
+            max-width: 100%; /* Torne as imagens responsivas */
+        }
+
+        .custom-container {
+            margin-bottom: 20px; /* Adapte o espaçamento entre os blocos */
+        }
+
+        .button1 {
+            bottom: auto; /* Remova a posição absoluta do botão */
+            right: auto; /* Remova a posição absoluta do botão */
+            margin-top: 20px; /* Adapte o espaçamento entre o botão e a imagem */
+        }
+
+        footer {
+            padding: 10px 0; /* Adapte o preenchimento do rodapé */
+        }
+
+        .icon-item img {
+            width: 60px; /* Reduza o tamanho dos ícones no rodapé */
+            height: 60px; /* Reduza o tamanho dos ícones no rodapé */
+        }
+    }
+
+/* Adicione uma regra de mídia para telas menores que 480 pixels (exemplo) */
+@media screen and (max-width: 768px) {
+    /* Oculte o menu principal em telas menores */
+    .menu {
+        display: none;
+    }
+
+    /* Exiba o ícone do menu em telas menores */
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    /* Adapte o estilo do menu responsivo */
+    .responsive-menu {
+        display: none; /* Inicialmente oculto em telas menores */
+    }
+}
+
+/* Estilos para o menu responsivo em telas menores */
+@media screen and (max-width: 768px) {
+    .menu {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        background-color: #293377; /* Cor de fundo do menu responsivo */
+        position: absolute;
+        top: 60px; /* Adapte conforme necessário para evitar sobreposição com o cabeçalho */
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .menu a {
+        padding: 15px;
+        text-decoration: none;
+        color: #fff; /* Cor dos itens do menu responsivo */
+    }
+
+    .menu li {
+        border-bottom: 1px solid #fff; /* Adapte conforme necessário para estilizar a divisão entre os itens do menu */
+    }
+}
+@media screen and (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block; /* Exibe o ícone do menu em telas menores */
+    }
+
+    .menu {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        background-color: #293377; /* Cor de fundo do menu responsivo */
+        position: absolute;
+        top: 60px; /* Adapte conforme necessário para evitar sobreposição com o cabeçalho */
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .menu a {
+        padding: 15px;
+        text-decoration: none;
+        color: #fff; /* Cor dos itens do menu responsivo */
+    }
+
+    .menu li {
+        border-bottom: 1px solid #fff; /* Adapte conforme necessário para estilizar a divisão entre os itens do menu */
+    }
+
+    @media screen and (max-width: 768px) {
+        .menu {
+            margin-right: 0;
+        }
+    
+        .menu li {
+            margin: 10px 0;
+        }
+    }
+    
+}
+
+
+    </style>
+    
+        <!-- Header Section -->
+        <div class="header-container">
+            <header>
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+                    </a>
+                </div>
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="index.html">Quem Somos</a>
+                        <ul class="submenu">
+                            
+                            <li><a href="historia.html">História</a></li>
+                            <li><a href="PilareseValores.html">Pilares e Valores</a></li>
+                            <li><a href="estrutura.html">Nossa Estrutura</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Ensinos</a>
+                        <ul class="submenu">
+                            <li><a href="niveisdeensino.html">Níveis Ensino</a></li>
+                            <li><a href="bilingue.html">Projeto Bilíngue</a></li>
+                            <li><a href="materiais.html">Material SAS</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">Contato</a>
+                        <ul class="submenu">
+                            <li><a href="contato.html" class="custom-text">Contato</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- JavaScript code moved to an external file -->
+    <script src="script.js" defer></script>
+    <script>
+
+        // Adicione o seguinte script JavaScript
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            // Selecione todos os itens do menu e submenu
+            const menuItems = document.querySelectorAll('.menu-item');
+    
+            // Adicione um ouvinte de evento para cada item do menu
+            menuItems.forEach(function (menuItem) {
+                const submenu = menuItem.querySelector('.submenu');
+    
+                menuItem.addEventListener('mouseenter', function () {
+                    // Adicione uma classe de destaque quando o mouse entra
+                    menuItem.classList.add('highlight');
+                    submenu.classList.add('active');
+                });
+    
+                menuItem.addEventListener('mouseleave', function () {
+                    // Remova a classe de destaque quando o mouse sai
+                    menuItem.classList.remove('highlight');
+                    submenu.classList.remove('active');
+                });
+            });
+        });
+
+    </script>
+</head>
+
+ 
+
+
+
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <video src="Video banner.mp4" autoplay loop muted></video>
+    </section>
+
+    <!-- Nossa Missão Section -->
+    <section class="mission-section">
+        <div class="section-header">
+            <div class="title-line"></div>
+            <p>SOBRE NÓS</p>
+            <div class="title-line"></div>
+        </div>
+        <div class="subtitle"></div>
+            <h1>Quem Somos</h1>
+            <div class="subtitle"></div>
+           
+        </div>
+        <img src="colegio.png" alt="Nossa Missão">
+        <p>Desde 1905 somos uma escola que mantém uma tradição de ensino de alta qualidade que nos diferencia das outras
+            da cidade e região.
+            Nossos alunos recebem não apenas uma educação sólida, mas também são incentivados a serem cidadãos ativos e
+            positivos em nossa sociedade.
+            Contamos com um rico capital intelectual de professores excepcionalmente qualificados e experientes, que
+            demonstram o compromisso contínuo com a sua própria atualização na área educacional e desenvolvimento
+            pessoal.</p>
+        </div>
+    </div>
+
+
+
+            <!-- Botão "Saiba Mais" contornado em amarelo -->
+            <a href="historia.html" class="saiba-mais-buttona">Saiba Mais</a>
+        </div>
+
+    </section>
+
+    <div class="centered-section">
+        <img src="167778.png" alt="Imagem Centralizada" class="centered-image">
+    </div>
+
+
+    <!-- Título, Subtítulo, Texto, Ícones, Imagem e Botão -->
+    <section class="content-section blue-section">
+        <div class="container">
+            <div>
+                <h2 class="section-title yellow-text custom-section-title">Níveis de Ensino</h2>
+                <h1 class="section-subtitle yellow-text custom-section-subtitle">Educação Infantil</h1>
+                <p class="section-text yellow-text custom-section-text">Nosso compromisso com o ensino de qualidade inicia-se na Educação Infantil,
+                sendo a primeira etapa da Educação Básica. para promover o desenvolvimento integral de nossos
+                alunos, desde pequenos, contamos com material didático completo.</p>
+    
+                <!-- Ícones com descrição -->
+                <div class="icon-container">
+                    <div class="icon-item">
+                        <img src="7.png" alt="Ícone 1">
+                        <p>Descrição do Ícone 1</p>
+                    </div>
+                    <div class="icon-item">
+                        <img src="6.png" alt="Ícone 2">
+                        <p>Descrição do Ícone 2</p>
+                    </div>
+                </div>
+    
+                <!-- Botão "Saiba Mais" contornado em amarelo -->
+            <a href="niveisdeensino.html" class="saiba-mais-buttona">Saiba Mais</a>
+</div>
+    
+            <!-- Imagem ao lado do texto -->
+            <div class="image-side right-image">
+                <img src="educacao infantil corrigido1.png" alt="Imagem ao lado do texto">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <!-- ... (rest of your content) ... -->
+
+            <!-- Setas para navegação no carrossel -->
+            <div class="carousel-nav">
+                <span class="prev"></span>
+                <span class="next"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Primeiro bloco -->
+<div class="custom-container">
+    <div class="image-container">
+        <img src="125s.png" alt="Imagem 1" class="image">
+        <img src="125s55.png" alt="Imagem 2" class="image">
+    </div>
+    <!-- Botão "Saiba Mais" contornado em amarelo -->
+    <a href="bilingue.html" class="saiba-mais-buttona">Saiba Mais</a>
+</div>
+</div>
+
+<!-- Segundo bloco -->
+<div class="custom-container">
+    <div class="image-container">
+        <img src="165.png" alt="Imagem 1" class="image">
+        <img src="adse.png" alt="Imagem 2" class="image">
+    </div>
+    
+    <!-- Botão "Saiba Mais" contornado em amarelo -->
+    <a href="estrutura.html" class="saiba-mais-buttona">Saiba Mais</a>
+</div>
+
+<!-- Terceiro bloco -->
+<div class="section-container">
+    <div class="custom-section">
+        <img src="1677.png" alt="Imagem Editável" class="custom-image">
+        <a href="materiais.html" class="button1">Saber Mais</a>
+    </div>
+</div>
+
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer>
+
+        <!-- Logo and Subtitle -->
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+            </div>
+
+            <div class="subtitle">
+                Valores eternos,<br>tempos modernos
+            </div>
+        </div>
+
+        <!-- Three Columns -->
+        <div class="container">
+            <!-- Column 1 -->
+            <div class="column">
+                <a href="index.html" class="custom-text">Quem Somos</a>
+                <a href="historia.html" class="custom-text">Historia</a>
+                <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
+                <a href="quem_somos.html" class="custom-text">Estrutura</a>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="column">
+                <a href="niveisdeensino.html" class="custom-text">Níveis de Ensino</a>
+                <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
+                <a href="materiais.html" class="custom-text">Material SAS</a>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="column">
+                <a href="contato.html" class="custom-text">Contato</a>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- Icon Container -->
+        <div class="icon-container">
+            <!-- Icon 1 -->
+            <div class="icon-item">
+                <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
+                <div class="description">ActiveSoft- Siga</div>
+                <div class="text">Acesso às informações pedagógicas administrativas.</div>
+            </div>
+
+            <!-- Icon 2 -->
+            <div class="icon-item">
+                <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
+                <div class="description">Class App</div>
+                <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
+            </div>
+
+            <!-- Icon 3 -->
+            <div class="icon-item">
+                <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
+                <div class="description">Portal SAS</div>
+                <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
+            </div>
+
+            <!-- Icon 4 -->
+            <div class="icon-item">
+                <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
+                <div class="description">StandFlor Evolution</div>
+                <div class="text">Informações sobre o nosso programa bilíngue.</div>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+        <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
+        <div class="contact-copyright-container">
+        <!-- Contact Information -->
+
+        <!-- Contact Information -->
+        Rua Episcopal, 1859 - Centro. São Carlos/SP
+        <div class="separator"></div>
+        (16) 3362-5044
+        <div class="separator"></div>
+
+        <!-- Copyright Notice -->
+        Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir
+        a sua segurança online.
+    </footer>
+    <img src="Sem título3.png" alt="imagem" style="width: 1500px; height: 300px;">
+
+
+</section>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="scripts.js" async defer></script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                // configurações do slick
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // outras configurações responsivas, se necessário
+                ]
+            });
+        });
+    
+    $(document).ready(function(){
+    $('.carousel').slick({
+        dots: true, // Adiciona indicadores de navegação
+        arrows: true, // Adiciona setas de navegação
+        infinite: true, // Navegação infinita
+        speed: 500, // Velocidade de transição em milissegundos
+        slidesToShow: 1, // Número de slides visíveis ao mesmo tempo
+        slidesToScroll: 1 // Número de slides para rolar a cada vez
+    });
+});
+
+
+$('.carousel').slick({
+    // configurações do slick
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+        // outras configurações responsivas, se necessário
+    ]
+});
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
