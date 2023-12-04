@@ -364,17 +364,351 @@ h1 {
     font-weight: bold;
 }
 
+/* Estilos globais */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue Light', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #293377;
+    box-sizing: border-box;
+    background-color: #fafafb;
+}
+
+/* Estilos do cabeçalho */
+.header-container {
+    background-color: #293377;
+    padding: 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin-right: 100px;
+}
+
+.menu a {
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    color: #fafafa;
+    font-size: 18px;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 15px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(16, 16, 16, 0.5);
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(252, 251, 251, 0);
+    z-index: 2;
+    color: rgb(7, 7, 7);
+    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+    transition: background-color 0.3s;
+    margin-bottom: 0px;
+}
+
+.submenu li:hover {
+    background-color: #ffdc0a;
+}
+
+.submenu.active {
+    display: block;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+/* Estilos do conteúdo */
+.body-container {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #293377;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+}
+
+.content-container {
+    max-width: 60%;
+    margin: 60px auto;
+    text-align: justify;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.content-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.card-image {
+    width: 500px;
+    height: auto;
+}
+
+.card-image-container::after {
+    content: "";
+    width: 10cm;
+    height: 2px;
+    background-color: yellow;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+p {
+    line-height: 1.9;
+    color: #293377;
+    margin: 30px 30px 150px;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    font-size: 19px;
+    margin-bottom: 50px;
+    margin-top: 150px;
+}
+
+p:last-child {
+    margin-bottom: 200px;
+}
+
+p + p {
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    margin-top: 50px;
+    margin-left: 320px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-custom {
+    margin-bottom: 5px;
+}
+
+.menu-custom {
+    display: flex;
+    align-items: center;
+}
+
+.submenu-container-custom {
+    display: flex;
+    align-items: center;
+}
+
+.submenu-container-custom a {
+    text-decoration: none;
+    color: #293377;
+    margin-right: 5px;
+}
+
+.divider {
+    margin: 0 5px;
+}
+
+.submenu-container-custom a:hover {
+    text-decoration: underline;
+}
+
+.submenu-container-custom a.current {
+    color: #ffcc00;
+    font-weight: bold;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+}
+
+.title-custom h2 {
+    margin: 0;
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: #293377;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.column {
+    flex: 1;
+}
+
+.column a {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.separator {
+    height: 20px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.icon-item {
+    text-align: center;
+    flex: 1;
+    max-width: 150px;
+}
+
+.icon-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.contact-copyright-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 /* Media query para telas menores */
 @media only screen and (max-width: 768px) {
     .content-container {
-        padding: 10px; /* Ajustado para um valor menor em telas menores */
+        max-width: 100%;
+        margin: 20px auto;
     }
 
     h1 {
-        padding: 10px; /* Ajustado para um valor menor em telas menores */
-        margin-top: 50px; /* Aumentado o espaçamento superior em telas menores */
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    .card-image-container::after {
+        bottom: -10px;
+    }
+
+    p {
+        margin: 10px;
+    }
+
+    .breadcrumb {
+        margin-left: 0;
+    }
+
+    .separator {
+        height: 10px;
+    }
+
+    .icon-container {
+        flex-direction: column;
+    }
+
+    .icon-item img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 5px;
+    }
+
+    .contact-copyright-container {
+        margin-top: 10px;
     }
 }
+
+/* Media query para telas médias */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .content-container {
+        max-width: 80%;
+    }
+
+    .breadcrumb {
+        margin-left: 150px;
+    }
+
+    .card-image-container::after {
+        content: "";
+        width: 5cm;
+        height: 2px;
+        background-color: yellow;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Media query para telas grandes */
+@media only screen and (min-width: 1025px) {
+    .content-container {
+        max-width: 70%;
+    }
+
+    .breadcrumb {
+        margin-left: 220px;
+    }
+}
+
 
 
 
@@ -453,21 +787,6 @@ h1 {
 </script>
 
 
-<div class="breadcrumb">
-    <div class="title">
-      <h4>Sobre Nós</h4>
-    </div>
-    <div class="menu">
-      <div class="submenu-container-custom">
-        <a href="index.html">Quem Somos</a>
-        
-        <span class="divider"> > </span>
-        <a href="PilareseValores.html">Pilares e Valores</a>
-        <span class="divider"> > </span>
-        <a href="estrutura.html">Nossa Estrutura</a>
-      </div>
-    </div>
-  </div>
   
   
   
