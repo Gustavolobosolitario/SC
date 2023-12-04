@@ -442,42 +442,26 @@ button:hover {
 
 
     /* Adicione este bloco de estilo no cabeçalho da sua página ou no seu arquivo de estilo CSS */
-    .content-container img {
-        margin-bottom: 50px; /* Ajuste conforme necessário */
-    }
+.content-container img {
+    margin-bottom: 50px; /* Ajuste conforme necessário */
+}
 
-    iframe {
-        margin-top: 50px; /* Ajuste conforme necessário */
-    }
+iframe {
+    margin-top: 50px; /* Ajuste conforme necessário */
+}
 
+    /* Estilo padrão para telas grandes */
+.header-container {
+    background-color: #293377;
+    padding: 10px 0;
+}
 
-
-
-/* Add this at the end of your existing styles */
-@media only screen and (max-width: 768px) {
-    /* Adjust styles for smaller screens */
-    .content-container {
-        max-width: 100%; /* Adjust as needed */
-        margin: 10px; /* Adjust as needed */
-    }
-
-    .tables-section {
-        padding: 20px;
-        margin: 20px;
-    }
-
-    .table-container {
-        flex-direction: column;
-    }
-
-    table {
-        margin: 10px;
-    }
-
-    .form-section {
-        padding: 10px;
-        margin-bottom: 20px;
-    }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 
@@ -485,12 +469,103 @@ button:hover {
 
 
 
+        /* Adjustments for smaller screens */
+        .content-container {
+            max-width: 100%;
+            margin: 20px auto;
+            text-align: justify;
+            background-color: white;
+        }
+    
+        .content-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px; /* Add some margin between images */
+        }
+    
+        /* Responsive styling for icons */
+        .custom-icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    
+        .custom-icon-item {
+            text-align: center;
+            flex: 0 0 calc(33.33% - 20px); /* Three icons per row with some margin */
+            max-width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+        }
+    
+        .custom-icon-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            .content-container {
+                padding: 10px;
+            }
+        
+            .content-container img {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 10px; /* Ajuste conforme necessário */
+            }
+        
+            /* Responsive styling para ícones */
+            .custom-icon-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+        
+            .custom-icon-item {
+                text-align: center;
+                flex: 0 0 calc(50% - 10px); /* Dois ícones por linha com um pouco de margem */
+                max-width: calc(50% - 10px);
+                margin-bottom: 10px;
+            }
+        
+            .custom-icon-item img {
+                width: 50px; /* Ajuste o tamanho do ícone conforme necessário */
+                height: 50px;
+                margin-bottom: 5px;
+            }
+        }
+        
+        /* Media query para telas ainda menores, como smartphones */
+        @media only screen and (max-width: 480px) {
+            .custom-icon-item {
+                flex: 0 0 calc(100% - 10px); /* Um ícone por linha com um pouco de margem */
+                max-width: calc(100% - 10px);
+            }
+        }
 
 
 
 
 
+
+
+
+
+
+
+
+
+    
+        
     </style>
+    
+
+
     
         <!-- Header Section -->
         <div class="header-container">
@@ -700,5 +775,9 @@ button:hover {
         <!-- Copyright Notice -->
         Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a sua segurança online.
     </div>
+
+    <img src="Sem título3.png" alt="imagem" style="width: 100%; height: auto; max-width: 100%;">
+
 </footer>
-<img src="Sem título3.png" alt="imagem" style="width: 1500px; height: 300px;">
+
+
