@@ -407,6 +407,10 @@ img {
 
 
 
+
+
+
+
 /* Footer Styles */
 footer {
     background-color: #293377;
@@ -465,202 +469,153 @@ footer {
 
 
 
+
+/* Adicione estas regras de mídia query ao seu estilo existente */
+
+/* Estilos padrão para telas maiores */
+body {
+    font-size: 16px;
+}
+
+/* Header Styles */
+.header-container {
+    padding: 10px 0;
+}
+
+nav {
+    margin-top: 0;
+}
+
+.menu {
+    margin-right: 100px;
+}
+
+.menu-item {
+    margin-left: 20px; /* Adicionei a unidade px */
+}
+
+/* Video Section */
+.video-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Mission Section */
+.mission-section {
+    margin: 20px 0;
+}
+
+/* Content Section */
+.content-section h2,
+.content-section h1,
+.content-section p {
+    text-align: center;
+}
+
+.icon-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icon-item {
+    flex: 1;
+    max-width: 150px;
+}
+
+/* Custom Containers */
+.custom-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px 0;
+}
+
 /* Responsive Styles */
-@media screen and (max-width: 768px) {
+
+/* Estilos para telas menores (como celulares) */
+@media only screen and (max-width: 767px) {
     body {
-        font-size: 14px; /* ou o tamanho desejado */
+        font-size: 14px; /* Reduza o tamanho da fonte para telas menores */
     }
 
-    h2 {
-        font-size: 24px; /* ou o tamanho desejado */
-    }
-
+    /* Header Styles */
     .menu {
-        flex-direction: column;
-        align-items: center;
+        margin-right: 20px;
     }
 
     .menu-item {
+        margin-left: 10px; /* Adicionei a unidade px */
+    }
+
+    /* Video Section */
+    .video-section {
+        height: 200px; /* ou ajuste conforme necessário */
+    }
+
+    /* Mission Section */
+    .mission-section {
         margin: 10px 0;
     }
 
-    .submenu {
-        top: 0;
+    /* Content Section */
+    .content-section h2,
+    .content-section h1,
+    .content-section p {
+        text-align: left; /* Ajuste conforme necessário para melhor legibilidade em telas menores */
     }
 
-    .slick-carousel-container {
-        max-width: 100%;
+    .icon-item {
+        max-width: 100%; /* Faça os ícones ocuparem toda a largura disponível */
+        text-align: center;
     }
 
-    .content-container {
-        max-width: 100%;
+    /* Custom Containers */
+    .custom-container {
+        margin-top: 10px; /* Reduza o espaçamento superior para telas menores */
     }
 
-
-    .mobile-menu-icon {
-        display: none; /* Inicialmente oculto em telas maiores */
-        cursor: pointer;
-        font-size: 24px;
-        color: #fff; /* Cor do ícone do menu */
-    }
-    
-    /* Adapte o estilo do menu responsivo */
-    .responsive-menu {
-        display: none; /* Inicialmente oculto em telas maiores */
-    }
-    
-}
-
-    /* Adicione uma regra de mídia para telas menores que 768 pixels */
-    @media screen and (max-width: 768px) {
-        body {
-            font-size: 14px; /* ou o tamanho desejado */
-        }
-    
-        h2 {
-            font-size: 24px; /* ou o tamanho desejado */
-        }
-    
-        .menu {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .menu-item {
-            margin: 10px 0;
-        }
-    
-        .submenu {
-            top: 0;
-        }
-    
-        .slick-carousel-container {
-            max-width: 100%;
-        }
-    
-        .content-container {
-            max-width: 100%;
-        }
-        .video-section video {
-        width: 100%; /* Torne o vídeo responsivo */
-        }
-
-        .mission-section img {
-        width: 100%; /* Torne a imagem da missão responsiva */
-        }
-
-        .saiba-mais-buttona {
-        margin: 20px auto; /* Centralize o botão "Saiba Mais" */
-        }
-
-        .content-section h2 {
-        font-size: 1.2em; /* Reduza o tamanho do título */
-        }
-
-        .content-section .image-side img {
-            max-width: 100%; /* Torne as imagens responsivas */
-        }
-
-        .custom-container {
-            margin-bottom: 20px; /* Adapte o espaçamento entre os blocos */
-        }
-
-        .button1 {
-            bottom: auto; /* Remova a posição absoluta do botão */
-            right: auto; /* Remova a posição absoluta do botão */
-            margin-top: 20px; /* Adapte o espaçamento entre o botão e a imagem */
-        }
-
-        footer {
-            padding: 10px 0; /* Adapte o preenchimento do rodapé */
-        }
-
-        .icon-item img {
-            width: 60px; /* Reduza o tamanho dos ícones no rodapé */
-            height: 60px; /* Reduza o tamanho dos ícones no rodapé */
-        }
+    /* Footer Styles */
+    footer {
+        text-align: center; /* Centralize o texto no rodapé para telas menores */
     }
 
-/* Adicione uma regra de mídia para telas menores que 480 pixels (exemplo) */
-@media screen and (max-width: 768px) {
-    /* Oculte o menu principal em telas menores */
-    .menu {
-        display: none;
-    }
-
-    /* Exiba o ícone do menu em telas menores */
-    .mobile-menu-icon {
-        display: block;
-    }
-
-    /* Adapte o estilo do menu responsivo */
-    .responsive-menu {
-        display: none; /* Inicialmente oculto em telas menores */
-    }
-}
-
-/* Estilos para o menu responsivo em telas menores */
-@media screen and (max-width: 768px) {
-    .menu {
-        list-style: none;
+   
+    .image-container {
         display: flex;
-        flex-direction: column;
-        background-color: #293377; /* Cor de fundo do menu responsivo */
-        position: absolute;
-        top: 60px; /* Adapte conforme necessário para evitar sobreposição com o cabeçalho */
-        left: 0;
-        width: 100%;
-        z-index: 1;
+        flex-direction: column; /* Altera a direção para uma coluna em telas menores */
+        align-items: center; /* Centraliza as imagens na horizontal */
     }
 
-    .menu a {
-        padding: 15px;
-        text-decoration: none;
-        color: #fff; /* Cor dos itens do menu responsivo */
+    .image {
+        margin-bottom: 10px; /* Adiciona espaço entre as imagens */
     }
 
-    .menu li {
-        border-bottom: 1px solid #fff; /* Adapte conforme necessário para estilizar a divisão entre os itens do menu */
+    .container {
+        flex-direction: column; /* Altera a direção para uma coluna em telas menores */
+        align-items: center; /* Centraliza o conteúdo na horizontal */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .icon-container {
+        flex-direction: column; /* Altera a direção dos ícones para uma coluna em telas menores */
+    }
+
+    .icon-item {
+        text-align: center; /* Centraliza o texto abaixo dos ícones */
+    }
+
+    .image-side {
+        margin-top: 20px; /* Adiciona espaçamento entre a imagem e o conteúdo acima */
     }
 }
-@media screen and (max-width: 768px) {
-    .mobile-menu-icon {
-        display: block; /* Exibe o ícone do menu em telas menores */
-    }
 
-    .menu {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        background-color: #293377; /* Cor de fundo do menu responsivo */
-        position: absolute;
-        top: 60px; /* Adapte conforme necessário para evitar sobreposição com o cabeçalho */
-        left: 0;
-        width: 100%;
-        z-index: 1;
-    }
 
-    .menu a {
-        padding: 15px;
-        text-decoration: none;
-        color: #fff; /* Cor dos itens do menu responsivo */
-    }
 
-    .menu li {
-        border-bottom: 1px solid #fff; /* Adapte conforme necessário para estilizar a divisão entre os itens do menu */
-    }
 
-    @media screen and (max-width: 768px) {
-        .menu {
-            margin-right: 0;
-        }
-    
-        .menu li {
-            margin: 10px 0;
-        }
-    }
-    
-}
+/* Responsive Styles */
 
 
     </style>
@@ -703,6 +658,11 @@ footer {
         </header>
     </div>
 
+    <!-- Ícone do menu para telas menores -->
+<div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
     <!-- JavaScript code moved to an external file -->
     <script src="script.js" defer></script>
     <script>
@@ -732,6 +692,12 @@ footer {
         });
 
     </script>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+        </script>
 </head>
 
  
