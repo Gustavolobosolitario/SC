@@ -123,34 +123,149 @@ nav {
     margin: 0 auto;
 }
 
-h2 {
+h1 {
     color: #293377;
-    text-align: center;
-    margin: 40px;
     font-family: 'Helvetica Neue Medium', sans-serif;
+  }
+  
+  /* Estilize o contêiner da imagem */
+  .content-container {
+    max-width: 60%;
+    margin: 60px auto;
+    text-align: justify;
+    position: relative; /* Adiciona posicionamento relativo ao contêiner */
+    background-color: #ffffff;
+  }
+  
+  /* Estilize a imagem dentro do contêiner */
+  .content-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Estilize o texto sobreposto à imagem */
+  h1 {
+    position: relative; /* Alterado de 'central' para 'relative' */
+    top: -150%; /* Alinha o topo do h1 ao centro vertical da imagem */
+    left: 0px;
+    right: 1500px;
+    transform: translateY(-50%); /* Centraliza verticalmente o h1 em relação à imagem */
+    padding: 10px; /* Corrigido para valor positivo */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com opacidade para melhor legibilidade */
+    margin: 250px; /* Remove as margens padrão do h1 */
+    box-sizing: border-box; /* Inclui o preenchimento no tamanho total do elemento */
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold; /* Adicionado para tornar o texto negrito */
 }
+  
 
 .content-container {
     text-align: justify;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px; /* Adiciona um espaço abaixo da imagem */
+.card-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    margin-bottom: 50px;
+    position: relative; /* Necessário para posicionar o pseudo-elemento corretamente */
 }
+
+.card-image {
+    width: 500px;
+    height: auto;
+}
+
+.card-image-container::after {
+    content: ""; /* Cria um elemento vazio para ser o risco */
+    width: 10cm; /* Largura do risco */
+    height: 2px; /* Altura do risco */
+    background-color: yellow; /* Cor do risco */
+    position: absolute; /* Posiciona o risco em relação ao elemento pai (.card-image-container) */
+    bottom: -20px; /* Posiciona o risco 2 cm abaixo da imagem (-20px para 2 cm considerando a altura do risco) */
+    left: 50%; /* Centraliza o risco horizontalmente */
+    transform: translateX(-50%); /* Centraliza o risco horizontalmente */
+}
+
+
 
 p {
-    margin-bottom: 15px;
-    line-height: 1.6;
+    line-height: 1.9;
     color: #293377;
-    margin: 10px;
+    margin: 30px 30px 150px; /* Adicionei um valor específico para a margem inferior */
     font-family: 'Helvetica Neue Medium', sans-serif;
     font-size: 19px; /* Altere o valor conforme necessário */
+    margin-bottom: 50px;
+    margin-top: 150px;
+    
+
 }
 
+/* Adiciona margem quando o texto termina */
+p:last-child {
+    margin-bottom: 200px; /* Altere o valor conforme necessário */
+}
 
+/* Adiciona um espaçamento menor entre os parágrafos */
+p + p {
+    margin-top: 5px; /* Altere o valor conforme necessário */
+    margin-bottom: 50px;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    margin-top: 50px;
+    margin-left: 320px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adicione uma sombra suave se desejar */
+  }
+  
+  .title-custom {
+    margin-bottom: 5px;
+  }
+  
+  .menu-custom {
+    display: flex;
+    align-items: center;
+  }
+  
+  .submenu-container-custom {
+    display: flex;
+    align-items: center;
+  }
+  
+  .submenu-container-custom a {
+    text-decoration: none;
+    color: #293377;
+    margin-right: 5px;
+  }
+  
+  .divider {
+    margin: 0 5px;
+  }
+  
+  .submenu-container-custom a:hover {
+    text-decoration: underline;
+  }
+  
+  .submenu-container-custom a.current {
+    color: #ffcc00; /* Cor da página atual no submenu */
+    font-weight: bold;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+  }
+  
+  .title-custom h2 {
+    margin: 0; /* Remover margem padrão do título */
+  }
+  
 
 
 
@@ -218,16 +333,13 @@ footer {
 
 
 /* Responsive Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
     body {
-        font-size: 14px; /* ou o tamanho desejado */
-    }
-
-    h2 {
-        font-size: 24px; /* ou o tamanho desejado */
+        font-size: 14px;
     }
 
     .menu {
+        margin-right: 0;
         flex-direction: column;
         align-items: center;
     }
@@ -247,19 +359,71 @@ footer {
     .content-container {
         max-width: 100%;
     }
+}
 
-    @media screen and (max-width: 768px) {
-        .menu {
-            margin-right: 0;
-        }
-    
-        .menu li {
-            margin: 10px 0;
-        }
+/* Tamanhos de tela médios (tablets) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
     }
-    
+}
 
-    
+/* Tamanhos de tela maiores (desktops) */
+@media screen and (min-width: 769px) {
+    body {
+        font-size: 18px;
+    }
+
+    .menu {
+        margin-right: 100px;
+    }
+
+    .menu li {
+        margin: 0 15px;
+    }
+
+    /* Responsividade para a imagem */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsividade para ícones */
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha se não houver espaço suficiente */
+}
+
+.icon-item {
+    text-align: center;
+    flex: 1;
+    max-width: 100px; /* Ajuste o tamanho máximo conforme necessário */
+}
+
+.icon-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Adaptação de estilos para telas menores */
+@media screen and (max-width: 576px) {
+    .content-container {
+        max-width: 100%; /* Ajusta a largura para ocupar 100% da largura da tela em telas menores */
+        margin: 20px auto; /* Centraliza o conteúdo */
+        padding: 0 10px; /* Adiciona um pouco de espaço nas laterais */
+    }
+
+    .icon-item {
+        max-width: 50%; /* Em telas menores, mostra dois ícones por linha */
+    }
+}
+
+/* Outras regras de mídia query conforme necessário... */
+
 }
 
 
