@@ -6,16 +6,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>Menu com Submenus</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica+Neue+Light&display=swap">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Colégio São Carlos</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <style>
     
         /* Reset some default styles */
 body, h1, h2, h3, p, ul, li {
@@ -331,344 +329,311 @@ footer {
 }
 
 
-
-/* Responsive Styles */
-@media screen and (max-width: 576px) {
-    body {
-        font-size: 14px;
-    }
-
-    .menu {
-        margin-right: 0;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu-item {
-        margin: 10px 0;
-    }
-
-    .submenu {
-        top: 0;
-    }
-
-    .slick-carousel-container {
-        max-width: 100%;
-    }
-
-    .content-container {
-        max-width: 100%;
-    }
+.body-container {
+    background-color: #ffffff;
+    padding: 20px;
 }
 
-/* Tamanhos de tela médios (tablets) */
-@media screen and (min-width: 577px) and (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
+.content-container {
+    max-width: 100%; /* Alterado para ocupar a largura total em telas menores */
+    margin: 20px auto;
+    text-align: justify;
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px; /* Adicionado preenchimento interno para melhorar a aparência */
 }
 
-/* Tamanhos de tela maiores (desktops) */
-@media screen and (min-width: 769px) {
-    body {
-        font-size: 18px;
-    }
-
-    .menu {
-        margin-right: 100px;
-    }
-
-    .menu li {
-        margin: 0 15px;
-    }
-
-    /* Responsividade para a imagem */
-.responsive-image {
+.content-container img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
 }
 
-/* Responsividade para ícones */
-.icon-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha se não houver espaço suficiente */
+h1 {
+    position: relative;
+    top: 0; /* Alterado para 0 para que o texto não se sobreponha à imagem */
+    left: 0;
+    right: 0;
+    transform: translateY(0);
+    padding: 20px; /* Ajustado para um valor maior para melhorar a aparência */
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px auto; /* Ajustado para espaçamento uniforme */
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
 }
 
-.icon-item {
-    text-align: center;
-    flex: 1;
-    max-width: 100px; /* Ajuste o tamanho máximo conforme necessário */
-}
-
-.icon-item img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-/* Adaptação de estilos para telas menores */
-@media screen and (max-width: 576px) {
+/* Media query para telas menores */
+@media only screen and (max-width: 768px) {
     .content-container {
-        max-width: 100%; /* Ajusta a largura para ocupar 100% da largura da tela em telas menores */
-        margin: 20px auto; /* Centraliza o conteúdo */
-        padding: 0 10px; /* Adiciona um pouco de espaço nas laterais */
+        padding: 10px; /* Ajustado para um valor menor em telas menores */
     }
 
-    .icon-item {
-        max-width: 50%; /* Em telas menores, mostra dois ícones por linha */
+    h1 {
+        padding: 10px; /* Ajustado para um valor menor em telas menores */
+        margin-top: 50px; /* Aumentado o espaçamento superior em telas menores */
     }
 }
 
-/* Outras regras de mídia query conforme necessário... */
-
-}
 
 
-    </style>
-    </head>
-    
-        <!-- Header Section -->
-        <div class="header-container">
-            <header>
-                <div class="logo-container">
-                    <a href="index.html">
-                        <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
-                    </a>
-                </div>
-            <nav>
-                <ul class="menu">
-                    <li class="menu-item">
-                        <a href="index.html">Quem Somos</a>
-                        <ul class="submenu">
-                            
-                            <li><a href="historia.html">História</a></li>
-                            <li><a href="PilareseValores.html">Pilares e Valores</a></li>
-                            <li><a href="estrutura.html">Nossa Estrutura</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Ensinos</a>
-                        <ul class="submenu">
-                            <li><a href="niveisdeensino.html">Níveis Ensino</a></li>
-                            <li><a href="bilingue.html">Projeto Bilíngue</a></li>
-                            <li><a href="materiais.html">Material SAS</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Contato</a>
-                        <ul class="submenu">
-                            <li><a href="contato.html" class="custom-text">Contato</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    </div>
 
-    <!-- JavaScript code moved to an external file -->
-    <script src="script.js" defer></script>
-    <script>
 
-        // Adicione o seguinte script JavaScript
-    
-        document.addEventListener('DOMContentLoaded', function () {
-            // Selecione todos os itens do menu e submenu
-            const menuItems = document.querySelectorAll('.menu-item');
-    
-            // Adicione um ouvinte de evento para cada item do menu
-            menuItems.forEach(function (menuItem) {
-                const submenu = menuItem.querySelector('.submenu');
-    
-                menuItem.addEventListener('mouseenter', function () {
-                    // Adicione uma classe de destaque quando o mouse entra
-                    menuItem.classList.add('highlight');
-                    submenu.classList.add('active');
-                });
-    
-                menuItem.addEventListener('mouseleave', function () {
-                    // Remova a classe de destaque quando o mouse sai
-                    menuItem.classList.remove('highlight');
-                    submenu.classList.remove('active');
-                });
+
+</style>
+</head>
+
+    <!-- Header Section -->
+    <div class="header-container">
+        <header>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+                </a>
+            </div>
+        <nav>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="index.html">Sobre Nós</a>
+                    <ul class="submenu">
+                        
+                        <li><a href="historia.html">Quem Somos</a></li>
+                        <li><a href="PilareseValores.html">Pilares e Valores</a></li>
+                        <li><a href="estrutura.html">Nossa Estrutura</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Ensinos</a>
+                    <ul class="submenu">
+                        <li><a href="niveisdeensino.html">Níveis Ensino</a></li>
+                        <li><a href="bilingue.html">Projeto Bilíngue</a></li>
+                        <li><a href="materiais.html">Material SAS</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Contato</a>
+                    <ul class="submenu">
+                        <li><a href="contato.html" class="custom-text">Contato</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<!-- JavaScript code moved to an external file -->
+<script src="script.js" defer></script>
+<script>
+
+    // Adicione o seguinte script JavaScript
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Selecione todos os itens do menu e submenu
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        // Adicione um ouvinte de evento para cada item do menu
+        menuItems.forEach(function (menuItem) {
+            const submenu = menuItem.querySelector('.submenu');
+
+            menuItem.addEventListener('mouseenter', function () {
+                // Adicione uma classe de destaque quando o mouse entra
+                menuItem.classList.add('highlight');
+                submenu.classList.add('active');
+            });
+
+            menuItem.addEventListener('mouseleave', function () {
+                // Remova a classe de destaque quando o mouse sai
+                menuItem.classList.remove('highlight');
+                submenu.classList.remove('active');
             });
         });
+    });
 
-    </script>
-    
+</script>
 
 
-    <body></body>
+<div class="breadcrumb">
+    <div class="title">
+      <h4>Sobre Nós</h4>
+    </div>
+    <div class="menu">
+      <div class="submenu-container-custom">
+        <a href="index.html">Quem Somos</a>
+        
+        <span class="divider"> > </span>
+        <a href="PilareseValores.html">Pilares e Valores</a>
+        <span class="divider"> > </span>
+        <a href="estrutura.html">Nossa Estrutura</a>
+      </div>
+    </div>
+  </div>
+  
+  
+  
 
-    <!-- Body Section -->
-    <div class="body-container">
-        <div class="content">
-            <h2>Quem Somos?</h2>
-            <div class="content-container" style="max-width: 60%; margin: 20px auto; text-align: justify;">
-                <img src="sala de aula.png" alt="Sua Imagem" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-                
-                
-                <p>Desde 1905 somos uma escola que mantém uma tradição de ensino de alta qualidade que nos diferencia
-                    das outras da cidade e região.</p>
-                <p>Nossos alunos recebem não apenas uma educação sólida, mas também são incentivados a serem cidadãos
-                    ativos e positivos em nossa sociedade.</p>
-                <p>Contamos com um rico capital intelectual de professores excepcionalmente qualificados e
-                    experientes, que demonstram o compromisso contínuo com a sua própria atualização na área educacional
-                    e desenvolvimento pessoal.</p>
-                <p>Além de proporcionar uma educação formal de excelência e promover o cultivo de valores humanos
-                    essenciais, o Colégio São Carlos enriquece ainda mais a experiência dos alunos, oferecendo uma
-                    extensa gama de atividades complementares, como esportes e reforço didático, sem custo adicional e
-                    disponíveis no próprio campus da escola, o que resulta em comodidade para os pais e segurança para
-                    os alunos.</p>
-                <p>As instalações do Colégio são completas, incluindo uma piscina aquecida, quadras poliesportivas para
-                    futsal e vôlei, além de espaços dedicados às práticas de karatê e dança, xadrez gigante,
-                    disponibilidade de instrumentos musicais e muito espaço para brincar e socializar.</p>
-                <p>O programa Bilíngue, que inclui aulas de conversação e sólida base gramatical, tem início no
-                    infantil 2 e atualmente vai até o 7º ano, com progressão automática nos próximos anos.</p>
-                <p>Oferecemos suporte de monitoria para reforço acadêmico, com horário flexível para esclarecimento de
-                    dúvidas, e foco especial em aprimorar habilidades de redação e expandir o repertório literário dos
-                    estudantes, além de proporcionar acesso a uma vasta biblioteca e um moderno laboratório de Ciências,
-                    Física, Química e Biologia.</p>
-                <p>No Colégio São Carlos, a educação vai além da sala de aula.</p>
-                <p>Se você valoriza a educação de qualidade e deseja um ambiente de aprendizado enriquecedor para seus
-                    filhos, sua decisão é clara: escolha o Colégio São Carlos.</p>
-            </div>
+<body></body>
+
+<!-- Body Section -->
+<div class="body-container">
+    <div class="content">
+        <h1>Quem Somos?</h1>
+        <div class="content-container" style="max-width: 60%; margin: 20px auto; text-align: justify;">
+            <img src="sala de aula.png" alt="Sua Imagem" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+            
+            
+            <p>Desde 1905 somos uma escola que mantém uma tradição de ensino de alta qualidade que nos diferencia
+                das outras da cidade e região.</p>
+            <p>Nossos alunos recebem não apenas uma educação sólida, mas também são incentivados a serem cidadãos
+                ativos e positivos em nossa sociedade.</p>
+            <p>Contamos com um rico capital intelectual de professores excepcionalmente qualificados e
+                experientes, que demonstram o compromisso contínuo com a sua própria atualização na área educacional
+                e desenvolvimento pessoal.</p>
+            <p>Além de proporcionar uma educação formal de excelência e promover o cultivo de valores humanos
+                essenciais, o Colégio São Carlos enriquece ainda mais a experiência dos alunos, oferecendo uma
+                extensa gama de atividades complementares, como esportes e reforço didático, sem custo adicional e
+                disponíveis no próprio campus da escola, o que resulta em comodidade para os pais e segurança para
+                os alunos.</p>
+            <p>As instalações do Colégio são completas, incluindo uma piscina aquecida, quadras poliesportivas para
+                futsal e vôlei, além de espaços dedicados às práticas de karatê e dança, xadrez gigante,
+                disponibilidade de instrumentos musicais e muito espaço para brincar e socializar.</p>
+            <p>O programa Bilíngue, que inclui aulas de conversação e sólida base gramatical, tem início no
+                infantil 2 e atualmente vai até o 7º ano, com progressão automática nos próximos anos.</p>
+            <p>Oferecemos suporte de monitoria para reforço acadêmico, com horário flexível para esclarecimento de
+                dúvidas, e foco especial em aprimorar habilidades de redação e expandir o repertório literário dos
+                estudantes, além de proporcionar acesso a uma vasta biblioteca e um moderno laboratório de Ciências,
+                Física, Química e Biologia.</p>
+            <p>No Colégio São Carlos, a educação vai além da sala de aula.</p>
+            <p>Se você valoriza a educação de qualidade e deseja um ambiente de aprendizado enriquecedor para seus
+                filhos, sua decisão é clara: escolha o Colégio São Carlos.</p>
         </div>
     </div>
-</body>
+</div>
+</section>
+<!-- Footer Section -->
+<footer>
+
+    <!-- Logo and Subtitle -->
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+        </div>
+
+        <div class="subtitle">
+            Valores eternos,<br>tempos modernos
+        </div>
+    </div>
+
+    <!-- Three Columns -->
+    <div class="container">
+        <!-- Column 1 -->
+        <div class="column">
+            <a href="index.html" class="custom-text">Quem Somos</a>
+            <a href="historia.html" class="custom-text">Historia</a>
+            <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
+            <a href="quem_somos.html" class="custom-text">Estrutura</a>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+            <a href="niveisdeensino.html" class="custom-text">Níveis de Ensino</a>
+            <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
+            <a href="materiais.html" class="custom-text">Material SAS</a>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column">
+            <a href="contato.html" class="custom-text">Contato</a>
+        </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <!-- Icon Container -->
+    <div class="icon-container">
+        <!-- Icon 1 -->
+        <div class="icon-item">
+            <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
+            <div class="description">ActiveSoft- Siga</div>
+            <div class="text">Acesso às informações pedagógicas administrativas.</div>
+        </div>
+
+        <!-- Icon 2 -->
+        <div class="icon-item">
+            <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
+            <div class="description">Class App</div>
+            <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
+        </div>
+
+        <!-- Icon 3 -->
+        <div class="icon-item">
+            <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
+            <div class="description">Portal SAS</div>
+            <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
+        </div>
+
+        <!-- Icon 4 -->
+        <div class="icon-item">
+            <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
+            <div class="description">StandFlor Evolution</div>
+            <div class="text">Informações sobre o nosso programa bilíngue.</div>
+        </div>
+    </div>
+
+    <div class="separator"></div>
+    <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
+    <div class="contact-copyright-container">
+    <!-- Contact Information -->
+
+    <!-- Contact Information -->
+    Rua Episcopal, 1859 - Centro. São Carlos/SP
+    <div class="separator"></div>
+    (16) 3362-5044
+    <div class="separator"></div>
+
+    <!-- Copyright Notice -->
+    Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir
+    a sua segurança online.
+</footer>
+<img src="Sem título3.png" alt="imagem" style="width: 100%; height: auto; max-width: 100%;">
 
 
-    </section>
-        <!-- Footer Section -->
-        <footer>
+</section>
 
-            <!-- Logo and Subtitle -->
-            <div class="container">
-                <div class="logo-container">
-                    <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
-                </div>
+<!-- Scripts -->
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="scripts.js" defer></script>
+<script>
 
-                <div class="subtitle">
-                    Valores eternos,<br>tempos modernos
-                </div>
-            </div>
 
-            <!-- Three Columns -->
-            <div class="container">
-                <!-- Column 1 -->
-                <div class="column">
-                    <a href="index.html" class="custom-text">Quem Somos</a>
-                    <a href="historia.html" class="custom-text">Historia</a>
-                    <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
-                    <a href="quem_somos.html" class="custom-text">Estrutura</a>
-                </div>
+$(document).ready(function(){
+$('.carousel').slick({
+    dots: true, // Adiciona indicadores de navegação
+    arrows: true, // Adiciona setas de navegação
+    infinite: true, // Navegação infinita
+    speed: 500, // Velocidade de transição em milissegundos
+    slidesToShow: 1, // Número de slides visíveis ao mesmo tempo
+    slidesToScroll: 1 // Número de slides para rolar a cada vez
+});
+});
 
-                <!-- Column 2 -->
-                <div class="column">
-                    <a href="niveisdeensino.html" class="custom-text">Níveis de Ensino</a>
-                    <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
-                    <a href="materiais.html" class="custom-text">Material SAS</a>
-                </div>
+$('.carousel').slick({
+// configurações do slick
+responsive: [
+    {
+        breakpoint: 768,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+    }
+    // outras configurações responsivas, se necessário
+]
+});
 
-                <!-- Column 3 -->
-                <div class="column">
-                    <a href="contato.html" class="custom-text">Contato</a>
-                </div>
-            </div>
-
-            <div class="separator"></div>
-
-            <!-- Icon Container -->
-            <div class="icon-container">
-                <!-- Icon 1 -->
-                <div class="icon-item">
-                    <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
-                    <div class="description">ActiveSoft- Siga</div>
-                    <div class="text">Acesso às informações pedagógicas administrativas.</div>
-                </div>
-
-                <!-- Icon 2 -->
-                <div class="icon-item">
-                    <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
-                    <div class="description">Class App</div>
-                    <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
-                </div>
-
-                <!-- Icon 3 -->
-                <div class="icon-item">
-                    <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
-                    <div class="description">Portal SAS</div>
-                    <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
-                </div>
-
-                <!-- Icon 4 -->
-                <div class="icon-item">
-                    <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
-                    <div class="description">StandFlor Evolution</div>
-                    <div class="text">Informações sobre o nosso programa bilíngue.</div>
-                </div>
-            </div>
-
-            <div class="separator"></div>
-            <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
-            <div class="contact-copyright-container">
-            <!-- Contact Information -->
-
-            <!-- Contact Information -->
-            Rua Episcopal, 1859 - Centro. São Carlos/SP
-            <div class="separator"></div>
-            (16) 3362-5044
-            <div class="separator"></div>
-
-            <!-- Copyright Notice -->
-            Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir
-            a sua segurança online.
-        </footer>
-        <img src="Sem título3.png" alt="imagem" style="width: 1500px; height: 300px;">
-    
-
-    </section>
-
-    <!-- Scripts -->
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="scripts.js" defer></script>
-    <script>
-
-    
-        $(document).ready(function(){
-        $('.carousel').slick({
-            dots: true, // Adiciona indicadores de navegação
-            arrows: true, // Adiciona setas de navegação
-            infinite: true, // Navegação infinita
-            speed: 500, // Velocidade de transição em milissegundos
-            slidesToShow: 1, // Número de slides visíveis ao mesmo tempo
-            slidesToScroll: 1 // Número de slides para rolar a cada vez
-        });
-    });
-
-    $('.carousel').slick({
-        // configurações do slick
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-            // outras configurações responsivas, se necessário
-        ]
-    });
-    
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-</body>
-
-</html>
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
