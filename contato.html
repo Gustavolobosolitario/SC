@@ -69,12 +69,13 @@ nav {
 .menu li {
     position: relative;
     margin: 0 15px;
-    cursor: pointer; /* Adiciona cursor pointer para indicar que é clicável */
+    cursor: pointer;
     list-style: none;
     display: flex;
-    margin-left: 20; /* Adiciona uma margem esquerda para mover o menu para a esquerda */
-    
+    margin-left: 20px; /* Adiciona uma margem esquerda para mover o menu para a esquerda */
 }
+
+
 
 .menu-item:hover .submenu {
     display: block;
@@ -454,58 +455,40 @@ button:hover {
 
 
 
-/* Responsive Styles */
+/* Common styles for all screen sizes */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: 'Helvetica Neue Light', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #293377;
+    box-sizing: border-box;
+    background-color: white;
+}
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
+/* ... (other styles remain unchanged) */
+
+/* Styles for smaller screens */
+@media only screen and (max-width: 768px) {
     .menu {
-        flex-direction: column;
-        align-items: center;
-        margin-right: 0; /* Adjust the margin-right for mobile */
+        flex-direction: column; /* Stack menu items vertically */
+        margin-right: 0; /* Remove the right margin */
     }
 
-    .menu-item {
-        margin: 10px 0;
+    .menu li {
+        margin: 0;
+        margin-bottom: 10px; /* Add some space between menu items */
     }
 
-    .submenu {
-        top: 0;
-        width: 100%; /* Make the submenu full width for mobile */
-        box-shadow: none; /* Remove box-shadow for mobile */
-    }
-
-    .submenu li {
-        text-align: center; /* Center the text in submenu items */
-    }
-
-    .slick-carousel-container {
-        max-width: 100%;
-    }
-
-    .content-container {
-        max-width: 100%;
-    }
-
-    .contact-section .contact-table {
-        margin-right: 0; /* Adjust the margin for mobile */
-    }
-
-    .form-section #assunto {
-        width: 100%; /* Make the "Assunto" field full width for mobile */
-        margin-bottom: 20px; /* Adjust the margin for mobile */
-    }
-
-    .form-section button {
-        width: 100%; /* Make the button full width for mobile */
-    }
-
-    .icon-item {
-        max-width: 100%; /* Make the icon items full width for mobile */
+    .menu-item:hover .submenu {
+        display: none; /* Hide submenus on small screens initially */
     }
 }
 
-       
 
 
     </style>
@@ -791,5 +774,5 @@ button:hover {
         <!-- Copyright Notice -->
         Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a sua segurança online.
     </div>
+    <img src="Sem título3.png" alt="imagem" style="width: 100%; height: auto; max-width: 100%;">
 </footer>
-<img src="Sem título3.png" alt="imagem" style="width: 1500px; height: 300px;">
