@@ -284,12 +284,110 @@ footer img {
 
 
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
+/* Estilos globais */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue Light', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #293377;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+/* Header Styles */
+.header-container {
+    background-color: #293377;
+    padding: 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin-right: 100px;
+}
+
+.menu a {
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    color: #fafafa;
+    font-size: 18px;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 15px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(16, 16, 16, 0.5);
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(252, 251, 251, 0);
+    z-index: 2;
+    color: rgb(7, 7, 7);
+    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+    transition: background-color 0.3s;
+    margin-bottom: 0px;
+}
+
+.submenu li:hover {
+    background-color: #ffdc0a;
+}
+
+.submenu.active {
+    display: block;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+/* Estilo da página */
+body.pagina-pilares {
+    background-color: white;
+    padding: 0px;
+}
+
+/* Adaptação para telas menores */
+/* Adaptação para telas menores */
+@media only screen and (max-width: 768px) {
     .menu {
         flex-direction: column;
         align-items: center;
-        margin-right: 0; /* Reduza a margem direita */
+        margin-right: 0;
     }
 
     .menu-item {
@@ -298,7 +396,7 @@ footer img {
 
     .submenu {
         top: 0;
-        width: 100%; /* Faça o submenu ocupar toda a largura */
+        width: 100%;
     }
 
     .slick-carousel-container {
@@ -307,6 +405,19 @@ footer img {
 
     .content-container {
         max-width: 100%;
+    }
+
+    #titulo, #paragrafo1, #subtitulo, .section, #subtitulo2, #paragrafo5 {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .section img {
+        width: 100%; /* Faça as imagens ocuparem toda a largura da seção */
+        max-width: 300px; /* Defina uma largura máxima para as imagens */
+        height: auto; /* Mantenha a proporção original da imagem */
+        margin-bottom: 10px;
     }
 }
 
