@@ -1,277 +1,173 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js"> <!<![endif]-->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Colégio São Carlos</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </head>
-    <style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colégio São Carlos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick-theme.css">
+</head>
+
+<style>
+    /* Reset some default styles */
+    body, h1, h2, h3, p, ul, li {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Helvetica Neue Light', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #293377;
+        background-color: #fafafb;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .body-container {
+        flex: 1;
+        background-color: #ffffff;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Header Styles */
+    .header-container {
+        background-color: #293377;
+        padding: 10px 0;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo-container {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    .menu {
+        list-style: none;
+        display: flex;
+        margin-right: 100px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        letter-spacing: 5px;
+        font-family: 'Helvetica Neue Medium', sans-serif;
+        color: #fafafa;
+        font-size: 18px;
+    }
+
+    .menu li {
+        position: relative;
+        margin: 0 15px;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+    }
+
+    .menu-item:hover .submenu {
+        display: block;
+    }
+
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(16, 16, 16, 0.5);
+        padding: 10px;
+        box-shadow: 0 0 30px rgba(252, 251, 251, 0);
+        z-index: 2;
+        color: rgb(7, 7, 7);
+        transition: opacity 0.3s, visibility 0.3s, height 0.3s;
+        transition: background-color 0.3s;
+        margin-bottom: 0px;
+    }
+
+    .submenu li:hover {
+        background-color: #ffdc0a;
+    }
+
+    .submenu.active {
+        display: block;
+    }
+
+    .submenu li {
+        margin: 5px 0;
+    }
+
+    /* Content Styles */
+    .content {
+        margin: 0 auto;
+    }
+
+    h1 {
+        color: #293377;
+        font-family: 'Helvetica Neue Medium', sans-serif;
+        margin: 290px 0 55px;
+    }
+
+    .content-container {
+        max-width: 60%;
+        margin: 60px auto;
+        text-align: justify;
+        position: relative;
+        background-color: #ffffff;
+        padding: 20px;
+    }
+
+    .content-container img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .card-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: yellow;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .card-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .content-text {
+        text-align: justify;
+        line-height: 1.6;
+        font-size: 18px;
+    }
+
     
-        /* Reset some default styles */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Helvetica Neue Light', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #293377;
-    box-sizing: border-box;
-    background-color: #fafafb;
-}
-
-/* Header Styles */
-.header-container {
-    background-color: #293377;
-    padding: 10px 0;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo-container {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-
-nav {
-    display: flex;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    margin-right: 100px; /* Adicionei uma margem esquerda para mover o menu para a esquerda */
-}
-
-.menu a {
-    text-decoration: none;
-    letter-spacing: 5px;
-    font-family: 'Helvetica Neue Medium', sans-serif;
-    color: #fafafa;
-    font-size: 18px;
-}
-
-.menu li {
-    position: relative;
-    margin: 0 15px;
-    cursor: pointer; /* Adiciona cursor pointer para indicar que é clicável */
-    list-style: none;
-    display: flex;
-    margin-left: 20; /* Adiciona uma margem esquerda para mover o menu para a esquerda */
-    
-}
-
-.menu-item:hover .submenu {
-    display: block;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: rgba(16, 16, 16, 0.5);
-    padding: 10px;
-    box-shadow: 0 0 30px rgba(252, 251, 251, 0);
-    z-index: 2;
-    color: rgb(7, 7, 7);
-    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
-    transition: background-color 0.3s; /* Adiciona transição para o efeito de destaque */
-    margin-bottom: 0px; /* Ajuste o valor conforme necessário */
-}
-
-.submenu li:hover {
-    background-color: #ffdc0a; /* Cor de destaque quando passa o mouse sobre o item do submenu */
-}
-
-.submenu.active {
-    display: block;
-}
-
-.submenu li {
-    margin: 5px 0;
-}
-
-
-
-.body-container {
-    background-color: #ffffff;
-    padding: 20px;
-}
-
-.content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-h1 {
-    color: #293377;
-    font-family: 'Helvetica Neue Medium', sans-serif;
-  }
-  
-  /* Estilize o contêiner da imagem */
-  .content-container {
-    max-width: 60%;
-    margin: 60px auto;
-    text-align: justify;
-    position: relative; /* Adiciona posicionamento relativo ao contêiner */
-    background-color: #ffffff;
-  }
-  
-  /* Estilize a imagem dentro do contêiner */
-  .content-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  /* Estilize o texto sobreposto à imagem */
-  h1 {
-    position: relative; /* Alterado de 'central' para 'relative' */
-    top: -150%; /* Alinha o topo do h1 ao centro vertical da imagem */
-    left: 0px;
-    right: 1500px;
-    transform: translateY(-50%); /* Centraliza verticalmente o h1 em relação à imagem */
-    padding: 10px; /* Corrigido para valor positivo */
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com opacidade para melhor legibilidade */
-    margin: 250px; /* Remove as margens padrão do h1 */
-    box-sizing: border-box; /* Inclui o preenchimento no tamanho total do elemento */
-    margin-top: 100px;
-    margin-bottom: 50px;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: bold; /* Adicionado para tornar o texto negrito */
-}
-  
-
-.content-container {
-    text-align: justify;
-}
-
-.card-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: yellow;
-    margin-bottom: 50px;
-    position: relative; /* Necessário para posicionar o pseudo-elemento corretamente */
-}
-
-.card-image {
-    width: 500px;
-    height: auto;
-}
-
-.card-image-container::after {
-    content: ""; /* Cria um elemento vazio para ser o risco */
-    width: 10cm; /* Largura do risco */
-    height: 2px; /* Altura do risco */
-    background-color: yellow; /* Cor do risco */
-    position: absolute; /* Posiciona o risco em relação ao elemento pai (.card-image-container) */
-    bottom: -20px; /* Posiciona o risco 2 cm abaixo da imagem (-20px para 2 cm considerando a altura do risco) */
-    left: 50%; /* Centraliza o risco horizontalmente */
-    transform: translateX(-50%); /* Centraliza o risco horizontalmente */
-}
-
-
-
-p {
-    line-height: 1.9;
-    color: #293377;
-    margin: 30px 30px 150px; /* Adicionei um valor específico para a margem inferior */
-    font-family: 'Helvetica Neue Medium', sans-serif;
-    font-size: 19px; /* Altere o valor conforme necessário */
-    margin-bottom: 50px;
-    margin-top: 150px;
-    
-
-}
-
-/* Adiciona margem quando o texto termina */
-p:last-child {
-    margin-bottom: 200px; /* Altere o valor conforme necessário */
-}
-
-/* Adiciona um espaçamento menor entre os parágrafos */
-p + p {
-    margin-top: 5px; /* Altere o valor conforme necessário */
-    margin-bottom: 50px;
-}
-
-.breadcrumb {
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    margin: 10px 0;
-    background-color: #ffffff;
-    margin-top: 50px;
-    margin-left: 320px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adicione uma sombra suave se desejar */
-  }
-  
-  .title-custom {
-    margin-bottom: 5px;
-  }
-  
-  .menu-custom {
-    display: flex;
-    align-items: center;
-  }
-  
-  .submenu-container-custom {
-    display: flex;
-    align-items: center;
-  }
-  
-  .submenu-container-custom a {
-    text-decoration: none;
-    color: #293377;
-    margin-right: 5px;
-  }
-  
-  .divider {
-    margin: 0 5px;
-  }
-  
-  .submenu-container-custom a:hover {
-    text-decoration: underline;
-  }
-  
-  .submenu-container-custom a.current {
-    color: #ffcc00; /* Cor da página atual no submenu */
-    font-weight: bold;
-    font-family: 'Helvetica Neue Medium', sans-serif;
-  }
-  
-  .title-custom h2 {
-    margin: 0; /* Remover margem padrão do título */
-  }
-  
-
-
-
-
-
-
-
-
 
 /* Footer Styles */
 footer {
@@ -281,7 +177,7 @@ footer {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -370,14 +266,7 @@ body, h1, h2, h3, p, ul, li {
     padding: 0;
 }
 
-body {
-    font-family: 'Helvetica Neue Light', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #293377;
-    box-sizing: border-box;
-    background-color: #fafafb;
-}
+
 
 /* Estilos do cabeçalho */
 .header-container {
@@ -461,14 +350,13 @@ nav {
     padding: 20px;
 }
 
-.content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+
 
 h1 {
     color: #293377;
     font-family: 'Helvetica Neue Medium', sans-serif;
+    margin: 290px;
+    margin-bottom: 55px;
 }
 
 .content-container {
@@ -484,6 +372,8 @@ h1 {
     height: auto;
     display: block;
     margin: 0 auto;
+    position: relative; /* Adiciona posição relativa para posicionar o contorno */
+    border-bottom: 5px solid #ffdc0a; /* Adiciona um contorno azul na parte inferior */
 }
 
 .card-image-container {
@@ -500,19 +390,19 @@ h1 {
     height: auto;
 }
 
-.card-image-container::after {
+.content-container img::after {
     content: "";
-    width: 10cm;
-    height: 2px;
-    background-color: yellow;
     position: absolute;
-    bottom: -20px;
-    left: 50%;
+    bottom: 0;
+    left: 50%; /* Posiciona o contorno centralizado na parte inferior */
     transform: translateX(-50%);
+    width: 15cm;
+    height: 5px; /* Altura do contorno */
+    background-color: #ffdc0a;
 }
 
 p {
-    line-height: 1.9;
+    line-height: 1.2;
     color: #293377;
     margin: 30px 30px 150px;
     font-family: 'Helvetica Neue Medium', sans-serif;
@@ -526,8 +416,8 @@ p:last-child {
 }
 
 p + p {
-    margin-top: 5px;
-    margin-bottom: 50px;
+    margin-top: 0px;
+    margin-bottom: 40px;
 }
 
 .breadcrumb {
@@ -543,6 +433,7 @@ p + p {
 
 .title-custom {
     margin-bottom: 5px;
+    font-size: 10px;
 }
 
 .menu-custom {
@@ -577,7 +468,61 @@ p + p {
 
 .title-custom h2 {
     margin: 0;
+    font-size: 10px;
 }
+
+
+
+.breadcrumb {
+    background-color: #ffffff; /* Adiciona fundo branco */
+    
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #ffffff;
+    margin-right: -500px; /* Mover 50 pixels para a direita */
+    margin-bottom: -170px; /* Espaçamento inferior menor */
+    box-sizing: border-box;
+}
+
+.breadcrumb .title h2 {
+    color: #293377;
+    margin: 0;
+    background-color: #ffffff; /* Adiciona fundo branco */
+    font-size: 16px;
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-family: 'Helvetica Neue Medium', sans-serif;
+}
+
+.breadcrumb .menu {
+    margin-top: 10px;
+}
+
+.breadcrumb .submenu-container {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb .submenu-container a {
+    text-decoration: none;
+    color: #293377;
+    margin-right: 5px;
+    letter-spacing: -1px; /* Adjust the letter spacing as needed */
+    font-size: 14px; /* Define o tamanho da fonte para 16px */
+}
+
+.breadcrumb .submenu-container .divider {
+    color: #707070;
+    margin: 0 5px;
+    font-size: 16px; /* Define o tamanho da fonte para 16px */
+}
+
+.breadcrumb .submenu-container a:first-child,
+.breadcrumb .submenu-container a:nth-child(2) {
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-size: 16px; /* Define o tamanho da fonte para 16px */
+}
+
 
 /* Estilos do rodapé */
 footer {
@@ -587,11 +532,41 @@ footer {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 10px;
+    margin-right: -50px;
+}
+
+.custom-container {
+    max-width: 80%; /* Adjust the max-width value as needed */
+    margin: 80px auto; /* Center the container on the page */
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    text-align: top;
+    flex-wrap: wrap;
+    margin-right: 50px; /* Adjust the margin-right value for positioning */
+}
+
+/* Custom Column */
+.custom-column {
+    flex: 1;
+}
+
+/* Custom Text */
+.custom-text {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Custom H4 */
+.custom-column h4 {
+    margin-bottom: 20px; /* Adjust the margin-bottom value for increased spacing */
 }
 
 .column {
@@ -607,6 +582,289 @@ footer {
 
 .separator {
     height: 20px;
+}
+
+/* Icon Container */
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 60px;
+}
+
+/* Icon Item */
+.icon-item {
+    text-align: center;
+    flex: 1;
+    max-width: 250px;
+    margin: 30px;
+}
+
+/* Icon Item Image */
+.icon-item .icon-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Icon Item Description */
+.icon-item .description {
+    font-weight: bold;
+    font-size: 18px;
+    color: #f6f6f8;
+}
+
+/* Icon Item Text */
+.icon-item .text {
+    color: #fcfcfd;
+    margin-top: 50px;
+}
+
+/* Specific styling for the fifth icon */
+.icon-item:last-child .icon-image {
+    /* Set specific styles for the fifth icon here */
+    width: auto;
+    height: auto;
+}
+
+
+.contact-copyright-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Content Styles */
+.body-container {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+h1 {
+    color: #293377;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-left: 325px;
+    margin-top: 100px;
+}
+
+.content-container {
+    max-width: 100%;
+    margin: 20px auto;
+    text-align: justify;
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.content-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    border-bottom: 5px solid #ffdc0a;
+}
+
+.card-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.card-image {
+    width: 500px;
+    height: auto;
+}
+
+.content-container img::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15cm;
+    height: 5px;
+    background-color: #ffdc0a;
+}
+
+p {
+    line-height: 1.2;
+    color: #293377;
+    margin: 30px 30px 150px;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    font-size: 19px;
+    margin-bottom: 50px;
+    margin-top: 150px;
+}
+
+p:last-child {
+    margin-bottom: 200px;
+}
+
+p + p {
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    margin-top: 50px;
+    margin-left: 320px;
+    box-shadow: 0px 0px 10px #ffffff;
+}
+
+.title-custom {
+    margin-bottom: 5px;
+    font-size: 10px;
+}
+
+.menu-custom {
+    display: flex;
+    align-items: center;
+}
+
+.submenu-container-custom {
+    display: flex;
+    align-items: center;
+}
+
+.submenu-container-custom a {
+    text-decoration: none;
+    color: #293377;
+    margin-right: 5px;
+}
+
+.divider {
+    margin: 0 5px;
+}
+
+.submenu-container-custom a:hover {
+    text-decoration: underline;
+}
+
+.submenu-container-custom a.current {
+    color: #ffcc00;
+    font-weight: bold;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+}
+
+.title-custom h2 {
+    margin: 0;
+    font-size: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #293377;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+    margin-top: 50px;
+    justify-content: center -50px;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    margin-right: 50px; /* Adjust the margin as needed to increase space */
+}
+
+.menu {
+    margin-left: 20px; /* Adjust the margin as needed to increase space */
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+}
+
+
+
+
+.column a {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/* Custom Container */
+/* Custom Container */
+/* Custom Container */
+/* Custom Container */
+.custom-container {
+    max-width: 80%; /* Adjust the max-width value as needed */
+    margin: 50px auto; /* Center the container on the page */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    text-align: top;
+    flex-wrap: wrap;
+}
+
+/* Custom Column */
+.custom-column {
+    flex: 1;
+}
+
+.custom-column a {
+    display: block;
+    margin-bottom: 0px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Custom Column Subtitle */
+.column-subtitle {
+    font-weight: bold;
+    
+}
+
+.custom-column h4 {
+    margin-bottom: 40px; /* Adjust the margin-bottom value for increased spacing */
+}
+
+
+/* Custom Text */
+
+
+
+
+/* Custom Text */
+
+
+
+
+
+.subtitle {
+    font-family: 'Helvetica Neue Bold', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.separator {
+    height: 20px;
+    margin: 20px;
 }
 
 .icon-container {
@@ -631,81 +889,108 @@ footer {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Media query para telas menores */
-@media only screen and (max-width: 768px) {
-    .content-container {
-        max-width: 100%;
-        margin: 20px auto;
+/* Center the content and add margin-bottom to the container */
+.contact-copyright-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Add margin-bottom to create space between individual descriptions */
+.contact-copyright-container .contact-info,
+.contact-copyright-container .copyright-info {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+    white-space: nowrap;
+    text-align: center;
+}
+
+
+/* Adicionando Media Query para Telas Menores */
+@media only screen and (max-width: 767px) {
+
+
+    .breadcrumb {
+        /* Adicione os estilos desejados para telas menores aqui */
+        padding: 10px; /* Exemplo: Reduz o preenchimento para telas menores */
+        text-align: left;
     }
 
-    h1 {
+    .title h2 {
+        font-size: 16px; /* Exemplo: Reduz o tamanho da fonte do título para telas menores */
+    }
+
+    /* Estilos do cabeçalho para telas menores */
+    .header-container {
         padding: 10px;
-        margin-top: 50px;
     }
 
-    .card-image-container::after {
-        bottom: -10px;
+    .menu {
+        margin-right: 20px; /* Reduz a margem para telas menores */
+    }
+
+    .menu a {
+        font-size: 16px; /* Reduz o tamanho da fonte para telas menores */
+    }
+
+    .submenu-container a {
+        font-size: 16px; /* Reduz o tamanho da fonte para telas menores */
+    }
+
+    /* Estilos do conteúdo para telas menores */
+    h1 {
+        margin: 100px 0 20px; /* Ajusta a margem para telas menores */
+    }
+
+    .content-container {
+        max-width: 100%; /* Ocupa a largura total para telas menores */
+    }
+
+    .card-image {
+        width: 100%; /* Ocupa a largura total para telas menores */
+    }
+
+    .divider {
+        display: none; /* Exemplo: Oculta o divisor para telas menores */
+    }
+
+    .content-container img::after {
+        width: 100%; /* Ocupa a largura total para telas menores */
     }
 
     p {
-        margin: 10px;
+        margin: 30px 0 100px; /* Ajusta a margem para telas menores */
     }
 
-    .breadcrumb {
-        margin-left: 0;
-    }
+    /* Adicionando Media Query para Telas Muito Pequenas (ex: smartphones em modo retrato) */
+    @media only screen and (max-width: 479px) {
 
-    .separator {
-        height: 10px;
-    }
+        .menu {
+            margin-right: 10px; /* Reduz ainda mais a margem para telas muito pequenas */
+        }
 
-    .icon-container {
-        flex-direction: column;
-    }
+        .menu a {
+            font-size: 14px; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        }
 
-    .icon-item img {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 5px;
-    }
+        h1 {
+            margin: 50px 0 10px; /* Ajusta ainda mais a margem para telas muito pequenas */
+        }
 
-    .contact-copyright-container {
-        margin-top: 10px;
-    }
-}
+        .content-container img::after {
+            height: 3px; /* Reduz a altura do contorno para telas muito pequenas */
+        }
 
-/* Media query para telas médias */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .content-container {
-        max-width: 80%;
-    }
-
-    .breadcrumb {
-        margin-left: 150px;
-    }
-
-    .card-image-container::after {
-        content: "";
-        width: 5cm;
-        height: 2px;
-        background-color: yellow;
-        position: absolute;
-        bottom: -20px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-/* Media query para telas grandes */
-@media only screen and (min-width: 1025px) {
-    .content-container {
-        max-width: 70%;
-    }
-
-    .breadcrumb {
-        margin-left: 220px;
+        p {
+            margin: 30px 0 50px; /* Ajusta ainda mais a margem para telas muito pequenas */
+        }
     }
 }
 
@@ -726,7 +1011,12 @@ footer {
                     <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
                 </a>
             </div>
-        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav>
             <ul class="menu">
                 <li class="menu-item">
                     <a href="index.html">Sobre Nós</a>
@@ -791,10 +1081,37 @@ footer {
   
   
 
-<body></body>
+<body>
+
+    <div class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    
+
+
+
 
 <!-- Body Section -->
-<div class="body-container">
+<div class="wrapper">
+    <div class="body-container">
+
+    <div class="breadcrumb">
+        <div class="title">
+          <h2>Sobre Nós</h2>
+        </div>
+        <div class="menu">
+          <div class="submenu-container">
+            <a href="index.html">Quem Somos</a>
+            <span class="divider"> > </span>
+            
+            <a href="PilareseValores.html">Pilares e Valores</a>
+            <span class="divider"> > </span>
+            <a href="estrutura.html">Nossa Estrutura</a>
+          </div>
+        </div>
+      </div>
     <div class="content">
         <h1>Quem Somos?</h1>
         <div class="content-container" style="max-width: 60%; margin: 20px auto; text-align: justify;">
@@ -829,6 +1146,7 @@ footer {
     </div>
 </div>
 </section>
+</body>
 <!-- Footer Section -->
 <footer>
 
@@ -844,115 +1162,120 @@ footer {
     </div>
 
     <!-- Three Columns -->
-    <div class="container">
+    <div class="custom-container">
         <!-- Column 1 -->
-        <div class="column">
-            <a href="index.html" class="custom-text">Quem Somos</a>
-            <a href="historia.html" class="custom-text">Historia</a>
-            <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
-            <a href="quem_somos.html" class="custom-text">Estrutura</a>
+        <div class="custom-column">
+            <h4 href="index.html" class="custom-text">Sobre Nós</h4>
+            
+            <a href="historia.html" class="custom-text">. Historia</a>
+            <a href="PilareseValores.html" class="custom-text">. Pilares e Valores</a>
+            <a href="quem_somos.html" class="custom-text">. Estrutura</a>
         </div>
-
+    
         <!-- Column 2 -->
-        <div class="column">
-            <a href="niveisdeensino.html" class="custom-text">Níveis de Ensino</a>
-            <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
-            <a href="materiais.html" class="custom-text">Material SAS</a>
+        <div class="custom-column">
+            <h4 href="niveisdeensino.html" class="custom-text">Ensino</h4>
+            <a href="niveisdeensino.html" class="custom-text">. Educação Infantil</a>
+            <a href="niveisdeensino.html" class="custom-text">. Ensino Fundamental</a>
+            <a href="niveisdeensino.html" class="custom-text">. Ensino Médio</a>
+            <a href="bilingue.html" class="custom-text">. Programa BilÍngue</a>
         </div>
-
+    
         <!-- Column 3 -->
-        <div class="column">
-            <a href="contato.html" class="custom-text">Contato</a>
+        <div class="custom-column">
+            <h4 href="contato.html" class="custom-text">Contato</h4>
+            <a href="contato.html" class="custom-text">. Atendimento</a>
+            <a href="contato.html" class="custom-text">. Canal Direto</a>
+            <a href="contato.html" class="custom-text">. Agende uma visita</a>
         </div>
     </div>
+    
 
     <div class="separator"></div>
 
     <!-- Icon Container -->
-    <div class="icon-container">
-        <!-- Icon 1 -->
-        <div class="icon-item">
-            <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
-            <div class="description">ActiveSoft- Siga</div>
-            <div class="text">Acesso às informações pedagógicas administrativas.</div>
-        </div>
-
-        <!-- Icon 2 -->
-        <div class="icon-item">
-            <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
-            <div class="description">Class App</div>
-            <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
-        </div>
-
-        <!-- Icon 3 -->
-        <div class="icon-item">
-            <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
-            <div class="description">Portal SAS</div>
-            <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
-        </div>
-
-        <!-- Icon 4 -->
-        <div class="icon-item">
-            <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
-            <div class="description">StandFlor Evolution</div>
-            <div class="text">Informações sobre o nosso programa bilíngue.</div>
-        </div>
+<div class="icon-container">
+    <!-- Icon 1 -->
+    <div class="icon-item">
+        <img src="12.png" alt="Icon 1" class="icon-image">
+        <div class="description">ActiveSoft- Siga</div>
+        <div class="text">Acesso às informações pedagógicas administrativas.</div>
     </div>
 
+    <!-- Icon 2 -->
+    <div class="icon-item">
+        <img src="13.png" alt="Icon 2" class="icon-image">
+        <div class="description">Class App</div>
+        <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
+    </div>
+
+    <!-- Icon 3 -->
+    <div class="icon-item">
+        <img src="14.png" alt="Icon 3" class="icon-image">
+        <div class="description">Portal SAS</div>
+        <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
+    </div>
+
+    <!-- Icon 4 -->
+    <div class="icon-item">
+        <img src="15.png" alt="Icon 4" class="icon-image">
+        <div class="description">StandFlor Evolution</div>
+        <div class="text">Informações sobre o nosso programa bilíngue.</div>
+    </div>
+
+    <!-- Icon 5 -->
+    <div class="icon-item">
+        <img src="seta.png" alt="Icon 5" class="icon-image">
+        
+    </div>
+</div>
+
+  
+    <!-- Footer Bottom -->
+<footer>
     <div class="separator"></div>
+
     <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
     <div class="contact-copyright-container">
-    <!-- Contact Information -->
+        <!-- Contact Information -->
+        <div class="contact-info">
+            Rua Episcopal, 1859 - Centro. São Carlos/SP
+        </div>
 
-    <!-- Contact Information -->
-    Rua Episcopal, 1859 - Centro. São Carlos/SP
-    <div class="separator"></div>
-    (16) 3362-5044
-    <div class="separator"></div>
+        <!-- Separator between contact information and phone number -->
+        <div class="separator"></div>
 
-    <!-- Copyright Notice -->
-    Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir
-    a sua segurança online.
+        <!-- Phone Number -->
+        <div class="contact-info">
+            (16) 3362-5044
+        </div>
+
+        <!-- Separator between phone number and copyright notice -->
+        <div class="separator"></div>
+
+        <!-- Copyright Notice -->
+        <div class="copyright-info">
+            Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a sua segurança online.
+            
+        </div>
+    </div>
+    
 </footer>
+
 <img src="Sem título3.png" alt="imagem" style="width: 100%; height: auto; max-width: 100%;">
 
-
-</section>
-
-<!-- Scripts -->
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="scripts.js" defer></script>
 <script>
-
-
-$(document).ready(function(){
-$('.carousel').slick({
-    dots: true, // Adiciona indicadores de navegação
-    arrows: true, // Adiciona setas de navegação
-    infinite: true, // Navegação infinita
-    speed: 500, // Velocidade de transição em milissegundos
-    slidesToShow: 1, // Número de slides visíveis ao mesmo tempo
-    slidesToScroll: 1 // Número de slides para rolar a cada vez
-});
-});
-
-$('.carousel').slick({
-// configurações do slick
-responsive: [
-    {
-        breakpoint: 768,
-        settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-        }
+    // Função JavaScript para alternar a exibição do menu em dispositivos menores
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('active');
     }
-    // outras configurações responsivas, se necessário
-]
-});
-
 </script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
