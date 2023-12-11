@@ -7,32 +7,35 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
+        <title>Nome da Página</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica+Neue+Light&display=swap">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Adicione mais links de estilo conforme necessário -->
     </head>
     <style>
         /* Reset some default styles */
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
+    
 }
 
 body {
     font-family: 'Helvetica Neue Light', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: #293377;
     box-sizing: border-box;
-    background-color: #fafafb;
+    background-color: white;
 }
 
 /* Header Styles */
 .header-container {
     background-color: #293377;
-    padding: 10px 0;
+    padding: 40px 0;
+    
 }
 
 header {
@@ -44,8 +47,9 @@ header {
 }
 
 .logo-container {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
+    
 }
 
 
@@ -56,7 +60,7 @@ nav {
 .menu {
     list-style: none;
     display: flex;
-    margin-right: 100px; /* Adicionei uma margem esquerda para mover o menu para a esquerda */
+    margin-right: 20px; /* Adicionei uma margem esquerda para mover o menu para a esquerda */
 }
 
 .menu a {
@@ -73,7 +77,7 @@ nav {
     cursor: pointer; /* Adiciona cursor pointer para indicar que é clicável */
     list-style: none;
     display: flex;
-    margin-left: 20; /* Adiciona uma margem esquerda para mover o menu para a esquerda */
+    /* Adiciona uma margem esquerda para mover o menu para a esquerda */
     
 }
 
@@ -110,269 +114,164 @@ nav {
 
 
 
-/* Estilo da página */
-/* Estilo para a seção de Tabelas */
-/* Estilo para a seção de Tabelas */
-/* Estilo para a seção de Tabelas */
-
-.tables-section {
-    text-align: center;
-    margin: 20px;
-}
-
-.table-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.icon {
-    width: auto;
-    height: auto;
-    display: inline-block;
-    margin-right: 10px; /* Ajuste conforme necessário */
-    color: #ffdc0a;
-}
-
-
-
-.description {
-    margin-left: 10px;
-    /* Adicione estilos para a descrição aqui */
-}
-
-.flex-container {
+.breadcrumb {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 100px;
-    border: none;
-    outline: none;
-}
-
-.contact-section {
-    margin: 0 20px; /* Adjust margin as needed */
-    text-align: center;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    margin-bottom: 60px;
-}
-
-.contact-table {
-    display: inline-block;
-    text-align: left;
-    border: none;
-    outline: none;
-    margin-right: 100px;
-}
-
-.contact-item {
-    display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Adjust as needed */
-    border: none;
-    outline: none;
-}
-
-.icon img {
-    margin-right: 10px; /* Adjust as needed */
-}
-
-
-
-
-
-
-
-.tables-section {
-    background-color: #f4f4f4;
-    padding: 40px 20px;
-    margin: 100px;
-    text-align: center;
-}
-
-.table-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Permite que as tabelas quebrem para a próxima linha se não houver espaço suficiente */
-    margin-top: 20px;
-}
-
-.table-with-header {
-    text-align: justify;
-    margin: 150px; /* Adicionando uma margem para separação entre as tabelas */
-    flex: 1; /* Para que as tabelas ocupem a mesma largura */
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%; /* Alterando a largura das tabelas para ocupar 100% da largura do contêiner pai */
-    border: 1px solid #ddd; /* Adiciona uma borda à tabela */
-}
-
-table th, table td {
-    border: 1px solid #ddd; /* Adiciona uma borda às células */
-    padding: 8px; /* Adiciona algum espaço interno para melhorar a aparência */
-}
-
-
-table tbody td {
-    text-align: left;
-}
-
-h2, h3, h4 {
-    color: #293377;
-    margin: 22px 0;
-    padding-right: 10px;
-    
-}
-
-
-td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-/* Estilo para a seção de Formulário */
-.form-section {
-    background-color: white; /* Set the background color to white */
-    text-align: center; /* Center the text */
-    padding: 20px; /* Add padding for better spacing */
-    margin-bottom: 40px; /* Adjust as needed for vertical spacing */
-}
-
-
-/* Formulário Section Heading Styles */
-.form-section h2, .form-section h3, .form-section p {
-    margin-bottom: 10px; /* Add some margin below each heading and paragraph */
-}
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-
-
-/* Formulário Section Form Styles */
-.form-section form {
-    max-width: 600px; /* Set a max-width for the form */
-    margin: 0 auto; /* Center the form horizontally */
-}
-
-
-/* Formulário Section Form Row Styles */
-.form-section .form-row {
-    display: flex;
-    justify-content: space-between; /* Add space between form groups */
-}
-
-/* Formulário Section Form Group Styles */
-.form-section .form-group {
-    flex: 1; /* Allow each form group to grow and take equal space */
-    margin-right: 10px; /* Add spacing between form groups */
-}
-
-/* Increase the width of the "Telefone" and "Assunto" fields */
-.form-section #telefone, .form-section #assunto {
-    width: calc(205% - 5px); /* Set the width to 50% minus spacing */
-    
-}
-
-.form-section #assunto {
-    
-    margin-bottom: 50px; /* Adjust the value as needed for more or less spacing */
-}
-
-
-/* Add space between the heading and paragraph */
-.form-section h3 {
-    margin-bottom: 40px; /* Adjust the margin as needed */
-}
-
-.form-section p {
-    margin-bottom: 40px; /* Adjust the margin as needed */
-}
-
-
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    width: 48%;
-}
-
-/* Center the submit button */
-.form-section .form-group {
-    text-align: center;
-}
-
-/* Style the submit button */
-.form-section button {
-    padding: 15px 30px; /* Adjust the padding to increase the button size */
-    font-size: 18px; /* Adjust the font size as needed */
-    background-color: #293377; /* Your button color */
-    color: #fff; /* Text color */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Add a smooth transition effect */
-}
-
-/* Add a hover effect */
-.form-section button:hover {
-    background-color: #1a214c; /* Your hover color */
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #293377;
-}
-
-input,
-textarea {
-    width: 100%;
+    background-color: #ffffff;
     padding: 10px;
-    margin-bottom: 12px;
+    font-size: 14px;
+    border-radius: 10px;
+    box-shadow: 30 50 10px #ffffff;
+    margin: 100px auto 0; /* Centraliza o elemento na página e ajusta a margem superior */
+    max-width: 50%; /* Define a largura máxima do contêiner (ajuste conforme necessário) */
     box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10PX;
+    background-color: white;
+    
 }
 
-button {
-    background-color: #293377;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+.breadcrumb .title h2 {
+    color: #293377;
+    margin: 0;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue Medium', sans-serif;
 }
 
-button:hover {
-    background-color: #1d2d4a;
+.breadcrumb .submenu-container {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
 }
+
+.breadcrumb .submenu-container a {
+    text-decoration: none;
+    color: #293377;
+    margin-right: 3px;
+    letter-spacing: -1px; /* Ajuste o espaçamento entre letras conforme necessário */
+    font-size: 18px; /* Define o tamanho da fonte para 14px */
+    font-weight: normal; /* Deixa o texto na formatação padrão */
+}
+
+.breadcrumb .submenu-container .divider {
+    background-color: #fafafb;
+    margin: 0 5px;
+    font-size: 18px; /* Define o tamanho da fonte para 16px */
+}
+
+.breadcrumb .submenu-container a:first-child,
+.breadcrumb .submenu-container a:nth-child(2) {
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-size: 18px; /* Define o tamanho da fonte para 16px */
+}
+
+
+
+.responsive-image {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+
+    
+    
+}
+
+p {
+    padding: 0px;
+    margin: 50px;
+    text-align: left;
+    background-color: white;
+}
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 40.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 60px;
+    left: 150px;
+    width: 70%;
+    height: 100%;
+    border: 0;
+    background-color: #fafafb;
+}
+
+
+.responsive-image1 {
+    width: 70%;
+    padding: 110px;
+    
+    float:right 50px;
+    background-color: white;
+    
+}
+
+
+.responsive-image2 {
+    width: 70%;
+    padding: 110px;
+    
+    float:right 50px;
+    background-color: #fafafb;
+    
+}
+
+.responsive-image2 {
+    width: 110%;
+    padding:10px;
+    
+    float:left ;
+    background-color: white;
+    
+}
+
+.responsive-image3 {
+    width: 130%;
+    padding:10px;
+    background-color: white;
+    float:right;
+    
+}
+
+
+h1 {
+    padding: 50px;
+    font-size: 36px; /* Ajuste o tamanho desejado em pixels */
+    background-color: white;
+}
+
+.responsive-image4 {
+    width: 183%; /* Ajuste o tamanho conforme necessário */
+    padding: 0; /* Remova qualquer preenchimento */
+    margin: 0; /* Remova qualquer margem */
+    display: block; /* Certifique-se de que é exibido como bloco */
+    margin-left: -50%; /* Move a imagem para a esquerda para centralizá-la */
+    background-color: transparent !important;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -385,26 +284,257 @@ button:hover {
 
 
 /* Footer Styles */
-/* Additional Footer Styles */
-.custom-footer {
+footer {
     background-color: #293377;
     color: #ffffff;
-    padding: 30px 0;
+    padding: 40px 0;
 }
 
-.custom-container {
-    max-width: 1200px;
+.container {
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.custom-column {
+.column {
     flex: 1;
 }
 
-.custom-column a {
+.column a {
+    display: block;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.separator {
+    height: 20px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.icon-item {
+    text-align: center;
+    flex: 1;
+    max-width: 150px;
+}
+
+.icon-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.contact-copyright-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#titulo {
+    text-align: auto;
+    margin-left: 300px;
+    padding: 20px;
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+#paragrafo1 {
+    text-align: justify;
+    margin-left: 300px; /* Adjust the left margin */
+    margin-right: 300px; /* Adjust the right margin */
+    margin-bottom: 30px;
+    /* Add your other styles for paragraphs */
+}
+
+#subtitulo {
+    text-align: justify;
+    margin-left: 300px; /* Adjust the left margin */
+    margin-right: 300px; /* Adjust the right margin */
+    margin-bottom: 30px;
+    margin-top: 160px;
+    font-weight: bold;
+}
+
+.icon-pilar {
+    display: block;
+    margin: 0 auto;
+    margin-top: 65px;
+
+    /* Add any additional styles for your icon here */
+}
+
+
+#descricao1,
+#texto1 {
+    text-align: center;
+    margin-top: 35px;
+    
+}
+
+#descricao1 {
+    font-weight: bold;
+    margin-top:30px;
+    /* Add any additional styles for h4 here */
+}
+
+#texto1 {
+    margin-top: 10px;
+    /* Add any additional styles for p here */
+}
+
+
+#descricao2,
+#texto2 {
+    text-align: center;
+    margin-top: 35px;
+    
+}
+
+#descricao2 {
+    font-weight: bold;
+    margin-top:30px;
+    /* Add any additional styles for h4 here */
+}
+
+#texto2 {
+    margin-top: 10px;
+    /* Add any additional styles for p here */
+}
+
+
+#descricao3,
+#texto3 {
+    text-align: center;
+    margin-top: 35px;
+    
+}
+
+#descricao3 {
+    font-weight: bold;
+    margin-top:30px;
+    /* Add any additional styles for h4 here */
+}
+
+#texto3 {
+    margin-top:5px;
+    text-align: center;
+    /* Add any additional styles for p here */
+}
+
+
+#descricao4,
+#texto4 {
+    text-align: center;
+    margin-top: 35px;
+    
+}
+
+#descricao4 {
+    font-weight: bold;
+    margin-top:30px;
+    /* Add any additional styles for h4 here */
+}
+
+#texto4 {
+    margin-top:5px;
+    text-align: center;
+    /* Add any additional styles for p here */
+}
+
+
+#descricao5,
+#texto5 {
+    text-align: center;
+    margin-top: 35px;
+    
+}
+
+#descricao5 {
+    font-weight: bold;
+    margin-top:30px;
+    /* Add any additional styles for h4 here */
+}
+
+#texto5 {
+    margin-top:5px;
+    text-align: center;
+    /* Add any additional styles for p here */
+}
+
+
+#subtitulo2 {
+    text-align: justify;
+    margin-left: 300px; /* Adjust the left margin */
+    margin-right: 300px; /* Adjust the right margin */
+    margin-bottom: 60px;
+    margin-top: 200px;
+    font-weight: bold;
+}
+
+
+#paragrafo5 {
+    text-align: justify;
+    margin-left: 300px; /* Adjust the left margin */
+    margin-right: 300px; /* Adjust the right margin */
+    margin-bottom: 30px;
+    /* Add your other styles for paragraphs */
+}
+
+
+footer {
+    margin-top: 250px;
+}
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #293377;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+    margin-top: 50px;
+    justify-content: center -50px;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    margin-right: 50px; /* Adjust the margin as needed to increase space */
+}
+
+.menu {
+    margin-left: 20px; /* Adjust the margin as needed to increase space */
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+}
+
+
+
+
+.column a {
     display: block;
     margin-bottom: 10px;
     color: #ffffff;
@@ -412,141 +542,342 @@ button:hover {
 }
 
 
-.custom-separator {
-    height: 20px;
+
+/* Custom Container */
+.custom-container {
+    max-width: 80%; /* Adjust the max-width value as needed */
+    margin: 50px auto; /* Center the container on the page */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    text-align: top;
+    flex-wrap: wrap;
 }
 
-.custom-icon-container {
+/* Custom Column */
+.custom-column {
+    flex: 1;
+}
+
+.custom-column a {
+    display: block;
+    margin-bottom: 0px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Custom Column Subtitle */
+.column-subtitle {
+    font-family: 'Helvetica Neue Bold', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 50px;
+    text-align: left; /* Adicionado para alinhar à esquerda */
+    /* Adicione quaisquer estilos adicionais necessários */
+}
+
+
+.custom-column h4 {
+    margin-bottom: 40px; /* Adjust the margin-bottom value for increased spacing */
+}
+
+.separator {
+    height: 20px;
+    margin: 20px;
+}
+
+.icon-container {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha se não houver espaço suficiente */
+    flex-wrap: wrap;
 }
 
-.custom-icon-item {
+.icon-item1 {
     text-align: center;
     flex: 1;
     max-width: 150px;
 }
 
-.custom-icon-item img {
+.icon-item img {
     width: 100px;
     height: 100px;
     margin-bottom: 10px;
 }
 
-.custom-contact-copyright-container {
-    max-width: 600px; /* Defina a largura máxima conforme necessário */
-    margin:  auto; /* Isso centralizará o contêiner na página */
-    text-align: center; /* Centralize o texto dentro do contêiner */
-}
-
-
-    /* Adicione este bloco de estilo no cabeçalho da sua página ou no seu arquivo de estilo CSS */
-.content-container img {
-    margin-bottom: 50px; /* Ajuste conforme necessário */
-}
-
-iframe {
-    margin-top: 50px; /* Ajuste conforme necessário */
-}
-
-    /* Estilo padrão para telas grandes */
-.header-container {
-    background-color: #293377;
-    padding: 10px 0;
-}
-
-header {
+.contact-copyright-container {
+    max-width: 50px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    max-width: 1200px;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* Center the content and add margin-bottom to the container */
+.contact-copyright-container {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -70px;
+    font-size: 20px;
+}
+
+/* Add margin-bottom to create space between individual descriptions */
+.contact-copyright-container .contact-info,
+.contact-copyright-container .copyright-info {
+    
+    white-space: nowrap;
+    text-align: center;
+    font-size: 20px;
+}
+
+.description {
+    font-weight: bold;
+    margin-bottom: 30px;
+    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+     /* Esconde qualquer parte do texto que ultrapasse a largura do contêiner */
+    text-overflow: ellipsis;
+    font-size: 20px;
+
+}
+
+.imagem-container img {
+    width: 100%;
+    height: auto;
+    display: block;
     margin: 0 auto;
 }
 
 
 
 
+/* Default styles (for screens larger than 1200px) */
+@media only screen and (max-width: 1200px) {
+    header {
+        padding: 20px 0;
+    }
+
+    .logo-container {
+        font-size: 1.5em;
+    }
+
+    .breadcrumb {
+        max-width: 80%;
+    }
+
+    .responsive-image1,
+    .responsive-image2,
+    .responsive-image3,
+    .responsive-image4 {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .video-container iframe {
+        top: 30px;
+        left: 50px;
+        width: 80%;
+    }
+
+    h1 {
+        padding: 20px;
+        font-size: 24px;
+    }
+
+    #titulo,
+    #paragrafo1,
+    #subtitulo,
+    #descricao1,
+    #texto1,
+    #descricao2,
+    #texto2,
+    #descricao3,
+    #texto3,
+    #descricao4,
+    #texto4,
+    #descricao5,
+    #texto5,
+    #subtitulo2,
+    #paragrafo5 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    footer {
+        margin-top: 150px;
+    }
+}
+
+/* Tablet styles (for screens between 768px and 1200px) */
+@media only screen and (max-width: 768px) {
+    .logo-container {
+        font-size: 1.2em;
+    }
+
+    .breadcrumb {
+        max-width: 90%;
+    }
+
+    .responsive-image1,
+    .responsive-image2,
+    .responsive-image3,
+    .responsive-image4 {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .video-container iframe {
+        top: 20px;
+        left: 30px;
+        width: 90%;
+    }
+
+    h1 {
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    #titulo,
+    #paragrafo1,
+    #subtitulo,
+    #descricao1,
+    #texto1,
+    #descricao2,
+    #texto2,
+    #descricao3,
+    #texto3,
+    #descricao4,
+    #texto4,
+    #descricao5,
+    #texto5,
+    #subtitulo2,
+    #paragrafo5 {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    footer {
+        margin-top: 100px;
+    }
+}
+
+/* Mobile styles (for screens up to 767px) */
+@media only screen and (max-width: 767px) {
+    .logo-container {
+        font-size: 1em;
+    }
+
+    .breadcrumb {
+        max-width: 100%;
+    }
+
+    .responsive-image1,
+    .responsive-image2,
+    .responsive-image3,
+    .responsive-image4 {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .video-container iframe {
+        top: 10px;
+        left: 10px;
+        width: 100%;
+    }
+
+    h1 {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    #titulo,
+    #paragrafo1,
+    #subtitulo,
+    #descricao1,
+    #texto1,
+    #descricao2,
+    #texto2,
+    #descricao3,
+    #texto3,
+    #descricao4,
+    #texto4,
+    #descricao5,
+    #texto5,
+    #subtitulo2,
+    #paragrafo5 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
 
 
-        /* Adjustments for smaller screens */
-        .content-container {
-            max-width: 100%;
-            margin: 20px auto;
-            text-align: justify;
-            background-color: white;
-        }
-    
-        .content-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 20px; /* Add some margin between images */
-        }
-    
-        /* Responsive styling for icons */
-        .custom-icon-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-    
-        .custom-icon-item {
-            text-align: center;
-            flex: 0 0 calc(33.33% - 20px); /* Three icons per row with some margin */
-            max-width: calc(33.33% - 20px);
-            margin-bottom: 20px;
-        }
-    
-        .custom-icon-item img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 10px;
-        }
+    .menu-toggle {
+        display: none;
+        cursor: pointer;
+      }
+      
+      .menu-toggle span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #293377;
+        margin: 6px 0;
+      }
+      
+      .menu {
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+      .menu ul {
+        list-style: none;
+        display: flex;
+      }
+      
+      .menu li {
+        margin: 0 15px;
+      }
+      
+      .menu a {
+        text-decoration: none;
+        color: #293377;
+        font-size: 16px;
+      }
+      
 
-
-        @media only screen and (max-width: 768px) {
-            .content-container {
-                padding: 10px;
-            }
-        
-            .content-container img {
-                width: 100%;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-                margin-bottom: 10px; /* Ajuste conforme necessário */
-            }
-        
-            /* Responsive styling para ícones */
-            .custom-icon-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-            }
-        
-            .custom-icon-item {
-                text-align: center;
-                flex: 0 0 calc(50% - 10px); /* Dois ícones por linha com um pouco de margem */
-                max-width: calc(50% - 10px);
-                margin-bottom: 10px;
-            }
-        
-            .custom-icon-item img {
-                width: 50px; /* Ajuste o tamanho do ícone conforme necessário */
-                height: 50px;
-                margin-bottom: 5px;
-            }
-        }
-        
-        /* Media query para telas ainda menores, como smartphones */
-        @media only screen and (max-width: 480px) {
-            .custom-icon-item {
-                flex: 0 0 calc(100% - 10px); /* Um ícone por linha com um pouco de margem */
-                max-width: calc(100% - 10px);
-            }
-        }
+    /* Consulta de mídia para telas menores */
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .menu li {
+      margin: 10px 0;
+    }
+  }
+}
 
 
 
@@ -555,7 +886,7 @@ header {
 
 
 
-
+/* Media Query para Telas Pequenas (ex: dispositivos móveis) */
 
 
 
@@ -635,43 +966,101 @@ header {
 
 
 <body>
+
+    <body>
+
+
+
+        <div class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        
+          <nav class="menu">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        
+        
     
+    
+    
+    
+    <div class="breadcrumb">
+        <div class="title">
+            <h2>Ensinos</h2>
+            <div class="submenu-container">
+                <p href="niveisdeensino.html">Niveis Ensino</p>
+                <span class="divider">  >  </span>
+                <h2 href="bilingue.html">Projeto Bilíngue</h2>
+                <span class="divider">  >  </span>
+                <a href="materiais.html">Material SAS</a>
+            </div>
+        </div>
+    </div>
 
-   <!-- Body Section -->
 
+
+
+    
 <!-- Contact Section -->
-<div class="container" style="background-color: white;">
+<div class="container">
     <!-- Image Section -->
-    
-
     <div class="body-container">
         <div class="content">
-            <div class="content-container" style="max-width: 60%; margin: 20px auto; text-align: justify; background-color: white;">
+            <div class="content-container" style="max-width: 60%; margin: 20px auto; text-align: justify;">
+
                 <!-- Images -->
-                <img src="ascdefg.png" alt="Sua Imagem" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-                <img src="dd.png" alt="Sua Imagem" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+                <img src="ascdefg.png" alt="Sua Imagem" class="responsive-image">
+                <img src="dd.png" alt="Sua Imagem" class="responsive-image">
 
-                <!-- Text Section -->
-                <p>
-                    <!-- Paragraph Content -->
-                    Uma proposta da FTD Educação para desenvolver alunos bilíngues. Criado para transformar o ensino-aprendizado de inglês das escolas, o StandFor Evolution é um programa de carga horária estendida que proporciona às crianças e aos adolescentes o estudo e a vivência de uma segunda língua, tornando-os cidadãos bilíngues e aptos para interagir e ir além.
-                </p>
+               <!-- Text Section -->
+               <p>
+                <!-- Paragraph Content -->
+                Uma proposta da FTD Educação para desenvolver alunos bilíngues.</p>
+                <p>Criado para transformar o ensino-aprendizado de inglês das escolas, o StandFor Evolution é um programa de carga horária estendida que proporciona às crianças e aos adolescentes o estudo e a vivência de uma segunda língua, tornando-os cidadãos bilíngues e aptos para interagir e ir além.
+            </p>
 
-                <!-- Video Section -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/fbFXunR0kEE" frameborder="0" allowfullscreen></iframe>
+            <!-- Video Section -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/fbFXunR0kEE" frameborder="0" allowfullscreen></iframe>
+            </div>
 
-                <!-- Additional Images -->
-                <img src="ascdefgf.png" alt="Sua Imagem" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-                <img src="dfgg.png" alt="Sua Imagem" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-                <img src="red.png" alt="Sua Imagem" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-                <img src="rede.png" alt="Sua Imagem" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-                
+            <!-- Additional Images -->
+            <img src="ascdefgf.png" alt="Sua Imagem" class="responsive-image1">
+            
+            <h1>
+                <!-- Paragraph Content -->
+                Entenda o programa
+            </h1>
+
+            <div class="no-blue-background">
+                <img src="redee.png" alt="Sua Imagem" class="responsive-image2">
+                <img src="redeer.png" alt="Sua Imagem" class="responsive-image3">
             </div>
         </div>
     </div>
 </div>
 
-<img src="fggh.png" alt="imagem" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+<div class="blue-background">
+    <img src=".png" alt="Sua Imagem" class="responsive-image4">
+    <img src=".png" alt="Sua Imagem" class="responsive-image4">
+    <img src=".png" alt="Sua Imagem" class="responsive-image4">
+</div>
+
+            
+            
+        </div>
+    </div>
+</div>
+</div>
+
+
 <!-- Código JavaScript movido para um arquivo externo -->
 <script src="script.js" defer></script>
 </body>
@@ -688,22 +1077,16 @@ header {
 
 
 
-
-
-
-
-
-
-        <!-- Footer Section -->
-<footer class="custom-footer">
+ 
+<footer>
 
     <!-- Logo and Subtitle -->
-    <div class="custom-container">
+    <div class="container">
         <div class="logo-container">
             <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
         </div>
 
-        <div class="subtitle">
+        <div class="column-subtitle">
             Valores eternos,<br>tempos modernos
         </div>
     </div>
@@ -712,72 +1095,113 @@ header {
     <div class="custom-container">
         <!-- Column 1 -->
         <div class="custom-column">
-            <a href="index.html" class="custom-text">Quem Somos</a>
-            <a href="historia.html" class="custom-text">Historia</a>
-            <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
-            <a href="quem_somos.html" class="custom-text">Estrutura</a>
+            <h4 class="custom-text"><a href="index.html">Sobre Nós</a></h4>
+            <a href="historia.html" class="custom-text">. História</a>
+            <a href="PilareseValores.html" class="custom-text">. Pilares e Valores</a>
+            <a href="quem_somos.html" class="custom-text">. Estrutura</a>
         </div>
 
         <!-- Column 2 -->
         <div class="custom-column">
-            <a href="niveisdeensino.html" class="custom-text">Níveis de Ensino</a>
-            <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
-            <a href="materiais.html" class="custom-text">Material SAS</a>
+            <h4 class="custom-text"><a href="niveisdeensino.html">Ensino</a></h4>
+            <a href="niveisdeensino.html" class="custom-text">. Educação Infantil</a>
+            <a href="niveisdeensino.html" class="custom-text">. Ensino Fundamental</a>
+            <a href="niveisdeensino.html" class="custom-text">. Ensino Médio</a>
+            <a href="bilingue.html" class="custom-text">. Programa Bilíngue</a>
         </div>
 
         <!-- Column 3 -->
         <div class="custom-column">
-            <a href="contato.html" class="custom-text">Contato</a>
+            <h4 class="custom-text"><a href="contato.html">Contato</a></h4>
+            <a href="contato.html" class="custom-text">. Atendimento</a>
+            <a href="contato.html" class="custom-text">. Canal Direto</a>
+            <a href="contato.html" class="custom-text">. Agende uma visita</a>
         </div>
     </div>
 
-    <div class="custom-separator"></div>
+    <div class="separator"></div>
 
     <!-- Icon Container -->
-    <div class="custom-icon-container">
+    <div class="icon-container">
+        <!-- Icon items here -->
         <!-- Icon 1 -->
-        <div class="custom-icon-item">
-            <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
-            <div class="description">ActiveSoft- Siga</div>
-            <div class="text">Acesso às informações pedagógicas administrativas.</div>
+        <div class="icon-item">
+            <img src="12.png" alt="Icon 1" class="icon-image7">
+            <div class="description1">ActiveSoft- Siga</div>
+            <div class="text1">Acesso às informações pedagógicas administrativas.</div>
         </div>
 
         <!-- Icon 2 -->
-        <div class="custom-icon-item">
-            <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
-            <div class="description">Class App</div>
-            <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
+        <div class="icon-item">
+            <img src="13.png" alt="Icon 2" class="icon-image7">
+            <div class="description1">Class App</div>
+            <div class="text1">Acesso ao aplicativo de comunicação com nossa instituição.</div>
         </div>
 
         <!-- Icon 3 -->
-        <div class="custom-icon-item">
-            <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
-            <div class="description">Portal SAS</div>
-            <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
+        <div class="icon-item">
+            <img src="14.png" alt="Icon 3" class="icon-image7">
+            <div class="description1">Portal SAS</div>
+            <div class="text1">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
         </div>
 
         <!-- Icon 4 -->
-        <div class="custom-icon-item">
-            <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
-            <div class="description">StandFlor Evolution</div>
-            <div class="text">Informações sobre o nosso programa bilíngue.</div>
+        <div class="icon-item">
+            <img src="15.png" alt="Icon 4" class="icon-image7">
+            <div class="description1">StandFlor Evolution</div>
+            <div class="text1">Informações sobre o nosso programa bilíngue.</div>
+        </div>
+
+        <!-- Icon 5 -->
+        <div class="icon-item1">
+            <img src="seta.png" alt="Icon 5" class="icon-image1">
         </div>
     </div>
 
-    <div class="custom-separator"></div>
-    <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
-    <div class="custom-contact-copyright-container">
-        <!-- Contact Information -->
-        Rua Episcopal, 1859 - Centro. São Carlos/SP
-        <div class="custom-separator"></div>
-        (16) 3362-5044
-        <div class="custom-separator"></div>
-        <!-- Copyright Notice -->
-        Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a sua segurança online.
-    </div>
+    <!-- Footer Bottom -->
+    <footer>
+        <div class="separator"></div>
 
-    <img src="Sem título3.png" alt="imagem" style="width: 100%; height: auto; max-width: 100%;">
+        <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
+        <div class="contact-copyright-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                Rua Episcopal, 1859 - Centro. São Carlos/SP
+            </div>
 
+            <!-- Separator between contact information and phone number -->
+            <div class="separator"></div>
+
+            <!-- Phone Number -->
+            <div class="contact-info">
+                (16) 3362-5044
+            </div>
+
+            <!-- Separator between phone number and copyright notice -->
+            <div class="separator"></div>
+
+            <!-- Copyright Notice -->
+            <div class="copyright-info">
+                Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a
+                sua segurança online.
+            </div>
+        </div>
+    </footer>
 </footer>
 
 
+
+<script src=""defer></script>
+
+
+
+<!-- Place the image at the end -->
+<div class="imagem-container">
+    <img src="Sem título3.png" alt="imagem">
+</div>
+
+
+
+</body>
+
+</html>
