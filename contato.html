@@ -17,6 +17,7 @@
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
+     
 }
 
 body {
@@ -26,6 +27,21 @@ body {
     color: #293377;
     box-sizing: border-box;
     background-color: white;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Cor de fundo da página */
+    
+}
+
+
+/* Global Styles */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header Styles */
@@ -108,280 +124,260 @@ nav {
     margin: 5px 0;
 }
 
+body {
+    background-color: #ffffff;
+}
 
+/* Breadcrumb Styles */
+.breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    box-shadow: 30 50 10px #ffffff;
+    margin: 80px auto 0; /* Centraliza o elemento na página e ajusta a margem superior */
+    max-width: 50%; /* Define a largura máxima do contêiner (ajuste conforme necessário) */
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10PX;
+    margin: 0 290px;
+}
+
+.breadcrumb .title h2 {
+    color: #293377;
+    margin: 0;
+    background-color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+}
+
+.breadcrumb .submenu-container {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.breadcrumb .submenu-container a {
+    text-decoration: none;
+    color: #293377;
+    margin-right: 5px;
+    letter-spacing: -1px; /* Ajuste o espaçamento entre letras conforme necessário */
+    font-size: 14px; /* Define o tamanho da fonte para 14px */
+    font-weight: normal; /* Deixa o texto na formatação padrão */
+    background-color: #ffffff;
+}
+
+.breadcrumb .submenu-container .divider {
+    background-color: #fafafb;
+    margin: 0 5px;
+    font-size: 16px; /* Define o tamanho da fonte para 16px */
+}
+
+.breadcrumb .submenu-container a:first-child,
+.breadcrumb .submenu-container a:nth-child(2) {
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-size: 16px; /* Define o tamanho da fonte para 16px */
+    background-color: #ffffff;
+}
+
+/* Content Styles */
+.content {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+}
 
 /* Estilo da página */
-/* Estilo para a seção de Tabelas */
-/* Estilo para a seção de Tabelas */
-/* Estilo para a seção de Tabelas */
-
-.tables-section {
-    text-align: center;
-    margin: 20px;
-    background-color: white;
-}
-
-.table-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    background-color: white;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    background-color: white;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-}
-
-.item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.icon {
-    width: auto;
-    height: auto;
-    display: inline-block;
-    margin-right: 10px; /* Ajuste conforme necessário */
-    color: #ffdc0a;
-}
-
-
-
-.description {
-    margin-left: 10px;
-    /* Adicione estilos para a descrição aqui */
-}
-
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 100px;
-    border: none;
-    outline: none;
-    background-color: white;
-}
-
-.contact-section {
-    margin: 0 20px; /* Adjust margin as needed */
-    text-align: center;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    margin-bottom: 60px;
-    background-color: white;
-}
-
-.contact-table {
-    display: inline-block;
-    text-align: left;
-    border: none;
-    outline: none;
-    margin-right: 100px;
-    background-color: white;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px; /* Adjust as needed */
-    border: none;
-    outline: none;
-    background-color: white;
-}
-
-.icon img {
-    margin-right: 10px; /* Adjust as needed */
-}
-
-
-
-
-
-
-
-.tables-section {
-    background-color: white;
-    padding: 40px 20px;
-    margin: 100px;
-    text-align: center;
-}
-
-.table-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Permite que as tabelas quebrem para a próxima linha se não houver espaço suficiente */
-    margin-top: 20px;
-    background-color: white;
-}
-
-.table-with-header {
-    text-align: justify;
-    margin: 150px; /* Adicionando uma margem para separação entre as tabelas */
-    flex: 1; /* Para que as tabelas ocupem a mesma largura */
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%; /* Alterando a largura das tabelas para ocupar 100% da largura do contêiner pai */
-    border: 1px solid #ddd; /* Adiciona uma borda à tabela */
-}
-
-table th, table td {
-    border: 1px solid #ddd; /* Adiciona uma borda às células */
-    padding: 8px; /* Adiciona algum espaço interno para melhorar a aparência */
-}
-
-
-table tbody td {
-    text-align: left;
-}
-
-h2, h3, h4 {
+.contact-title {
     color: #293377;
-    margin: 22px 0;
-    padding-right: 10px;
-    
-}
-
-
-td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-/* Estilo para a seção de Formulário */
-.form-section {
-    background-color: white; /* Set the background color to white */
-    text-align: center; /* Center the text */
-    padding: 20px; /* Add padding for better spacing */
-    margin-bottom: 40px; /* Adjust as needed for vertical spacing */
-}
-
-
-/* Formulário Section Heading Styles */
-.form-section h2, .form-section h3, .form-section p {
-    margin-bottom: 10px; /* Add some margin below each heading and paragraph */
-}
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-
-
-/* Formulário Section Form Styles */
-.form-section form {
-    max-width: 600px; /* Set a max-width for the form */
-    margin: 0 auto; /* Center the form horizontally */
-}
-
-
-/* Formulário Section Form Row Styles */
-.form-section .form-row {
-    display: flex;
-    justify-content: space-between; /* Add space between form groups */
-}
-
-/* Formulário Section Form Group Styles */
-.form-section .form-group {
-    flex: 1; /* Allow each form group to grow and take equal space */
-    margin-right: 10px; /* Add spacing between form groups */
-}
-
-/* Increase the width of the "Telefone" and "Assunto" fields */
-.form-section #telefone, .form-section #assunto {
-    width: calc(205% - 5px); /* Set the width to 50% minus spacing */
-    
-}
-
-.form-section #assunto {
-    
-    margin-bottom: 50px; /* Adjust the value as needed for more or less spacing */
-}
-
-
-/* Add space between the heading and paragraph */
-.form-section h3 {
-    margin-bottom: 40px; /* Adjust the margin as needed */
-}
-
-.form-section p {
-    margin-bottom: 40px; /* Adjust the margin as needed */
-}
-
-
-.form-row {
-    display: flex;
-    justify-content: space-between;
+    font-size: 36px;
+    margin-top: 0;
     margin-bottom: 20px;
+    margin-left: 290px;
+    margin-top: 120px;
+    background-color: #ffffff;
 }
 
-.form-group {
-    width: 48%;
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff;
 }
 
-/* Center the submit button */
-.form-section .form-group {
-    text-align: center;
-}
-
-/* Style the submit button */
-.form-section button {
-    padding: 15px 30px; /* Adjust the padding to increase the button size */
-    font-size: 18px; /* Adjust the font size as needed */
-    background-color: #293377; /* Your button color */
-    color: #fff; /* Text color */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Add a smooth transition effect */
-}
-
-/* Add a hover effect */
-.form-section button:hover {
-    background-color: #1a214c; /* Your hover color */
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #293377;
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
+.contact-box {
+    background-color: #ffffff;
+    border: 1px solid  #ffffff;
+    padding: 20px;
+    width: 400px;
+    margin: 10px;
     box-sizing: border-box;
 }
 
-button {
-    background-color: #293377;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+.contact-box h4 {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #293377;
+    font-size: 24px;
+    font-weight: lighter;
+    background-color: #ffffff;
 }
 
-button:hover {
-    background-color: #1d2d4a;
+.contact-box ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #ffffff;
 }
+
+.contact-box li {
+    padding: 10px 0;
+    color: #293377;
+    font-size: 13px;
+    margin: 10px;
+    align-items: center;
+    display: flex; /* Adicionado ponto e vírgula aqui */
+    background-color: #ffffff;
+}
+
+.contact-box li .icon {
+    margin-right: 10px;
+    color: #293377;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #ffffff;
+}
+
+.contact-box .highlight {
+    background-color: #293377;
+    color: white;
+    padding: 10px;
+}
+
+.contact-form {
+    margin-left: 290px;
+    margin-top: 120px;
+    background-color: #ffffff;
+}
+
+
+/* Adiciona estilos para o subtítulo e texto abaixo do formulário */
+.subtitle {
+    
+    font-size: 26px;
+    margin-top: 20px;
+    margin-left: 450px;
+    margin-top: 120px;
+    
+    
+}
+
+.text-below {
+    
+    font-size: 16px;
+    color: #293377;
+    margin-top: 10px;
+    margin-left: 450px;
+    margin-top: 60px;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    
+}
+
+#contact-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #293377;
+    text-align: center; /* Ajusta o alinhamento do texto */
+    width: 100%; /* Garante que o texto ocupe toda a largura disponível */
+    white-space: nowrap;
+    background-color: #fff;
+}
+
+#contact-form input,
+#contact-form textarea {
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    background-color: #fff;
+}
+
+#contact-form textarea {
+    min-height: 100px;
+    resize: vertical;
+    background-color: #fff;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.input-half {
+    flex: 1;
+    margin-right: 10px;
+    background-color: #fff;
+}
+
+#contact-form input[type="submit"] {
+    background-color: #293377;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border: none;
+    border-radius:50px;
+    width: 100%;
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
 
 
 
@@ -394,26 +390,42 @@ button:hover {
 
 
 /* Footer Styles */
-/* Additional Footer Styles */
-.custom-footer {
+footer {
     background-color: #293377;
     color: #ffffff;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 
-.custom-container {
-    max-width: 1200px;
+.container {
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 120px;
+    margin-top: 50px;
+    justify-content: center -50px;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
-.custom-column {
+.logo-container {
+    margin-right: 50px; /* Adjust the margin as needed to increase space */
+}
+
+.menu {
+    margin-left: 20px; /* Adjust the margin as needed to increase space */
+}
+
+.column {
     flex: 1;
+    margin: 10px;
 }
 
-.custom-column a {
+
+
+
+.column a {
     display: block;
     margin-bottom: 10px;
     color: #ffffff;
@@ -421,73 +433,328 @@ button:hover {
 }
 
 
-.custom-separator {
-    height: 20px;
+
+/* Custom Container */
+.custom-container {
+    max-width: 80%; /* Adjust the max-width value as needed */
+    margin: 50px auto; /* Center the container on the page */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    text-align: top;
+    flex-wrap: wrap;
 }
 
-.custom-icon-container {
+/* Custom Column */
+.custom-column {
+    flex: 1;
+}
+
+.custom-column a {
+    display: block;
+    margin-bottom: 0px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.column-subtitle_customn {
+    font-family: 'Helvetica Neue Bold', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 50px;
+    text-align: left; /* Adicionado para alinhar à esquerda */
+    /* Adicione quaisquer estilos adicionais necessários */
+}
+
+
+.custom-column h4 {
+    margin-bottom: 40px; /* Adjust the margin-bottom value for increased spacing */
+}
+
+.separator {
+    height: 20px;
+    margin: 20px;
+}
+
+.icon-container {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha se não houver espaço suficiente */
+    flex-wrap: wrap;
 }
 
-.custom-icon-item {
+.icon-item {
     text-align: center;
     flex: 1;
-    max-width: 150px;
+    max-width: 200px; /* Ajuste conforme necessário */
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-.custom-icon-item img {
-    width: 100px;
-    height: 100px;
+.icon-image {
+    width: 100px; /* ou ajuste conforme necessário */
+    height: 100px; /* ou ajuste conforme necessário */
     margin-bottom: 10px;
 }
 
-.custom-contact-copyright-container {
-    max-width: 600px; /* Defina a largura máxima conforme necessário */
-    margin:  auto; /* Isso centralizará o contêiner na página */
-    text-align: center; /* Centralize o texto dentro do contêiner */
+
+.contact-copyright-container {
+    max-width: 50px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center the content and add margin-bottom to the container */
+.contact-copyright-container {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -70px;
+}
+
+/* Add margin-bottom to create space between individual descriptions */
+
+.contact-copyright-container {
+    
+    white-space: nowrap;
+    text-align: center;
+}
+
+
+
+.description {
+    font-weight: bold;
+    margin-bottom: 30px;
+    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+     /* Esconde qualquer parte do texto que ultrapasse a largura do contêiner */
+    text-overflow: ellipsis;
+
+}
+
+.imagem-container {
+    margin: 0px; /* Ajuste conforme necessário para o espaçamento desejado */
 }
 
 
 
 
-
-
-
-/* Common styles for all screen sizes */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
+/* Content Styles */
+.content {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    background-color: #ffffff;
 }
 
-body {
-    font-family: 'Helvetica Neue Light', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+/* Contact Title Styles */
+.contact-title {
     color: #293377;
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: 290px;
+    margin-top: 120px;
+    background-color: #ffffff;
+}
+
+/* Content and Contact Box Styles */
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff;
+    flex-wrap: wrap; /* Adiciona flex-wrap para acomodar em telas menores */
+}
+
+.contact-box {
+    background-color: #ffffff;
+    border: 1px solid  #ffffff;
+    padding: 20px;
+    width: 400px;
+    margin: 10px;
     box-sizing: border-box;
-    background-color: white;
 }
 
-/* ... (other styles remain unchanged) */
+/* Subtitle and Text Below Styles */
+.subtitle,
+.text-below {
+    
+    text-align: center;
+}
 
-/* Styles for smaller screens */
+.subtitle {
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+.text-below {
+    font-size: 16px;
+    color: #293377;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+    .contact-title {
+        margin-left: 0; /* Remove a margem à esquerda */
+        text-align: center; /* Alinha o texto ao centro */
+    }
+
+    .content {
+        padding: 10px; /* Reduz o preenchimento */
+    }
+
+    .subtitle,
+    .text-below {
+        margin-left: 0; /* Remove a margem à esquerda */
+        text-align: center; /* Alinha o texto ao centro */
+    }
+
+    .contact-form {
+        margin-left: 0; /* Remove a margem à esquerda */
+    }
+}
+
+
+
+
+
 @media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .breadcrumb {
+        padding: 8px;
+        font-size: 12px;
+        margin: 40px auto 0; /* Ajuste conforme necessário */
+        max-width: 90%; /* Ajuste conforme necessário */
+    }
+
+    #titulo {
+        margin-left: 20px; /* Ajuste conforme necessário */
+        margin-bottom: 20px; /* Ajuste conforme necessário */
+        font-weight: bold;
+    }
+
+    #paragrafo1,
+    #subtitulo,
+    #subtitulo2,
+    #paragrafo5 {
+        margin-left: 20px; /* Ajuste conforme necessário */
+        margin-right: 20px; /* Ajuste conforme necessário */
+    }
+
+    /* Adicione as seguintes regras para os ícones */
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .icon-item {
+        text-align: center;
+        flex: 1;
+        max-width: 150px;
+        margin: 10px; /* Espaçamento entre os ícones */
+    }
+
+    .icon-item img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        display: block;
+        margin: 0 auto; /* Centraliza a imagem dentro do contêiner */
+    }
+
+    /* Ajustes para o subtítulo */
+    .column-subtitle {
+        font-family: 'Helvetica Neue Bold', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 10px; /* Ajuste conforme necessário */
+        text-align: center; /* Centraliza o subtítulo */
+    }
+
+    .menu-toggle {
+        display: none;
+        cursor: pointer;
+      }
+      
+      .menu-toggle span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #293377;
+        margin: 6px 0;
+      }
+      
+      .menu {
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+      .menu ul {
+        list-style: none;
+        display: flex;
+      }
+      
+      .menu li {
+        margin: 0 15px;
+      }
+      
+      .menu a {
+        text-decoration: none;
+        color: #293377;
+        font-size: 16px;
+      }
+      
+
+    /* Consulta de mídia para telas menores */
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
     .menu {
-        flex-direction: column; /* Stack menu items vertically */
-        margin-right: 0; /* Remove the right margin */
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
     }
-
+  
+    .menu.active {
+      display: flex;
+    }
+  
     .menu li {
-        margin: 0;
-        margin-bottom: 10px; /* Add some space between menu items */
+      margin: 10px 0;
     }
 
-    .menu-item:hover .submenu {
-        display: none; /* Hide submenus on small screens initially */
-    }
+
+
+
+    
+  }
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -560,149 +827,106 @@ body {
 </body>
 
 
+<body>
 
-
-    <!-- Body Section -->
-    
-    <!-- Contact Section -->
-<section class="contact-section">
-    <h2>Contato</h2>
-    <div class="contact-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Ensino Fundamental</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <img src="localizacao.png" alt="Localizacao Icon">
-                                </div>
-                                <div class="description">Rua Episcopal, Centro, São Carlos, SP</div>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <img src="comunicacao.png" alt="Phone Icon">
-                                </div>
-                                <div class="description">(16) 3362-5044</div>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <img src="email.png" alt="Email Icon">
-                                </div>
-                                <div class="description">suporte@colsaocarlos.com.br</div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Menu Toggle -->
+    <div class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
     </div>
-</section>
 
-<!-- Contact Section -->
-<section class="contact-section">
-    
-    <div class="contact-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Ensino Médio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <img src="localizacao.png" alt="Localizacao Icon">
-                                </div>
-                                <div class="description">Rua Episcopal, Centro, São Carlos, SP</div>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <img src="comunicacao.png" alt="Phone Icon">
-                                </div>
-                                <div class="description">(16) 3362-5044</div>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <img src="email.png" alt="Email Icon">
-                                </div>
-                                <div class="description">suporte@colsaocarlos.com.br</div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Navigation -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="title">
+            <h2>Sobre Nós</h2>
+            <div class="submenu-container">
+                <a href="index.html">Quem Somos</a>
+                <span class="divider"> > </span>
+                <a href="PilareseValores.html">Pilares e Valores</a>
+                <span class="divider"> > </span>
+                <h2>Nossa Estrutura</h2>
+            </div>
+        </div>
     </div>
-</section>
-
-                    
-                    
-                    
-                    
 
 
 
+
+   
+
+<h1 class="contact-title">Contato</h1>
+
+    <div class="content">
+        <div class="contact-box">
+            <h4>Ensino Fundamental</h4>
+            <ul>
+                <li><img src="Localizacao.png" alt="Icon 2" class="icon icon-pilar">Rua Episcopal, 1859, Centro, São Carlos, SP</li>
+                <li><img src="comunicacao.png" alt="Icon 3" class="icon icon-telefone">(16) 3362-5044</li>
+                <li><img src="Email.png" alt="Icon 4" class="icon icon-email">suporte@colsaocarlos.com.br</li>
+            </ul>
+        </div>
+
+        <div class="contact-box">
+            <h4>Ensino Médio</h4>
+            <ul>
+                <li><img src="Localizacao.png" alt="Icon 2" class="icon icon-pilar">Rua Episcopal, 1859, Centro, São Carlos, SP</li>
+                <li><img src="comunicacao.png" alt="Icon 3" class="icon icon-telefone">(16) 3362-5044</li>
+                <li><img src="Email.png" alt="Icon 4" class="icon icon-email">suporte@colsaocarlos.com.br</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="title-group">
+            <div class="subtitle">Alguma dúvida?</div>
+            <div class="text-below">Entre em contato com a nossa equipe e tire suas dúvidas.</div>
+        </div>
     
-    <!-- Formulário Section -->
-    <section class="form-section">
-        <h3>Alguma dúvida?</h3>
-        <p>Entre em contato com a nossa equipe e tire todas as duvidas.</p>
-        
-        <form>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome">
+        <form id="contact-form" class="contact-form">
+            <h2>Fale Conosco</h2>
+            <div class="input-group">
+                <div class="input-half">
+                    <input type="text" id="name" name="name" placeholder="Nome*">
                 </div>
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email">
+                <div class="input-half">
+                    <input type="email" id="email" name="email" placeholder="E-mail*">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone">
+            <div class="input-group">
+                <input type="tel" id="phone" name="phone" placeholder="Telefone*">
             </div>
-            <div class="form-group">
-                <label for="assunto">Assunto:</label>
-                <textarea id="assunto" name="assunto"></textarea>
+            <div class="input-group">
+                <textarea id="subject" name="subject" placeholder="Assunto"></textarea>
             </div>
-            <div class="form-group">
-                <button type="submit">Enviar</button>
-            </div>
+            <input type="submit" value="Enviar">
         </form>
-    </section>
+    </div>
+</div>
 
 
-
-
-        <!-- Footer Section -->
-<footer class="custom-footer">
+<footer>
 
     <!-- Logo and Subtitle -->
-    <div class="custom-container">
+    <div class="container">
         <div class="logo-container">
             <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
         </div>
 
-        <div class="subtitle">
+        <div class="column-subtitle_customn">
             Valores eternos,<br>tempos modernos
         </div>
     </div>
@@ -711,68 +935,133 @@ body {
     <div class="custom-container">
         <!-- Column 1 -->
         <div class="custom-column">
-            <a href="index.html" class="custom-text">Quem Somos</a>
-            <a href="historia.html" class="custom-text">Historia</a>
-            <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
-            <a href="quem_somos.html" class="custom-text">Estrutura</a>
+            <h4 class="custom-text"><a href="index.html">Sobre Nós</a></h4>
+            <a href="historia.html" class="custom-text">. História</a>
+            <a href="PilareseValores.html" class="custom-text">. Pilares e Valores</a>
+            <a href="quem_somos.html" class="custom-text">. Estrutura</a>
         </div>
 
         <!-- Column 2 -->
         <div class="custom-column">
-            <a href="niveisdeensino.html" class="custom-text">Níveis de Ensino</a>
-            <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
-            <a href="materiais.html" class="custom-text">Material SAS</a>
+            <h4 class="custom-text"><a href="niveisdeensino.html">Ensino</a></h4>
+            <a href="niveisdeensino.html" class="custom-text">. Educação Infantil</a>
+            <a href="niveisdeensino.html" class="custom-text">. Ensino Fundamental</a>
+            <a href="niveisdeensino.html" class="custom-text">. Ensino Médio</a>
+            <a href="bilingue.html" class="custom-text">. Programa Bilíngue</a>
         </div>
 
         <!-- Column 3 -->
         <div class="custom-column">
-            <a href="contato.html" class="custom-text">Contato</a>
+            <h4 class="custom-text"><a href="contato.html">Contato</a></h4>
+            <a href="contato.html" class="custom-text">. Atendimento</a>
+            <a href="contato.html" class="custom-text">. Canal Direto</a>
+            <a href="contato.html" class="custom-text">. Agende uma visita</a>
         </div>
     </div>
 
-    <div class="custom-separator"></div>
+    <div class="separator"></div>
 
     <!-- Icon Container -->
-    <div class="custom-icon-container">
+    <div class="icon-container">
+        <!-- Icon items here -->
         <!-- Icon 1 -->
-        <div class="custom-icon-item">
-            <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
+        <div class="icon-item">
+            <img src="12.png" alt="Icon 1" class="icon-image">
             <div class="description">ActiveSoft- Siga</div>
             <div class="text">Acesso às informações pedagógicas administrativas.</div>
         </div>
 
         <!-- Icon 2 -->
-        <div class="custom-icon-item">
-            <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
+        <div class="icon-item">
+            <img src="13.png" alt="Icon 2" class="icon-image">
             <div class="description">Class App</div>
             <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
         </div>
 
         <!-- Icon 3 -->
-        <div class="custom-icon-item">
-            <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
+        <div class="icon-item">
+            <img src="14.png" alt="Icon 3" class="icon-image">
             <div class="description">Portal SAS</div>
             <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
         </div>
 
         <!-- Icon 4 -->
-        <div class="custom-icon-item">
-            <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
+        <div class="icon-item">
+            <img src="15.png" alt="Icon 4" class="icon-image">
             <div class="description">StandFlor Evolution</div>
             <div class="text">Informações sobre o nosso programa bilíngue.</div>
         </div>
+
+        <!-- Icon 5 -->
+        <div class="icon-item1">
+            <img src="seta.png" alt="Icon 5" class="icon-image1">
+        </div>
     </div>
 
-    <div class="custom-separator"></div>
-    <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
-    <div class="custom-contact-copyright-container">
-        <!-- Contact Information -->
-        Rua Episcopal, 1859 - Centro. São Carlos/SP
-        <div class="custom-separator"></div>
-        (16) 3362-5044
-        <div class="custom-separator"></div>
-        <!-- Copyright Notice -->
-        Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a sua segurança online.
-    </div>
-    <img src="Sem título3.png" alt="imagem" style="width: 100%; height: auto; max-width: 100%;">
+    <!-- Footer Bottom -->
+    <footer>
+        <div class="separator"></div>
+
+        <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
+        <div class="contact-copyright-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                Rua Episcopal, 1859 - Centro. São Carlos/SP
+            </div>
+
+            <!-- Separator between contact information and phone number -->
+            <div class="separator"></div>
+
+            <!-- Phone Number -->
+            <div class="contact-info">
+                (16) 3362-5044
+            </div>
+
+            <!-- Separator between phone number and copyright notice -->
+            <div class="separator"></div>
+
+            <!-- Copyright Notice -->
+            <div class="copyright-info">
+                Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a
+                sua segurança online.
+            </div>
+        </div>
+    </footer>
 </footer>
+
+
+
+<script src=""defer></script>
+
+<!-- Seu HTML anterior -->
+
+<!-- Script para navegação manual dos carrosséis -->
+<script>
+    function prevSlide(carouselId) {
+        $('#' + carouselId).carousel('prev');
+    }
+
+    function nextSlide(carouselId) {
+        $('#' + carouselId).carousel('next');
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- Place the image at the end -->
+<div class="imagem-container">
+    <img src="Sem título3.png" alt="imagem" style="width: 1400px; height: auto; max-width: 100%;">
+</div>
+
+
+</body>
+
+</html>
