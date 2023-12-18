@@ -122,12 +122,12 @@ nav {
     padding: 10px;
     font-size: 14px;
     border-radius: 10px;
-    box-shadow: 30 50 10px #ffffff;
+    box-shadow: 10 10 10px #ffffff;
     margin: 100px auto 0; /* Centraliza o elemento na página e ajusta a margem superior */
     max-width: 50%; /* Define a largura máxima do contêiner (ajuste conforme necessário) */
     box-sizing: border-box;
-    margin-top: 10px;
-    margin-bottom: 10PX;
+    margin-top: 0px;
+    margin-bottom: 0PX;
     background-color: white;
     
 }
@@ -139,6 +139,7 @@ nav {
     font-size: 18px;
     font-weight: bold;
     font-family: 'Helvetica Neue Medium', sans-serif;
+    margin-left: 40px;
 }
 
 .breadcrumb .submenu-container {
@@ -150,15 +151,15 @@ nav {
 .breadcrumb .submenu-container a {
     text-decoration: none;
     color: #293377;
-    margin-right: 3px;
-    letter-spacing: -1px; /* Ajuste o espaçamento entre letras conforme necessário */
+    margin-right: 0px;
+    letter-spacing: 0px; /* Ajuste o espaçamento entre letras conforme necessário */
     font-size: 18px; /* Define o tamanho da fonte para 14px */
     font-weight: normal; /* Deixa o texto na formatação padrão */
 }
 
 .breadcrumb .submenu-container .divider {
     background-color: #fafafb;
-    margin: 0 5px;
+    margin: 0 2px;
     font-size: 18px; /* Define o tamanho da fonte para 16px */
 }
 
@@ -207,7 +208,7 @@ p {
 
 
 .responsive-image1 {
-    width: 70%;
+    width: 100%;
     padding: 110px;
     
     float:right 50px;
@@ -216,30 +217,13 @@ p {
 }
 
 
-.responsive-image2 {
-    width: 70%;
-    padding: 110px;
-    
-    float:right 50px;
-    background-color: #fafafb;
-    
-}
 
-.responsive-image2 {
-    width: 110%;
-    padding:10px;
-    
-    float:left ;
-    background-color: white;
-    
-}
-
+.responsive-image2,
 .responsive-image3 {
-    width: 130%;
-    padding:10px;
-    background-color: white;
-    float:right;
-    
+    max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
+    height: auto;
+    display: block; /* Remove espaçamento adicional causado por elementos de linha */
+    margin: 10px auto; /* Centraliza as imagens horizontalmente e adiciona espaçamento entre elas */
 }
 
 
@@ -258,6 +242,25 @@ h1 {
     background-color: transparent !important;
     background-color: white;
 }
+
+
+
+
+/* Outros estilos aqui... */
+
+    /* Estilo para a última carousel-section */
+    .blue-background {
+        background-color: #293377; /* Cor azul de exemplo */
+         /* Adapte conforme necessário */
+        
+    }
+
+
+    .imagem-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
 
 
 
@@ -491,18 +494,70 @@ footer {
     /* Add your other styles for paragraphs */
 }
 
+.blue-background {
+    background-color: #293377; /* Cor de fundo azul */
+    text-align: justify; /* Centraliza o conteúdo na horizontal */
+    
+}
+
+.responsive-image4 {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da div */
+    height: auto;
+    display: block; /* Remove espaçamento adicional causado por elementos de linha */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+.imagem-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.blue-background {
+    background-color: #293377; /* ou a cor azul desejada */
+    padding: 0px 0; /* Ajuste conforme necessário */
+    color: #293377; /* Defina a cor do texto para garantir legibilidade */
+}
+
+.blue-background img {
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    background-color: #293377;
+}
+
+.carousel-section.blue-background {
+    background-color: #293377; /* ou a cor azul desejada */
+    padding: 0px 0; /* Ajuste conforme necessário */
+    color: #293377; /* Defina a cor do texto para garantir legibilidade */
+}
+
+.spacer {
+    height: 0px; /* Ajuste conforme necessário para a altura do espaçamento */
+    background-color: #293377;
+}
 
 footer {
-    margin-top: 250px;
+    background-color: #293377; /* ou a cor azul desejada */
+    padding: 0px 0; /* Ajuste conforme necessário */
+    color: #293377; /* Defina a cor do texto para garantir legibilidade */
 }
 
 
 
-/* Footer Styles */
+
+
+footer {
+    margin-top: 0px;
+    background-color: #293377;
+}
+
+
+
+/* Rodapé */
 footer {
     background-color: #293377;
     color: #ffffff;
-    padding: 20px 0;
+    padding: 0px 0;
+    margin-top: 0px;
 }
 
 .container {
@@ -510,29 +565,15 @@ footer {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 120px;
-    margin-top: 50px;
-    justify-content: center -50px;
-    align-items: center;
-    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
     flex-wrap: wrap;
-}
-
-.logo-container {
-    margin-right: 50px; /* Adjust the margin as needed to increase space */
-}
-
-.menu {
-    margin-left: 20px; /* Adjust the margin as needed to increase space */
 }
 
 .column {
     flex: 1;
     margin: 10px;
 }
-
-
-
 
 .column a {
     display: block;
@@ -567,7 +608,7 @@ footer {
 }
 
 /* Custom Column Subtitle */
-.column-subtitle {
+.column-subtitle_customn {
     font-family: 'Helvetica Neue Bold', sans-serif;
     font-weight: bold;
     font-size: 30px;
@@ -581,6 +622,7 @@ footer {
     margin-bottom: 40px; /* Adjust the margin-bottom value for increased spacing */
 }
 
+
 .separator {
     height: 20px;
     margin: 20px;
@@ -592,65 +634,33 @@ footer {
     flex-wrap: wrap;
 }
 
-.icon-item1 {
+.icon-item {
     text-align: center;
     flex: 1;
-    max-width: 150px;
+    max-width: 200px;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-.icon-item img {
+.icon-image {
     width: 100px;
     height: 100px;
     margin-bottom: 10px;
 }
 
 .contact-copyright-container {
-    max-width: 50px;
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
-
-/* Center the content and add margin-bottom to the container */
-.contact-copyright-container {
     max-width: 300px;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 10px;
     margin-top: -70px;
-    font-size: 20px;
 }
 
-/* Add margin-bottom to create space between individual descriptions */
-.contact-copyright-container .contact-info,
-.contact-copyright-container .copyright-info {
-    
-    white-space: nowrap;
-    text-align: center;
-    font-size: 20px;
-}
 
-.description {
-    font-weight: bold;
-    margin-bottom: 30px;
-    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
-     /* Esconde qualquer parte do texto que ultrapasse a largura do contêiner */
-    text-overflow: ellipsis;
-    font-size: 20px;
 
-}
 
-.imagem-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+
+
 
 
 
@@ -703,8 +713,8 @@ footer {
     #texto5,
     #subtitulo2,
     #paragrafo5 {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     footer {
@@ -763,6 +773,12 @@ footer {
     footer {
         margin-top: 100px;
     }
+
+    .responsive-image4 {
+        max-width: 100%; /* Ajuste a largura conforme necessário para telas menores */
+    }
+
+    
 }
 
 /* Mobile styles (for screens up to 767px) */
@@ -876,6 +892,8 @@ footer {
     .menu li {
       margin: 10px 0;
     }
+
+    
   }
 }
 
@@ -909,10 +927,10 @@ footer {
             <nav>
                 <ul class="menu">
                     <li class="menu-item">
-                        <a href="index.html">Quem Somos</a>
+                        <a href="">Sobre Nós</a>
                         <ul class="submenu">
                             
-                            <li><a href="historia.html">História</a></li>
+                            <li><a href="historia.html">Quem Somos</a></li>
                             <li><a href="PilareseValores.html">Pilares e Valores</a></li>
                             <li><a href="estrutura.html">Nossa Estrutura</a></li>
                         </ul>
@@ -979,10 +997,10 @@ footer {
         
           <nav class="menu">
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="index.html">Quem Somos</a></li>
+              <li><a href="historia.html">Sobre Nós</a></li>
+              <li><a href="niveisdeensino.html">Ensinos</a></li>
+              <li><a href="contato.html">Contato</a></li>
             </ul>
           </nav>
         
@@ -1048,36 +1066,39 @@ footer {
 </div>
 
 <div class="blue-background">
-    <img src=".png" alt="Sua Imagem" class="responsive-image4">
-    <img src=".png" alt="Sua Imagem" class="responsive-image4">
-    <img src=".png" alt="Sua Imagem" class="responsive-image4">
-</div>
+    <img src="StandFor evolution tem os melhores materiais para tornar os alunos bilíngues..png" alt="Sua Imagem" class="responsive-image4">
+    
+
 
             
             
         </div>
     </div>
 </div>
-</div>
-
-
-<!-- Código JavaScript movido para um arquivo externo -->
-<script src="script.js" defer></script>
-</body>
-
-</body>
-
-<!-- Adiciona o atributo async ao carregamento de fontes -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica+Neue+Light&display=swap" async>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" async />
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" async />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" async>
 
 
 
 
 
- 
+
+
+
+<section class="carousel-section blue-background">
+    <div class="container">
+</section>
+
+
+<!-- Div de espaçamento -->
+<div class="spacer"></div>
+
+<!-- Rodapé -->
+
+
+
+
+
+
+
 <footer>
 
     <!-- Logo and Subtitle -->
@@ -1197,7 +1218,7 @@ footer {
 
 <!-- Place the image at the end -->
 <div class="imagem-container">
-    <img src="Sem título3.png" alt="imagem">
+    <img src="Sem título3.png" alt="imagem" style="width: 1400px; height: auto; max-width: 100%;">
 </div>
 
 
