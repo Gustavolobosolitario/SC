@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js"> <!<![endif]-->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title>Menu com Submenus</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick-theme.css">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-        <style>
-    
-        /* Reset some default styles */
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colégio São Carlos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick-theme.css">
+</head>
+<style>
+/* Reset de estilos padrão */
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -27,13 +26,27 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: #293377;
-    box-sizing: border-box;
-    background-color: #293377;
-    margin: 0;
-    padding: 0;
+    background-color: #fafafb;
+    margin-bottom: 10px;
+    background-color: white;
 }
 
-/* Header Styles */
+/* Estrutura principal */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.body-container {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
 .header-container {
     background-color: #293377;
     padding: 10px 0;
@@ -52,7 +65,6 @@ header {
     font-weight: bold;
 }
 
-
 nav {
     display: flex;
 }
@@ -60,7 +72,7 @@ nav {
 .menu {
     list-style: none;
     display: flex;
-    margin-right: 100px; /* Adicionei uma margem esquerda para mover o menu para a esquerda */
+    margin-right: 100px;
 }
 
 .menu a {
@@ -74,11 +86,9 @@ nav {
 .menu li {
     position: relative;
     margin: 0 15px;
-    cursor: pointer; /* Adiciona cursor pointer para indicar que é clicável */
+    cursor: pointer;
     list-style: none;
     display: flex;
-    margin-left: 20; /* Adiciona uma margem esquerda para mover o menu para a esquerda */
-    
 }
 
 .menu-item:hover .submenu {
@@ -95,13 +105,11 @@ nav {
     box-shadow: 0 0 30px rgba(252, 251, 251, 0);
     z-index: 2;
     color: rgb(7, 7, 7);
-    transition: opacity 0.3s, visibility 0.3s, height 0.3s;
-    transition: background-color 0.3s; /* Adiciona transição para o efeito de destaque */
-    margin-bottom: 0px; /* Ajuste o valor conforme necessário */
+    transition: background-color 0.3s;
 }
 
 .submenu li:hover {
-    background-color: #ffdc0a; /* Cor de destaque quando passa o mouse sobre o item do submenu */
+    background-color: #ffdc0a;
 }
 
 .submenu.active {
@@ -113,324 +121,385 @@ nav {
 }
 
 
-
-.centered-section {
-    text-align: center;
-    padding: 50px; /* Adapte conforme necessário */
-    background-color: #fff; /* Cor de fundo branco */
-}
-
-.section-title {
-    margin-bottom: 30px; /* Espaço abaixo do título */
-    background-color: #fefefd; /* Cor do título */
-}
-
-.section-title h2 {
-    color: #293377; /* Cor do título */
-    font-size: 35px; /* Tamanho do título */
-    margin-bottom: 50px;
-}
-
-
-.carousel {
-    width: 80%;
-    margin: auto;
-}
-
-.carousel-section {
-    display: none;
-    position: relative;
-    text-align: center;
-    color: #333;
-    padding: 20px;
-}
-
-.carousel-section:first-child {
-    display: flex;
-}
-
-/* Slick Carousel Navigation Styles */
-.slick-prev,
-.slick-next {
-    font-size: 24px;
-    color: #333;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    cursor: pointer;
-}
-
-.slick-prev {
-    left: 10px;
-}
-
-.slick-next {
-    right: 10px;
-}
-
-
-/* Estilo do contêiner */
-.container {
+.breadcrumb {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 0;
-    max-width: 800px;
-    margin: 20px auto;
-    text-align: justify; /* Justifica o texto */
-    line-height: 0,5; /* Define a altura da linha para melhor legibilidade */
-    background-color: #f5f5f8;
-}
-
-.image {
-    width: 100%; /* Torna a imagem responsiva dentro do contêiner */
-    max-width: 500px; /* Define uma largura máxima para a imagem */
-    display: block; /* Garante espaçamento apropriado */
-    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    box-shadow: 30 50 10px #ffffff;
+    margin: 100px auto 0; /* Centraliza o elemento na página e ajusta a margem superior */
+    max-width: 50%; /* Define a largura máxima do contêiner (ajuste conforme necessário) */
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 10PX;
+    margin: 0 240px;
     
 }
 
-.custom-container {
-    background-color: #293377; /* Cor de fundo azul */
-    color: #fff; /* Cor do texto branco */
-    padding: 20px;
-    display: flex;
-    text-align: center;
-    overflow: hidden; /* Adiciona overflow: hidden para conter as floats dentro da div */
-    flex-direction: row; /* Alinha os elementos em linha */
-    justify-content: space-between; /* Distribui os elementos ao longo da linha */
-    align-items: center; /* Centraliza verticalmente */
-     
-}
-
-
-.subtitle {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center; /* Centraliza o título */
-    color: rgb(250, 250, 247); /* Adiciona a cor amarela ao texto */
-
-}
-
-
-.custom-subtitle {
-    font-size: 1.5em; /* Tamanho de fonte de exemplo */
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: yellow; /* Adiciona a cor amarela ao texto */
-}
-
-.text {
+.breadcrumb .title h2 {
+    color: #293377;
+    margin: 0 10px;
+    background-color: #ffffff;
     font-size: 16px;
-    color: rgb(252, 252, 250); /* Adiciona a cor amarela ao texto */
-    margin-bottom: 20px;
-    max-width: 100%; /* Ajuste a largura máxima conforme necessário */
+    font-weight: bold;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    margin-top: 7px;
 }
 
-
-.custom-text{
-    text-align: justify; /* Justify the text */
-    line-height: 1.5; /* Set line height for better readability */
-    /* Add any additional styles as needed */
-    color: yellow; /* Adiciona a cor amarela ao texto */
-}
-
-.custom-icon {
-    margin-bottom: 20px; /* Adjust margin as needed */
-    background-color: #293377;
-}
-
-.icon {
-    display: inline-block;
-    margin-right: 20px; /* Adjust margin between icons */
-    vertical-align: middle; /* Alinha os ícones verticalmente */
-}
-
-.icon-text {
-    display: inline-block; /* Ensures the text is on a new line */
-    color: yellow;  
-}
-
-.icon-container:after {
-    content: "";
-    display: block;
-    border-bottom: 2px solid yellow; /* Adiciona uma linha amarela após os ícones */
-    margin-top: 10px; /* Ajusta a margem superior conforme necessário */
-}
-
-.icon-container {
+.breadcrumb .submenu-container {
     display: flex;
     align-items: center;
-    margin-top: 20px;
-    vertical-align: middle;
-    
-}
-.icon-container img {
-    margin-right: 10px; /* Adiciona um espaçamento entre os ícones (ajuste conforme necessário) */
 }
 
-
-
-.icon {
-    margin: 10px 0; /* Adiciona espaço entre os ícones */
-    display: inline-block;
-    margin-right: 10px; /* Ajusta a margem entre os ícones */
-    vertical-align: middle; 
+.breadcrumb .submenu-container a {
+    text-decoration: none;
+    color: #293377;
+    margin-right: 5px;
+    letter-spacing: -1px; /* Ajuste o espaçamento entre letras conforme necessário */
+    font-size: 14px; /* Define o tamanho da fonte para 14px */
+    font-weight: normal; /* Deixa o texto na formatação padrão */
 }
 
-.icon-text {
-    display: inline-block;
-    vertical-align: middle; /* Alinha o texto verticalmente com os ícones */
+.breadcrumb .submenu-container .divider {
+    background-color: #fafafb;
+    margin: 0 10px;
+    font-size: 16px; /* Define o tamanho da fonte para 16px */
 }
 
-.image {
-    max-width: 30%;
-    height: auto;
-    margin-top: 20px;
-    float: right; /* Adiciona a propriedade float para a imagem ir para a direita */
-    margin-left: 20px; /* Adiciona margem à esquerda para separar o texto da imagem */
-    border-radius: 5px;
-}
-
-.content {
-    max-width: 60%; /* Limita a largura do conteúdo */
-    text-align: justify; /* Justifica o texto */
-    flex: 1;
-    padding-right: 20px;
-    background-color: #293377;
+.breadcrumb .submenu-container a:first-child,
+.breadcrumb .submenu-container a:nth-child(2) {
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-size: 16px; /* Define o tamanho da fonte para 16px */
 }
 
 
 
 
 
-/* Estilo do conteúdo dentro do contêiner */
-.content {
-    flex: 1;
+
+/* Adicione este trecho de CSS para a sessão específica */
+.carousel-section {
+    background-color: #293377; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    padding: 20px; /* Espaçamento interno, ajuste conforme necessário */
+    width: 100%;
 }
 
-/* Estilo da linha amarela */
-.yellow-line {
-    height: 5px;
-    background-color: #293377;
-    margin: 20px 0;
+.carousel-section img {
+    border-radius: 5px; /* Borda arredondada para as imagens, ajuste conforme necessário */
+    margin-bottom: 80px;
+    background-color: #293377; /* Set the background color to blue */
 }
 
-/* Estilo do subtítulo personalizado */
-.custom-subtitle {
-    font-size: 24px;
+
+/* Section Titles */
+.section-title, .centered-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
     font-weight: bold;
-    margin-bottom: 10px;
+    color: #293377; /* Change color as needed */
 }
 
-/* Estilo do título personalizado */
-.custom-title {
+
+.custom-subtitle, .custom-subtitle1 {
+    font-size: 35px;
+    color: #ffcc00;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    left: 120px;
+    padding: 45px;
+    background-color: #fff;
+    background-color: #293377; /* Set the background color to blue */
+}
+
+/* Adapte os estilos conforme necessário para outras partes do seu site */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #000; /* Cor do texto padrão, ajuste conforme necessário */
+}
+
+.centered-section {
+    font-size: 30px;
+    background-color: #fff;
+}
+
+.section-title h2 {
+    margin: 0;
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-/* Estilo do texto personalizado */
-.custom-text {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
 
-/* Estilo do contêiner */
 .container {
     position: relative;
     overflow: hidden;
     background-color: #293377;
+    margin: 0 auto; /* Center the container horizontally */
+    max-width: 1200px; /* Set a maximum width for the container */
+    
 }
 
-/* Estilo do conteúdo dentro do contêiner */
+
 .content {
+    max-width: 60%;
+    text-align: justify;
     flex: 1;
+    padding-right: 0px;
+    margin: 10px auto; 
+    padding: 0 0px; /* Add padding to the sides of the content */
+    box-sizing: border-box;
+    
+    
 }
 
-/* Estilo da linha amarela */
+.content-wrapper {
+    background-color: #ffffff; /* Cor de fundo branca */
+    padding: 20px; /* Adicione preenchimento conforme necessário */
+    border-radius: 10px; /* Adicione borda arredondada conforme necessário */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adicione uma sombra suave conforme necessário */
+}
+
+
+.custom-subtitle {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-right: 100px;
+    align-items: left 0 40px;
+}
+
+.custom-text, .custom-text1 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.icon-container img {
+    width: 30%; /* Ajuste conforme necessário */
+    height: auto;
+    
+}
+
 .yellow-line {
     height: 10px;
-    background-color: #293377;;
+    background-color: #ffc107;
     margin: 20px 0;
 }
 
-/* Estilo do subtítulo personalizado */
-.custom-subtitle {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Estilo do título personalizado */
-.custom-title {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Estilo do texto personalizado */
-.custom-text {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-/* Estilo do contêiner de ícones */
 .icon-container {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    flex-wrap: nowrap; /* Permite que os ícones quebrem para a próxima linha, se necessário */
+    margin-top: 0px; /* Ajuste a margem superior conforme necessário */
 }
 
-/* Estilo do ícone */
 .icon {
-    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px 20px; /* Ajuste a margem entre os ícones conforme necessário */
 }
 
-/* Estilo do texto ao lado do ícone */
 .icon-text {
-    font-size: 14px;
+    text-align: center;
+    color: #fff; /* Ajuste a cor do texto do ícone conforme necessário */
+    margin-top: 0px; /* Ajuste a margem conforme necessário */
 }
 
-/* Estilo da imagem */
-
-
-/* Estilo da seta para "ver mais" */
-.see-more {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 10px;
-    background-color:#293377;;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.image {
+    width: 100%; /* Ajuste a largura conforme necessário */
+    height: auto;
+    max-width: 800px; /* Defina uma largura máxima para evitar esticamento */
+    margin: 20px 0; /* Ajuste a margem conforme necessário */
 }
 
-/* Estilo da seta quando passa o mouse */
-.see-more:hover {
-    background-color: #293377;;
+.image-container5 {
+    max-width: 100%;
+    width: 7cm;
+    height: 9cm;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 130px auto 0;
+    display: block;
+    position: relative;
+    right: 108px;
+}
+
+.image5 {
+    max-width: 100%;
+    width: 7cm;
+    height: 8cm;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 275px auto 0;
+    display: block;
+    position: relative;
+    right: 108px;
 }
 
 
-/* Footer Styles */
+.image11 {
+    
+    right: 108px;
+    max-width: 100%;
+    width: 7cm;
+    height: 8cm;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 520px auto 0;
+    display: block;
+    position: relative;
+    right: 108px;
+}
+
+.text {
+    font-size: 20px;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom:300px;
+    max-width: 100%;
+    margin: 10px;
+    padding: 34px;
+    
+    right: 25px;
+}
+
+
+.custom-text {
+    text-align: justify;
+    
+    color: #ffcc00;
+    
+    text-align: left;
+   
+    
+}
+
+
+.custom-three-columns {
+    /* Adicione estilos específicos para a seção de três colunas aqui */
+    background-color: #293377; /* Exemplo de cor de fundo */
+    
+    text-align: justify;
+    
+    
+    
+    
+   
+    
+}
+
+
+/* Adicione a classe .descriptionh4 ao h4 dentro do .icon-item */
+.icon-item .descriptionh4 {
+    font-weight: bold;
+    color: #fdfefe; /* Cor desejada para o texto */
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+/* Estilizar outros elementos dentro do .icon-item, se necessário */
+.icon-item .text4 {
+    color: #fefcfc; /* Cor desejada para o texto */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+
+/* Ajuste o tamanho do ícone dentro do .icon-item */
+.icon-item .icon-image {
+    width: 50%; /* Ajuste o tamanho desejado em pixels */
+    height: 50%; /* Ajuste o tamanho desejado em pixels */
+    /* Adicione outras propriedades conforme necessário */
+}
+
+.icon-item5 {
+    width: 10%; /* Ajuste o tamanho desejado em pixels */
+    height: 10%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Rodapé */
 footer {
     background-color: #293377;
     color: #ffffff;
     padding: 20px 0;
+    margin-top: 160px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 120px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    
 }
 
 .column {
     flex: 1;
+    margin: 10px;
 }
 
 .column a {
@@ -440,308 +509,461 @@ footer {
     text-decoration: none;
 }
 
+
+
+/* Custom Container */
+.custom-container {
+    max-width: 80%; /* Adjust the max-width value as needed */
+    margin: 50px auto; /* Center the container on the page */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    text-align: top;
+    flex-wrap: wrap;
+}
+
+/* Custom Column */
+.custom-column {
+    flex: 1;
+}
+
+.custom-column a {
+    display: block;
+    margin-bottom: 0px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Custom Column Subtitle */
+.column-subtitle_customn {
+    font-family: 'Helvetica Neue Bold', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 50px;
+    text-align: left; /* Adicionado para alinhar à esquerda */
+    /* Adicione quaisquer estilos adicionais necessários */
+}
+
+
+.custom-column h4 {
+    margin-bottom: 40px; /* Adjust the margin-bottom value for increased spacing */
+}
+
+
 .separator {
     height: 20px;
+    margin: 20px;
 }
 
 .icon-container {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha se não houver espaço suficiente */
-    
+    flex-wrap: wrap;
 }
 
 .icon-item {
     text-align: center;
     flex: 1;
-    max-width: 150px;
+    max-width: 200px;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-.icon-item img {
+.icon-image {
     width: 100px;
-    height: 100px;
+    height: auto;
     margin-bottom: 10px;
 }
 
 .contact-copyright-container {
-    max-width: 600px; /* Defina a largura máxima conforme necessário */
-    margin: 0 auto; /* Isso centralizará o contêiner na página */
-    text-align: center; /* Centralize o texto dentro do contêiner */
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -70px;
 }
 
 
-/* Mobile Styles */
-.responsive-image {
-    width: 100%;
+    /* Outros estilos aqui... */
+
+    /* Estilo para a última carousel-section */
+    .blue-background {
+        background-color: #293377; /* Cor azul de exemplo */
+         /* Adapte conforme necessário */
+        color: #fff; /* Cor do texto, ajuste se necessário */
+        text-align: center; /* Centraliza o texto */
+    }
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .breadcrumb {
+        padding: 8px;
+        font-size: 12px;
+        margin: 40px auto 0; /* Ajuste conforme necessário */
+        max-width: 90%; /* Ajuste conforme necessário */
+    }
+
+    #titulo {
+        margin-left: 20px; /* Ajuste conforme necessário */
+        margin-bottom: 20px; /* Ajuste conforme necessário */
+        font-weight: bold;
+    }
+
+    #paragrafo1,
+    #subtitulo,
+    #subtitulo2,
+    #paragrafo5 {
+        margin-left: 20px; /* Ajuste conforme necessário */
+        margin-right: 20px; /* Ajuste conforme necessário */
+        text-align: left;
+    }
+
+    /* Adicione as seguintes regras para os ícones */
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 80%; /* ajuste conforme necessário */
+        margin: 0 auto; /* centraliza horizontalmente */
+}
+
+.icon-container img {
+    width: 80%; /* ajuste conforme necessário */
     height: auto;
 }
 
-/* Header Styles */
-/* ... (unchanged) ... */
-
-/* Reset some default styles */
-/* ... (unchanged) ... */
-
-/* Mobile Styles */
-@media only screen and (max-width: 600px) {
-    /* Header adjustments */
-    .header-container {
-        padding: 5px 0;
-    }
-
-    header {
-        flex-direction: column;
-    }
-
-    .menu {
-        margin: 0;
-        padding: 10px;
-    }
-
-    .menu-item {
-        margin: 0;
-    }
-
-    .submenu {
-        position: static;
-        display: none;
-        width: 100%;
-        background-color: rgba(16, 16, 16, 0.5);
-        box-shadow: none;
-        margin-bottom: 10px;
-    }
-
-    .submenu li {
-        margin: 0;
-    }
-
-    .submenu.active {
-        display: block;
-    }
-
-    .carousel {
-        width: 100%;
-    }
-
-    .content {
-        max-width: 100%;
-    }
-
-    .image {
-        max-width: 100%;
-        margin-top: 10px;
-        float: none;
-    }
-
-    /* Custom adjustments for content sections */
-    .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .icon-container {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 20px;
-    }
 
     .icon-item {
         text-align: center;
         flex: 1;
         max-width: 150px;
-        margin-bottom: 20px;
+        margin: 10px; /* Espaçamento entre os ícones */
     }
 
     .icon-item img {
         width: 100px;
         height: 100px;
         margin-bottom: 10px;
+        display: block;
+        margin: 0 auto; /* Centraliza a imagem dentro do contêiner */
     }
-}
 
-/* Tablet Styles */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    /* ... (unchanged) ... */
-}
+    /* Ajustes para o subtítulo */
+    .column-subtitle {
+        font-family: 'Helvetica Neue Bold', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 10px; /* Ajuste conforme necessário */
+        text-align: center; /* Centraliza o subtítulo */
+    }
 
+    .menu-toggle {
+        display: none;
+        cursor: pointer;
+      }
+      
+      .menu-toggle span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #293377;
+        margin: 6px 0;
+      }
+      
+      .menu {
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+      .menu ul {
+        list-style: none;
+        display: flex;
+      }
+      
+      .menu li {
+        margin: 0 15px;
+      }
+      
+      .menu a {
+        text-decoration: none;
+        color: #293377;
+        font-size: 16px;
+      }
 
+      .content h1 {
+        text-align: center; /* Centraliza o texto em telas de tamanho médio */
+        margin: 0 auto;
+    }
+      
 
+    /* Consulta de mídia para telas menores */
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .menu li {
+      margin: 10px 0;
+    }
 
-
-
-
-
-    </style>
+    @media (max-width: 768px) {
+        .breadcrumb {
+            margin: 10px; /* Ajuste a margem conforme necessário para dispositivos menores */
+            max-width: 100%; /* Ocupar a largura total da tela */
+        }
     
-        <!-- Header Section -->
-        <div class="header-container">
-            <header>
-                <div class="logo-container">
-                    <a href="index.html">
-                        <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
-                    </a>
-                </div>
+        .breadcrumb .title h2 {
+            font-size: 14px; /* Ajuste o tamanho da fonte para telas menores */
+        }
+    
+        .breadcrumb .submenu-container a {
+            font-size: 12px; /* Ajuste o tamanho da fonte para telas menores */
+        }
+    
+        .carousel-section {
+            padding: 10px; /* Ajuste o espaçamento interno para telas menores */
+        }
+    
+        .carousel-section img {
+            margin-bottom: 20px; /* Reduza a margem inferior para telas menores */
+        }
+    
+        .custom-subtitle, .custom-subtitle1 {
+            font-size: 24px; /* Ajuste o tamanho da fonte para telas menores */
+            margin-top: 20px; /* Ajuste a margem superior para telas menores */
+            margin-bottom: 30px; /* Ajuste a margem inferior para telas menores */
+        }
+        
+        .image11 {
+            max-width: 80%; /* Ajuste a largura conforme necessário para telas menores */
+        }
+
+    }
+
+    @media screen and (max-width: 480px) {
+        .content h1 {
+            text-align: center; /* Centraliza o texto em telas pequenas */
+            font-size: 1.9em; /* Reduz o tamanho da fonte para telas pequenas, se necessário */
+        }
+    }
+
+
+    
+    
+  }
+}
+
+
+
+
+
+</style>
+</head>
+
+    <!-- Header Section -->
+    <div class="header-container">
+        <header>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+                </a>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
             <nav>
-                <ul class="menu">
-                    <li class="menu-item">
-                        <a href="index.html">Quem Somos</a>
-                        <ul class="submenu">
-                            
-                            <li><a href="historia.html">História</a></li>
-                            <li><a href="PilareseValores.html">Pilares e Valores</a></li>
-                            <li><a href="estrutura.html">Nossa Estrutura</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Ensinos</a>
-                        <ul class="submenu">
-                            <li><a href="niveisdeensino.html">Níveis Ensino</a></li>
-                            <li><a href="bilingue.html">Projeto Bilíngue</a></li>
-                            <li><a href="materiais.html">Material SAS</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Contato</a>
-                        <ul class="submenu">
-                            <li><a href="contato.html" class="custom-text">Contato</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="index.html">Sobre Nós</a>
+                    <ul class="submenu">
+                        
+                        <li><a href="historia.html">Quem Somos</a></li>
+                        <li><a href="PilareseValores.html">Pilares e Valores</a></li>
+                        <li><a href="estrutura.html">Nossa Estrutura</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Ensinos</a>
+                    <ul class="submenu">
+                        <li><a href="niveisdeensino.html">Níveis Ensino</a></li>
+                        <li><a href="bilingue.html">Projeto Bilíngue</a></li>
+                        <li><a href="materiais.html">Material SAS</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Contato</a>
+                    <ul class="submenu">
+                        <li><a href="contato.html" class="custom-text">Contato</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</div>
 
-    <!-- JavaScript code moved to an external file -->
-    <script src="script.js" defer></script>
-    <script>
+<!-- JavaScript code moved to an external file -->
+<script src="script.js" defer></script>
+<script>
 
-        // Adicione o seguinte script JavaScript
-    
-        document.addEventListener('DOMContentLoaded', function () {
-            // Selecione todos os itens do menu e submenu
-            const menuItems = document.querySelectorAll('.menu-item');
-    
-            // Adicione um ouvinte de evento para cada item do menu
-            menuItems.forEach(function (menuItem) {
-                const submenu = menuItem.querySelector('.submenu');
-    
-                menuItem.addEventListener('mouseenter', function () {
-                    // Adicione uma classe de destaque quando o mouse entra
-                    menuItem.classList.add('highlight');
-                    submenu.classList.add('active');
-                });
-    
-                menuItem.addEventListener('mouseleave', function () {
-                    // Remova a classe de destaque quando o mouse sai
-                    menuItem.classList.remove('highlight');
-                    submenu.classList.remove('active');
-                });
+    // Adicione o seguinte script JavaScript
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Selecione todos os itens do menu e submenu
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        // Adicione um ouvinte de evento para cada item do menu
+        menuItems.forEach(function (menuItem) {
+            const submenu = menuItem.querySelector('.submenu');
+
+            menuItem.addEventListener('mouseenter', function () {
+                // Adicione uma classe de destaque quando o mouse entra
+                menuItem.classList.add('highlight');
+                submenu.classList.add('active');
+            });
+
+            menuItem.addEventListener('mouseleave', function () {
+                // Remova a classe de destaque quando o mouse sai
+                menuItem.classList.remove('highlight');
+                submenu.classList.remove('active');
             });
         });
+    });
 
-    </script>
-    <section class="centered-section">
-        <div class="section-title">
-            <h2>Níveis de ensino</h2>
-        </div>
-        <!-- Outro conteúdo da seção aqui -->
-    </section>
+</script>
 
+
+
+
+<body>
+  
+  
+
+<section>
+    <div class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Quem Somos</a></li>
+          <li><a href="historia.html">Sobre Nós</a></li>
+          <li><a href="niveisdeensino.html">Ensinos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    
     
 
 
 
 
+<div class="breadcrumb">
+    <div class="title">
+        <h2>Ensinos</h2>
+        <div class="submenu-container">
+            <h2 href="niveisdeensino.html">Níveis de ensino</h2>
+            <span class="divider">  >  </span>
+            <a href="bilingue.html">Projeto Bilíngue</a>
+            <span class="divider">  >  </span>
+            <a href="materiais.html">Material SAS</a>
+        </div>
+    </div>
+</div>
 
 
 
 
-
-
-
-    <!-- Body Section -->
-    <div class="carousel">
-    <!-- Adicione suas seções conforme necessário -->
-    <section class="carousel-section">
-    <!-- Seção 1 Conteúdo aqui -->
+<section class="centered-section">
+    <div class="section-title">
+        <h2>Níveis de ensino</h2>
+    </div>
+    <!-- Outro conteúdo da seção aqui -->
 </section>
+
+<!-- Body Section -->
+<div class="carousel">
+    <!-- Section 1 -->
+    <section class="carousel-section">
         <div class="container">
             <div class="content">
                 <div class="custom-subtitle">Educação Infantil</div>
                 <div class="custom-text">
-                    Nosso compromisso com o ensino de qualidade inicia-se na Educação Infantil, sendo a primeira etapa da Educação Básica. Para promover o desenvolvimento integral de nossos alunos, desde pequenos, contamos com material didático completo, plataformas digitais, atividades esportivas, profissionais capacitados e amplo espaço educativo, incluindo sempre "o brincar" em cada atividade proposta. Nosso Programa Bilíngue inicia-se, também nessa fase, pois entendemos que proporcionar às crianças e adolescentes a vivência de uma segunda língua aumenta as habilidades na resolução de problemas de comunicação e melhora a criatividade, tornando-os cidadãos aptos para interagir e ir além.
+                    Nosso compromisso com o ensino de qualidade inicia-se na Educação Infantil, sendo a primeira etapa da Educação Básica. Para promover o desenvolvimento integral de nossos alunos, desde pequenos, contamos com material didático completo, plataformas digitais, atividades esportivas, profissionais capacitados e amplo espaço educativo, incluindo sempre "o brincar" em cada atividade proposta. Nosso Programa Bilíngue inicia-se também nessa fase, pois entendemos que proporcionar às crianças e adolescentes a vivência de uma segunda língua aumenta as habilidades na resolução de problemas de comunicação e melhora a criatividade, tornando-os cidadãos aptos para interagir e ir além.
                 </div>
                 <div class="icon-container">
-                    <img src="7.png" alt="Ícone 1" width="50" height="50" class="icon">
-                    <span class="icon-text">Material Didático Completo</span>
-
-                    <img src="6.png" alt="Ícone 2" width="50" height="50" class="icon">
-                    <span class="icon-text">Programa Bilíngue</span>
+                    <img src="Plataforma_líder_de_assertividade__4_-removebg-preview.png" alt="Ícone 1">
+                    <img src="Plataforma_líder_de_assertividade__2_-removebg-preview.png" alt="Ícone 2">
                 </div>
             </div>
-            <img class="image" src="educacao infantil corrigido1.png" alt="Sua Imagem">
+            <img class="image5" src="educacao infantil corrigido1.png" alt="Material Didático">
         </div>
         <div class="yellow-line"></div>
     </section>
+
+    <!-- Section 2 -->
     <section class="carousel-section"></section>
 
+    <!-- Section 3 -->
     <section class="carousel-section">
-        <!-- Seção 2 Conteúdo aqui -->
-    </section>
         <div class="container">
             <div class="content">
-                <div class="custom-subtitle">Ensino Fundamental Anos iniciais</div>
+                <div class="custom-subtitle">Ensino Fundamental</div>
+                <h4 class="text">Ensino Fundamental Anos Iniciais</h4>
                 <div class="custom-text">
-                    Nossa Estrutura educacional completa promove a formação integral dos alunos, nos aspectos cognitivo, afetivo, sócio emocional e físico. Procuramos garantir a edificação das bases acadêmicas, solidificando a alfabetização, estimulando o prazer pela leitura e escrita, desenvolvendo o raciocínio lógico, apresentando o mundo e colocando o aluno como protagonista de sua história, para poder entender, interpretar e agir! Escolhemos a plataforma SAS - Educação, com excelentes recursos materiais e digitais, e o Programa Bilíngue Standfor Evolution, da FTD, para que os alunos vivenciem, construam e sedimentem as aprendizagens. A formação de valores, em parceria com as famílias, também é um diferencial do Colégio São Carlos.
+                    Nossa estrutura educacional completa promove a formação integral dos alunos, nos aspectos cognitivo, afetivo, sócio emocional e físico. Procuramos garantir a edificação das bases acadêmicas, solidificando a alfabetização, estimulando o prazer pela leitura e escrita, desenvolvendo o raciocínio lógico, apresentando o mundo e colocando o aluno como protagonista de sua história, para poder entender, interpretar e agir! Escolhemos a plataforma SAS - Educação, com excelentes recursos materiais e digitais, e o Programa Bilíngue Standfor Evolution, da FTD, para que os alunos vivenciem, construam e sedimentem as aprendizagens. A formação de valores, em parceria com as famílias, também é um diferencial do Colégio São Carlos.
                 </div>
-
-                <div class="custom-subtitle">Ensino Fundamental Anos Finais</div>
+                <h4 class="text">Ensino Fundamental Anos Finais</h4>
                 <div class="custom-text">
-                    Nos anos finais do Ensino Fundamental, nossos alunos recebem todo o apoio para adquirirem mais responsabilidade e autonomia nos estudos, acessando diferentes fontes de conhecimento e desenvolvendo o senso crítico de forma apurada. O Laboratório de Ciências, que contempla as disciplinas de Física, Química e Biologia auxilia nosso alunos a visualizar e experienciar na prática, o aprendizado teórico adquirido. Olimpíadas de conhecimento e Projeto de vida também agregam valor ao desenvolvimento cognitivo dos alunos. Nosso parceiro SAS Educação oferece um material didático alinhado à BNCC, planos de estudo individualizados e modelos de avaliações para cada etapa da vida escolar, garantindo o desenvolvimento integral dos nossos estudantes, preparando-os para esse novo mundo globalizado. Acreditamos, como Freire, que a Educação transforma pessoas, e pessoas transformam o mundo.
+                    Nos anos finais do Ensino Fundamental, nossos alunos recebem todo o apoio para adquirirem mais responsabilidade e autonomia nos estudos, acessando diferentes fontes de conhecimento e desenvolvendo o senso crítico de forma apurada. O Laboratório de Ciências, que contempla as disciplinas de Física, Química e Biologia auxilia nosso alunos a visualizar e experienciar na prática, o aprendizado teórico adquirido. Olimpíadas de conhecimento e Projeto de Vida também agregam valor ao desenvolvimento cognitivo dos alunos. Nosso parceiro SAS Educação oferece um material didático alinhado à BNCC, planos de estudo individualizados e modelos de avaliações para cada etapa da vida escolar, garantindo o desenvolvimento integral dos nossos estudantes, preparando-os para esse novo mundo globalizado. Acreditamos, como Freire, que a Educação transforma pessoas, e pessoas transformam o mundo.
                 </div>
                 <div class="icon-container">
-                    <img src="11.png" alt="Ícone 1" width="40" height="40" class="icon">
-                    <span class="icon-text">Plataforma líder de assertividade</span>
-
-                    <img src="10.png" alt="Ícone 2" width="50" height="50" class="icon">
-                    <span class="icon-text">Formação integral</span>
+                    <img src="Plataforma_líder_de_assertividade__3_-removebg-preview.png" alt="Ícone 1">
+                    <img src="Plataforma_líder_de_assertividade__1_-removebg-preview.png" alt="Ícone 2">
+                    <img src="Plataforma_líder_de_assertividade__2_-removebg-preview.png" alt="Ícone 3">
                 </div>
             </div>
-            <img class="image" src="laboratorio corrigido1.png" alt="image" width="90" height="90" class="image">
+            <img class="image11" src="margenhhhgtt.png" alt="Material Didático">
         </div>
         <div class="yellow-line"></div>
     </section>
-    
-    <section class="carousel-section">
 
+    <!-- Section 4 -->
+    <section class="carousel-section"></section>
 
-    </section>
-    <div class="container">
-        <div class="content">
-            
-
-            <div class="custom-subtitle">Ensino Médio</div>
-            <div class="custom-text">
-                Autonomia, aprofundamento dos conhecimentos, exercício da cidadania, capacitação para a vida profissional e reflexão a respeito do futuro são partes importantes do nosso Ensino Médio. Além das disciplinas convencionais, que garantem o acesso às Universidades, nossos alunos escolhem seus itinerários, parte curricular flexível, alinhando suas escolhas profissionais e pessoais, conhecendo seus propósitos orientados pela disciplina Projeto de Vida. Nesse contexto, nosso parceiro SAS Educação contribui como a maior plataforma aprovadora no SiSU em 2022, líder em assertividade no ENEM, indo muito além dos conteúdos da BNCC.
-            </div>
-            <div class="icon-container">
-                <img src="11.png" alt="Ícone 1" width="40" height="40" class="icon">
-                <span class="icon-text">Plataforma líder de assertividade</span>
-
-                <img src="10.png" alt="Ícone 2" width="50" height="50" class="icon">
-                <span class="icon-text">Formação Integral</span>
-            </div>
-        </div>
-        <img class="image" src="Imagem ensino medio.png" alt="image" width="90" height="90" class="image">
-    </div>
-    <div class="yellow-line"></div>
-</section>
-
-<section class="carousel-section">
-
-    <!-- Seção 3 Conteúdo aqui -->
-</section>
+    <!-- Section 5 -->
     <section class="carousel-section">
         <div class="container">
             <div class="content">
@@ -750,152 +972,156 @@ footer {
                     Autonomia, aprofundamento dos conhecimentos, exercício da cidadania, capacitação para a vida profissional e reflexão a respeito do futuro são partes importantes do nosso Ensino Médio. Além das disciplinas convencionais, que garantem o acesso às Universidades, nossos alunos escolhem seus itinerários, parte curricular flexível, alinhando suas escolhas profissionais e pessoais, conhecendo seus propósitos orientados pela disciplina Projeto de Vida. Nesse contexto, nosso parceiro SAS Educação contribui como a maior plataforma aprovadora no SiSU em 2022, líder em assertividade no ENEM, indo muito além dos conteúdos da BNCC.
                 </div>
                 <div class="icon-container">
-                    <img src="11.png" alt="Ícone 1" width="40" height="40" class="icon">
-                    <span class="icon-text">Plataforma líder de assertividade</span>
-
-                    <img src="10.png" alt="Ícone 2" width="50" height="50" class="icon">
-                    <span class="icon-text">Formação Integral</span>
+                    <img src="Plataforma_líder_de_assertividade-removebg-preview.png" alt="Ícone 1">
+                    <img src="Plataforma_líder_de_assertividade__1_-removebg-preview.png" alt="Ícone 2">
+                    <img src="Plataforma_líder_de_assertividade__2_-removebg-preview.png" alt="Ícone 3">
                 </div>
             </div>
-            <img class="image" src="Imagem ensino medio.png" alt="Sua Imagem">
+            <img class="image-container5" src="Imagem ensino medio.png" alt="Material Didático">
         </div>
-        <div class="yellow-line"></div>
+        <section class="carousel-section blue-background">
+            <div class="container">
     </section>
 
-    
+
+<!-- Div de espaçamento -->
+<div class="spacer"></div>
+
+<!-- Rodapé -->
+
+
+
+
+
+
+
+<footer>
+
+    <!-- Logo and Subtitle -->
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+        </div>
+
+        <div class="column-subtitle_customn">
+            Valores eternos,<br>tempos modernos
+        </div>
+    </div>
+
+    <!-- Three Columns -->
+<div class="custom-container custom-three-columns">
+    <!-- Column 1 -->
+    <div class="custom-column">
+        <h4 class="custom-texth4"><a href="index.html">Sobre Nós</a></h4>
+        <a href="historia.html" class="custom-text">. História</a>
+        <a href="PilareseValores.html" class="custom-text">. Pilares e Valores</a>
+        <a href="quem_somos.html" class="custom-text">. Estrutura</a>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="custom-column">
+        <h4 class="custom-texth4"><a href="niveisdeensino.html">Ensino</a></h4>
+        <a href="niveisdeensino.html" class="custom-text">. Educação Infantil</a>
+        <a href="niveisdeensino.html" class="custom-text">. Ensino Fundamental</a>
+        <a href="niveisdeensino.html" class="custom-text">. Ensino Médio</a>
+        <a href="bilingue.html" class="custom-text">. Programa Bilíngue</a>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="custom-column">
+        <h4 class="custom-texth4"><a href="contato.html">Contato</a></h4>
+        <a href="contato.html" class="custom-text">. Atendimento</a>
+        <a href="contato.html" class="custom-text">. Canal Direto</a>
+        <a href="contato.html" class="custom-text">. Agende uma visita</a>
+    </div>
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.carousel').slick({
-            arrows: false, // desativa as setas padrão do slick
-            dots: true, // ativa os pontos de navegação
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-        });
-    });
-</script>
+    <div class="separator"></div>
 
+    <!-- Icon Container -->
+    <div class="icon-container">
+        <!-- Icon items here -->
+        <!-- Icon 1 -->
+        <div class="icon-item">
+            <img src="12.png" alt="Icon 1" class="icon-image">
+            <div class="descriptionh4">ActiveSoft- Siga</div>
+            <div class="text4">Acesso às informações pedagógicas administrativas.</div>
+        </div>
 
+        <!-- Icon 2 -->
+        <div class="icon-item">
+            <img src="13.png" alt="Icon 2" class="icon-image">
+            <div class="descriptionh4">Class App</div>
+            <div class="text4">Acesso ao aplicativo de comunicação com nossa instituição.</div>
+        </div>
 
+        <!-- Icon 3 -->
+        <div class="icon-item">
+            <img src="14.png" alt="Icon 3" class="icon-image">
+            <div class="descriptionh4">Portal SAS</div>
+            <div class="text4">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
+        </div>
 
+        <!-- Icon 4 -->
+        <div class="icon-item">
+            <img src="15.png" alt="Icon 4" class="icon-image">
+            <div class="descriptionh4">StandFlor Evolution</div>
+            <div class="text4">Informações sobre o nosso programa bilíngue.</div>
+        </div>
 
+        <!-- Icon 5 -->
+        <div class="icon-item5">
+            <img src="seta.png" alt="Icon 5" class="icon-image1">
+        </div>
+    </div>
 
+    <!-- Footer Bottom -->
+    <footer>
+        <div class="separator"></div>
 
-
-    
-        <!-- Footer Section -->
-        <footer>
-
-            <!-- Logo and Subtitle -->
-            <div class="container">
-                <div class="logo-container">
-                    <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
-                </div>
-
-                <div class="subtitle">
-                    Valores eternos,<br>tempos modernos
-                </div>
-            </div>
-
-            <!-- Three Columns -->
-            <div class="container">
-                <!-- Column 1 -->
-                <div class="column">
-                    <a href="index.html" class="custom-text">Quem Somos</a>
-                    <a href="historia.html" class="custom-text">Historia</a>
-                    <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
-                    <a href="quem_somos.html" class="custom-text">Estrutura</a>
-                </div>
-
-                <!-- Column 2 -->
-                <div class="column">
-                    <a href="niveisdeensino.html" class="custom-text">Níveis Ensino</a>
-                    <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
-                    <a href="materiais.html" class="custom-text">Material SAS</a>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="column">
-                    <a href="contato.html" class="custom-text">Contato</a>
-                </div>
-            </div>
-
-            <div class="separator"></div>
-
-            <!-- Icon Container -->
-            <div class="icon-container">
-                <!-- Icon 1 -->
-                <div class="icon-item">
-                    <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
-                    <div class="description">ActiveSoft- Siga</div>
-                    <div class="text">Acesso às informações pedagógicas administrativas.</div>
-                </div>
-
-                <!-- Icon 2 -->
-                <div class="icon-item">
-                    <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
-                    <div class="description">Class App</div>
-                    <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
-                </div>
-
-                <!-- Icon 3 -->
-                <div class="icon-item">
-                    <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
-                    <div class="description">Portal SAS</div>
-                    <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
-                </div>
-
-                <!-- Icon 4 -->
-                <div class="icon-item">
-                    <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
-                    <div class="description">StandFlor Evolution</div>
-                    <div class="text">Informações sobre o nosso programa bilíngue.</div>
-                </div>
-            </div>
-
-            <div class="separator"></div>
-            <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
-            <div class="contact-copyright-container">
+        <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
+        <div class="contact-copyright-container">
             <!-- Contact Information -->
+            <div class="contact-info">
+                Rua Episcopal, 1859 - Centro. São Carlos/SP
+            </div>
 
-            <!-- Contact Information -->
-            Rua Episcopal, 1859 - Centro. São Carlos/SP
+            <!-- Separator between contact information and phone number -->
             <div class="separator"></div>
-            (16) 3362-5044
+
+            <!-- Phone Number -->
+            <div class="contact-info">
+                (16) 3362-5044
+            </div>
+
+            <!-- Separator between phone number and copyright notice -->
             <div class="separator"></div>
 
             <!-- Copyright Notice -->
-            Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir
-            a sua segurança online.
-            <img src="Sem título3.png" alt="imagem" style="width: 100%; height: auto; max-width: 100%;">
+            <div class="copyright-info">
+                Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a
+                sua segurança online.
+            </div>
+        </div>
+    </footer>
+</footer>
+</div>
 
-        </footer>
-       
+<!-- Place the image at the end -->
+<div class="imagem-container">
+    <img src="Sem título3.png" alt="imagem" style="width: 100vw; height: auto; max-width: 100%;">
+</div>
 
-    </section>
-    <!-- Scripts do jQuery e do Slick Carousel -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('.carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                adaptiveHeight: true,
-                prevArrow: '<div class="slick-prev" style="color: white;"></div>',
-                nextArrow: '<div class="slick-next" style="color: white;"></div>'
-            });
-        });
-    </script>
 
-    
+<script src=""defer></script>
+
+
+
+<!-- Place the image at the end -->
+
+
 
 </body>
+
 </html>
