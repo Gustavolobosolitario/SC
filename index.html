@@ -119,6 +119,61 @@ nav {
 }
 
 
+.breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    box-shadow: 30 50 10px #ffffff;
+    margin: 100px auto 0; /* Centraliza o elemento na página e ajusta a margem superior */
+    max-width: 50%; /* Define a largura máxima do contêiner (ajuste conforme necessário) */
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 10PX;
+    margin: 0 240px;
+    
+}
+
+.breadcrumb .title h2 {
+    color: #293377;
+    margin: 0 10px;
+    background-color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue Medium', sans-serif;
+    margin-top: 7px;
+}
+
+.breadcrumb .submenu-container {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb .submenu-container a {
+    text-decoration: none;
+    color: #293377;
+    margin-right: 5px;
+    letter-spacing: -1px; /* Ajuste o espaçamento entre letras conforme necessário */
+    font-size: 14px; /* Define o tamanho da fonte para 14px */
+    font-weight: normal; /* Deixa o texto na formatação padrão */
+}
+
+.breadcrumb .submenu-container .divider {
+    background-color: #fafafb;
+    margin: 0 10px;
+    font-size: 16px; /* Define o tamanho da fonte para 16px */
+}
+
+.breadcrumb .submenu-container a:first-child,
+.breadcrumb .submenu-container a:nth-child(2) {
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-size: 16px; /* Define o tamanho da fonte para 16px */
+}
+
+
 
 
 
@@ -368,8 +423,8 @@ h2 {
     color: #fff; /* Cor do texto do botão */
     text-decoration: none;
     font-size: 16px;
-    position: absolute;
-    bottom: -3742px; /* Distância do fundo da imagem */
+    position: fixed;
+    bottom: 1110px; /* Distância do fundo da imagem */
     right: 804px; /* Distância da direita da imagem */
     z-index: 1; /* Garante que o botão fica sobreposto à imagem */
 }
@@ -383,6 +438,160 @@ img {
     margin-top: 0;
   }
 
+  .custom-icon-section {
+    background-color: yellow;
+    padding: 60px;
+    overflow: hidden;
+  }
+
+  .custom-icon-container {
+    display: flex;
+    animation: scrollIcons 15s linear infinite;
+  }
+
+  .custom-icon-item-1,
+  .custom-icon-item-2,
+  .custom-icon-item-3,
+  .custom-icon-item-4 {
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-icon-item-1 img,
+  .custom-icon-item-2 img,
+  .custom-icon-item-3 img,
+  .custom-icon-item-4 img {
+    width: 70px;
+    height: 70px;
+    margin-right: 5px;
+  }
+
+  .custom-icon-description-1,
+  .custom-icon-description-2,
+  .custom-icon-description-3,
+  .custom-icon-description-4 {
+    margin-top: 5px;
+    white-space: nowrap;
+    margin-right: 50px;
+  }
+
+  @keyframes scrollIcons {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .seu-prefixo-carousel .container {
+    position: relative;
+    overflow: hidden;
+    background-color: #293377;
+    margin: 0 0px;
+    max-width: 100%; /* Set a maximum width for the container */
+}
+
+.seu-prefixo-carousel .content {
+    max-width: 60%;
+    text-align: justify;
+    flex: 1;
+    padding-right: 0px;
+    margin: 10px auto;
+    padding: 0 0; /* Add padding to the sides of the content */
+    box-sizing: border-box;
+    
+}
+
+.seu-prefixo-carousel .seu-prefixo-custom-subtitle {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-right: 100px;
+    align-items: left 0 40px;
+    
+}
+
+.seu-prefixo-custom-subtitle {
+    font-size: 30px;
+    margin-bottom: 60px;
+    margin-top: 40px;
+    font-weight: bold;
+    color: #ffcc00; /* Cor do texto, ajuste conforme necessário */
+    /* Adicione mais propriedades de estilo conforme necessário */
+    
+}
+
+.seu-prefixo-custom-text1 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    color: #ffcc00; /* Cor do texto, ajuste conforme necessário */
+    /* Adicione mais propriedades de estilo conforme necessário */
+}
+
+
+.seu-prefixo-carousel .seu-prefixo-custom-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 60px;
+    text-align: justify;
+    color: #ffcc00; /* Altere a cor conforme necessário */
+    text-align: left;
+    margin-top: 100px;
+}
+
+.seu-prefixo-carousel .seu-prefixo-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 20px; /* Ajuste conforme necessário */
+    
+}
+
+.seu-prefixo-carousel .seu-prefixo-icon-container img {
+    width: 30%; /* Ajuste conforme necessário */
+    height: auto;
+    
+}
+
+.seu-prefixo-carousel .seu-prefixo-image5 {
+    max-width: 100%;
+    width: 8cm;
+    height: 10cm; /* Ajuste conforme necessário */
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 88px auto 0;
+    display: block;
+    position: relative;
+    right: 44px;
+    background-color: #293377;
+}
+
+
+.seu-prefixo-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 20px; /* Ajuste conforme necessário */
+}
+
+.seu-prefixo-icon-container img {
+    max-width: 100%;
+    height: auto;
+    width: 30%; /* Ajuste conforme necessário */
+    margin: 0 10px; /* Adicione margem entre os ícones conforme necessário */
+}
+
+
+
+
+  
 
 
 
@@ -408,27 +617,28 @@ img {
 
 
 
-
-
-
-/* Footer Styles */
+/* Rodapé */
 footer {
     background-color: #293377;
     color: #ffffff;
     padding: 20px 0;
-    margin-bottom: 0;
+    margin-top: 160px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 120px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    
 }
 
 .column {
     flex: 1;
+    margin: 10px;
 }
 
 .column a {
@@ -438,102 +648,290 @@ footer {
     text-decoration: none;
 }
 
+
+
+/* Custom Container */
+.custom-container {
+    max-width: 80%; /* Adjust the max-width value as needed */
+    margin: 50px auto; /* Center the container on the page */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    text-align: top;
+    flex-wrap: wrap;
+}
+
+/* Custom Column */
+.custom-column {
+    flex: 1;
+}
+
+.custom-column a {
+    display: block;
+    margin-bottom: 0px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Custom Column Subtitle */
+.column-subtitle_customn {
+    font-family: 'Helvetica Neue Bold', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 50px;
+    text-align: left; /* Adicionado para alinhar à esquerda */
+    /* Adicione quaisquer estilos adicionais necessários */
+}
+
+
+.custom-column h4 {
+    margin-bottom: 40px; /* Adjust the margin-bottom value for increased spacing */
+}
+
+
 .separator {
     height: 20px;
+    margin: 20px;
 }
 
 .icon-container {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Permite que os ícones quebrem para a próxima linha se não houver espaço suficiente */
-    
-}
-
-.icon-item {
-    text-align: center;
-    flex: 1;
-    max-width: 150px;
-}
-
-.icon-item img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-}
-
-.contact-copyright-container {
-    max-width: 600px; /* Defina a largura máxima conforme necessário */
-    margin: 0 auto; /* Isso centralizará o contêiner na página */
-    text-align: center; /* Centralize o texto dentro do contêiner */
-}
-
-
-
-
-/* Adicione estas regras de mídia query ao seu estilo existente */
-
-/* Estilos padrão para telas maiores */
-body {
-    font-size: 16px;
-}
-
-/* Header Styles */
-.header-container {
-    padding: 10px 0;
-}
-
-nav {
-    margin-top: 0;
-}
-
-.menu {
-    margin-right: 100px;
-}
-
-.menu-item {
-    margin-left: 20px; /* Adicionei a unidade px */
-}
-
-/* Video Section */
-.video-section {
-    width: 100%;
-    overflow: hidden;
-}
-
-/* Mission Section */
-.mission-section {
-    margin: 20px 0;
-}
-
-/* Content Section */
-.content-section h2,
-.content-section h1,
-.content-section p {
-    text-align: center;
-}
-
-.icon-container {
-    display: flex;
     flex-wrap: wrap;
 }
 
 .icon-item {
-    flex: 1;
-    max-width: 150px;
-}
-
-/* Custom Containers */
-.custom-container {
     text-align: center;
-    margin-top: 20px;
+    flex: 1;
+    max-width: 200px;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-/* Footer Styles */
-footer {
-    padding: 20px 0;
+.icon-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
-/* Responsive Styles */
+.contact-copyright-container {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -70px;
+}
+
+
+    /* Outros estilos aqui... */
+
+    /* Estilo para a última carousel-section */
+    .blue-background {
+        background-color: #293377; /* Cor azul de exemplo */
+         /* Adapte conforme necessário */
+        color: #fff; /* Cor do texto, ajuste se necessário */
+        text-align: center; /* Centraliza o texto */
+    }
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .breadcrumb {
+        padding: 8px;
+        font-size: 12px;
+        margin: 40px auto 0; /* Ajuste conforme necessário */
+        max-width: 90%; /* Ajuste conforme necessário */
+    }
+
+    #titulo {
+        margin-left: 20px; /* Ajuste conforme necessário */
+        margin-bottom: 20px; /* Ajuste conforme necessário */
+        font-weight: bold;
+    }
+
+    #paragrafo1,
+    #subtitulo,
+    #subtitulo2,
+    #paragrafo5 {
+        margin-left: 20px; /* Ajuste conforme necessário */
+        margin-right: 20px; /* Ajuste conforme necessário */
+        text-align: left;
+    }
+
+    /* Adicione as seguintes regras para os ícones */
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 80%; /* ajuste conforme necessário */
+        margin: 0 auto; /* centraliza horizontalmente */
+}
+
+.icon-container img {
+    width: 80%; /* ajuste conforme necessário */
+    height: auto;
+}
+
+
+    .icon-item {
+        text-align: center;
+        flex: 1;
+        max-width: 150px;
+        margin: 10px; /* Espaçamento entre os ícones */
+    }
+
+    .icon-item img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        display: block;
+        margin: 0 auto; /* Centraliza a imagem dentro do contêiner */
+    }
+
+    /* Ajustes para o subtítulo */
+    .column-subtitle {
+        font-family: 'Helvetica Neue Bold', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 10px; /* Ajuste conforme necessário */
+        text-align: center; /* Centraliza o subtítulo */
+    }
+
+    .menu-toggle {
+        cursor: pointer;
+        display: none;
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+        margin: 6px 0;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f4f4f4;
+        padding: 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+
+        .menu {
+            position: relative;
+            top: 0;
+        }
+    }
+
+    /* Consulta de mídia para telas menores */
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #293377;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .menu li {
+      margin: 10px 0;
+    }
+
+    
+  
+
+    @media (max-width: 768px) {
+        .breadcrumb {
+            margin: 10px; /* Ajuste a margem conforme necessário para dispositivos menores */
+            max-width: 100%; /* Ocupar a largura total da tela */
+        }
+    
+        .breadcrumb .title h2 {
+            font-size: 14px; /* Ajuste o tamanho da fonte para telas menores */
+        }
+    
+        .breadcrumb .submenu-container a {
+            font-size: 12px; /* Ajuste o tamanho da fonte para telas menores */
+        }
+    
+        .carousel-section {
+            padding: 10px; /* Ajuste o espaçamento interno para telas menores */
+        }
+    
+        .carousel-section img {
+            margin-bottom: 20px; /* Reduza a margem inferior para telas menores */
+        }
+    
+        .custom-subtitle, .custom-subtitle1 {
+            font-size: 24px; /* Ajuste o tamanho da fonte para telas menores */
+            margin-top: 20px; /* Ajuste a margem superior para telas menores */
+            margin-bottom: 30px; /* Ajuste a margem inferior para telas menores */
+        }
+        
+        .image11 {
+            max-width: 80%; /* Ajuste a largura conforme necessário para telas menores */
+        }
+
+    }
+
+    @media screen and (max-width: 480px) {
+        .content h1 {
+            text-align: center; /* Centraliza o texto em telas pequenas */
+            font-size: 1.9em; /* Reduz o tamanho da fonte para telas pequenas, se necessário */
+        }
+    }
+
+
+    
+    
+  }
+}
 
 /* Estilos para telas menores (como celulares) */
 @media only screen and (max-width: 767px) {
@@ -615,6 +1013,8 @@ footer {
 
 
 
+
+
 /* Responsive Styles */
 
 
@@ -658,10 +1058,7 @@ footer {
         </header>
     </div>
 
-    <!-- Ícone do menu para telas menores -->
-<div class="menu-icon" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-</div>
+ 
 
     <!-- JavaScript code moved to an external file -->
     <script src="script.js" defer></script>
@@ -692,6 +1089,8 @@ footer {
         });
 
     </script>
+
+    
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu');
@@ -699,6 +1098,12 @@ footer {
         }
         </script>
 </head>
+
+<body>
+
+   
+
+
 
  
 
@@ -739,45 +1144,100 @@ footer {
             <a href="historia.html" class="saiba-mais-buttona">Saiba Mais</a>
         </div>
 
-    </section>
+        <section>
+            <!-- Seção Principal -->
+          </section>
+        
+          <div class="custom-icon-section">
+            <div class="custom-icon-container">
+              <!-- Icon 1 -->
+              <div class="custom-icon-item-1">
+                <img src="fs.png" alt="Icon 1" width="50" height="50">
+                <div class="custom-icon-description-1">Educação de qualidade desde 1906</div>
+              </div>
+        
+              <!-- Icon 2 -->
+              <div class="custom-icon-item-2">
+                <img src="gu.png" alt="Icon 2" width="25" height="25">
+                <div class="custom-icon-description-2">Valores Cristãos</div>
+              </div>
+        
+              <!-- Icon 3 -->
+              <div class="custom-icon-item-3">
+                <img src="df.png" alt="Icon 3" width="25%" height="25%">
+                <div class="custom-icon-description-3">Desenvolvimento Integral</div>
+              </div>
+        
+              <!-- Icon 4 -->
+              <div class="custom-icon-item-4">
+                <img src="fr.png" alt="Icon 4" width="25%" height="25%">
+                <div class="custom-icon-description-4">Formação de vencedores</div>
+              </div>
+              <!-- Icon 1 -->
+              <div class="custom-icon-item-1">
+                <img src="fs.png" alt="Icon 1" width="50" height="50">
+                <div class="custom-icon-description-1">Educação de qualidade desde 1906</div>
+              </div>
+        
+              <!-- Icon 2 -->
+              <div class="custom-icon-item-2">
+                <img src="gu.png" alt="Icon 2" width="25" height="25">
+                <div class="custom-icon-description-2">Valores Cristãos</div>
+              </div>
+        
+              <!-- Icon 3 -->
+              <div class="custom-icon-item-3">
+                <img src="df.png" alt="Icon 3" width="25%" height="25%">
+                <div class="custom-icon-description-3">Desenvolvimento Integral</div>
+              </div>
+        
+              <!-- Icon 4 -->
+              <div class="custom-icon-item-4">
+                <img src="fr.png" alt="Icon 4" width="25%" height="25%">
+                <div class="custom-icon-description-4">Formação de vencedores</div>
+              </div>
+              <!-- Icon 1 -->
+              <div class="custom-icon-item-1">
+                <img src="fs.png" alt="Icon 1" width="50" height="50">
+                <div class="custom-icon-description-1">Educação de qualidade desde 1906</div>
+              </div>
+              <!-- Icon 2 -->
+              <div class="custom-icon-item-2">
+                <img src="gu.png" alt="Icon 2" width="25" height="25">
+                <div class="custom-icon-description-2">Valores Cristãos</div>
+              </div>
 
-    <div class="centered-section">
-        <img src="167778.png" alt="Imagem Centralizada" class="centered-image">
-    </div>
-
-
-    <!-- Título, Subtítulo, Texto, Ícones, Imagem e Botão -->
-    <section class="content-section blue-section">
-        <div class="container">
-            <div>
-                <h2 class="section-title yellow-text custom-section-title">Níveis de Ensino</h2>
-                <h1 class="section-subtitle yellow-text custom-section-subtitle">Educação Infantil</h1>
-                <p class="section-text yellow-text custom-section-text">Nosso compromisso com o ensino de qualidade inicia-se na Educação Infantil,
-                sendo a primeira etapa da Educação Básica. para promover o desenvolvimento integral de nossos
-                alunos, desde pequenos, contamos com material didático completo.</p>
-    
-                <!-- Ícones com descrição -->
-                <div class="icon-container">
-                    <div class="icon-item">
-                        <img src="7.png" alt="Ícone 1">
-                        <p>Descrição do Ícone 1</p>
-                    </div>
-                    <div class="icon-item">
-                        <img src="6.png" alt="Ícone 2">
-                        <p>Descrição do Ícone 2</p>
-                    </div>
-                </div>
-    
-                <!-- Botão "Saiba Mais" contornado em amarelo -->
-            <a href="niveisdeensino.html" class="saiba-mais-buttona">Saiba Mais</a>
-</div>
-    
-            <!-- Imagem ao lado do texto -->
-            <div class="image-side right-image">
-                <img src="educacao infantil corrigido1.png" alt="Imagem ao lado do texto">
             </div>
+          </div>
+
+          <!-- Body Section -->
+<div class="seu-prefixo-carousel">
+    <!-- Section 1 -->
+    <section class="seu-prefixo-carousel-section">
+        <div class="container">
+            <div class="content">
+                <h4 class="seu-prefixo-custom-text1">NIVEIS DE ENSINO</h4>
+                <div class="seu-prefixo-custom-subtitle">Educação Infantil</div>
+                <div class="seu-prefixo-custom-text">
+                    Nosso compromisso com o ensino de qualidade inicia-se na Educação Infantil, sendo a primeira etapa da Educação Básica. Para promover o desenvolvimento integral de nossos alunos, desde pequenos, contamos com material didático completo.
+                </div>
+                <div class="seu-prefixo-icon-container">
+                    <img src="Plataforma_líder_de_assertividade__4_-removebg-preview.png" alt="Ícone 1">
+                    <img src="Plataforma_líder_de_assertividade__2_-removebg-preview.png" alt="Ícone 2">
+                </div>
+            </div>
+            <img class="seu-prefixo-image5" src="educacao infantil corrigido1.png" alt="Material Didático">
         </div>
     </section>
+</div>
+
+        
+    
+                
+    
+          
+
+    
 
     <section class="content-section">
         <div class="container">
@@ -826,154 +1286,132 @@ footer {
 
 
 
-    <!-- Footer Section -->
+<footer>
+
+    <!-- Logo and Subtitle -->
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+        </div>
+
+        <div class="column-subtitle_customn">
+            Valores eternos,<br>tempos modernos
+        </div>
+    </div>
+
+    <!-- Three Columns -->
+<div class="custom-container custom-three-columns">
+    <!-- Column 1 -->
+    <div class="custom-column">
+        <h4 class="custom-texth4"><a href="index.html">Sobre Nós</a></h4>
+        <a href="historia.html" class="custom-text">. História</a>
+        <a href="PilareseValores.html" class="custom-text">. Pilares e Valores</a>
+        <a href="quem_somos.html" class="custom-text">. Estrutura</a>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="custom-column">
+        <h4 class="custom-texth4"><a href="niveisdeensino.html">Ensino</a></h4>
+        <a href="niveisdeensino.html" class="custom-text">. Educação Infantil</a>
+        <a href="niveisdeensino.html" class="custom-text">. Ensino Fundamental</a>
+        <a href="niveisdeensino.html" class="custom-text">. Ensino Médio</a>
+        <a href="bilingue.html" class="custom-text">. Programa Bilíngue</a>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="custom-column">
+        <h4 class="custom-texth4"><a href="contato.html">Contato</a></h4>
+        <a href="contato.html" class="custom-text">. Atendimento</a>
+        <a href="contato.html" class="custom-text">. Canal Direto</a>
+        <a href="contato.html" class="custom-text">. Agende uma visita</a>
+    </div>
+</div>
+
+    <div class="separator"></div>
+
+    <!-- Icon Container -->
+    <div class="icon-container">
+        <!-- Icon items here -->
+        <!-- Icon 1 -->
+        <div class="icon-item">
+            <img src="12.png" alt="Icon 1" class="icon-image">
+            <div class="descriptionh4">ActiveSoft- Siga</div>
+            <div class="text4">Acesso às informações pedagógicas administrativas.</div>
+        </div>
+
+        <!-- Icon 2 -->
+        <div class="icon-item">
+            <img src="13.png" alt="Icon 2" class="icon-image">
+            <div class="descriptionh4">Class App</div>
+            <div class="text4">Acesso ao aplicativo de comunicação com nossa instituição.</div>
+        </div>
+
+        <!-- Icon 3 -->
+        <div class="icon-item">
+            <img src="14.png" alt="Icon 3" class="icon-image">
+            <div class="descriptionh4">Portal SAS</div>
+            <div class="text4">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
+        </div>
+
+        <!-- Icon 4 -->
+        <div class="icon-item">
+            <img src="15.png" alt="Icon 4" class="icon-image">
+            <div class="descriptionh4">StandFlor Evolution</div>
+            <div class="text4">Informações sobre o nosso programa bilíngue.</div>
+        </div>
+
+        <!-- Icon 5 -->
+        <div class="icon-item5">
+            <img src="seta.png" alt="Icon 5" class="icon-image1">
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
     <footer>
-
-        <!-- Logo and Subtitle -->
-        <div class="container">
-            <div class="logo-container">
-                <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
-            </div>
-
-            <div class="subtitle">
-                Valores eternos,<br>tempos modernos
-            </div>
-        </div>
-
-        <!-- Three Columns -->
-        <div class="container">
-            <!-- Column 1 -->
-            <div class="column">
-                <a href="index.html" class="custom-text">Quem Somos</a>
-                <a href="historia.html" class="custom-text">Historia</a>
-                <a href="PilareseValores.html" class="custom-text">Pilares e Valores</a>
-                <a href="quem_somos.html" class="custom-text">Estrutura</a>
-            </div>
-
-            <!-- Column 2 -->
-            <div class="column">
-                <a href="niveisdeensino.html" class="custom-text">Níveis de Ensino</a>
-                <a href="bilingue.html" class="custom-text">Projeto Bilíngue</a>
-                <a href="materiais.html" class="custom-text">Material SAS</a>
-            </div>
-
-            <!-- Column 3 -->
-            <div class="column">
-                <a href="contato.html" class="custom-text">Contato</a>
-            </div>
-        </div>
-
         <div class="separator"></div>
 
-        <!-- Icon Container -->
-        <div class="icon-container">
-            <!-- Icon 1 -->
-            <div class="icon-item">
-                <img src="12.png" alt="Icon 1" style="width: 100px; height: 100px;">
-                <div class="description">ActiveSoft- Siga</div>
-                <div class="text">Acesso às informações pedagógicas administrativas.</div>
-            </div>
-
-            <!-- Icon 2 -->
-            <div class="icon-item">
-                <img src="13.png" alt="Icon 2" style="width: 100px; height: 100px;">
-                <div class="description">Class App</div>
-                <div class="text">Acesso ao aplicativo de comunicação com nossa instituição.</div>
-            </div>
-
-            <!-- Icon 3 -->
-            <div class="icon-item">
-                <img src="14.png" alt="Icon 3" style="width: 100px; height: 100px;">
-                <div class="description">Portal SAS</div>
-                <div class="text">Acesso ao Eureka, Educacross, livros digitais, avaliações, simulados, entre outras ferramentas.</div>
-            </div>
-
-            <!-- Icon 4 -->
-            <div class="icon-item">
-                <img src="15.png" alt="Icon 4" style="width: 100px; height: 100px;">
-                <div class="description">StandFlor Evolution</div>
-                <div class="text">Informações sobre o nosso programa bilíngue.</div>
-            </div>
-        </div>
-
-        <div class="separator"></div>
         <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
         <div class="contact-copyright-container">
-        <!-- Contact Information -->
+            <!-- Contact Information -->
+            <div class="contact-info">
+                Rua Episcopal, 1859 - Centro. São Carlos/SP
+            </div>
 
-        <!-- Contact Information -->
-        Rua Episcopal, 1859 - Centro. São Carlos/SP
-        <div class="separator"></div>
-        (16) 3362-5044
-        <div class="separator"></div>
+            <!-- Separator between contact information and phone number -->
+            <div class="separator"></div>
 
-        <!-- Copyright Notice -->
-        Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir
-        a sua segurança online.
+            <!-- Phone Number -->
+            <div class="contact-info">
+                (16) 3362-5044
+            </div>
+
+            <!-- Separator between phone number and copyright notice -->
+            <div class="separator"></div>
+
+            <!-- Copyright Notice -->
+            <div class="copyright-info">
+                Todos os direitos reservados @ 2023 Colégio São Carlos. Proteger a propriedade intelectual e garantir a
+                sua segurança online.
+            </div>
+        </div>
     </footer>
-    <img src="Sem título3.png" alt="imagem" style="width: 1500px; height: 300px;">
+</footer>
+</div>
+
+<!-- Place the image at the end -->
+<div class="imagem-container">
+    <img src="Sem título3.png" alt="imagem" style="width: 100vw; height: auto; max-width: 100%;">
+</div>
 
 
-</section>
 
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="scripts.js" async defer></script>
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.carousel').slick({
-                // configurações do slick
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                    // outras configurações responsivas, se necessário
-                ]
-            });
-        });
-    
-    $(document).ready(function(){
-    $('.carousel').slick({
-        dots: true, // Adiciona indicadores de navegação
-        arrows: true, // Adiciona setas de navegação
-        infinite: true, // Navegação infinita
-        speed: 500, // Velocidade de transição em milissegundos
-        slidesToShow: 1, // Número de slides visíveis ao mesmo tempo
-        slidesToScroll: 1 // Número de slides para rolar a cada vez
-    });
-});
+<script src=""defer></script>
 
 
-$('.carousel').slick({
-    // configurações do slick
-    responsive: [
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-        // outras configurações responsivas, se necessário
-    ]
-});
+
+<!-- Place the image at the end -->
 
 
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 
