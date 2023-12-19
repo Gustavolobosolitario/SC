@@ -423,7 +423,7 @@ h2 {
     color: #fff; /* Cor do texto do botão */
     text-decoration: none;
     font-size: 16px;
-    position: fixed;
+    position: absolute;
     bottom: 1110px; /* Distância do fundo da imagem */
     right: 804px; /* Distância da direita da imagem */
     z-index: 1; /* Garante que o botão fica sobreposto à imagem */
@@ -440,7 +440,7 @@ img {
 
   .custom-icon-section {
     background-color: yellow;
-    padding: 60px;
+    padding: 40px;
     overflow: hidden;
   }
 
@@ -1008,6 +1008,82 @@ footer {
     .image-side {
         margin-top: 20px; /* Adiciona espaçamento entre a imagem e o conteúdo acima */
     }
+
+    .menu-toggle {
+        cursor: pointer;
+        display: none;
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+        margin: 6px 0;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f4f4f4;
+        padding: 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+
+        .menu {
+            position: relative;
+            top: 0;
+        }
+    }
+
+    /* Consulta de mídia para telas menores */
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #293377;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .menu li {
+      margin: 10px 0;
+    }
+
+}
+
 }
 
 
@@ -1114,6 +1190,29 @@ footer {
     <section class="video-section">
         <video src="Video banner.mp4" autoplay loop muted></video>
     </section>
+    <section>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+      
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Quem Somos</a></li>
+                <li><a href="historia.html">Sobre Nós</a></li>
+                <li><a href="niveisdeensino.html">Ensinos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
 
     <!-- Nossa Missão Section -->
     <section class="mission-section">
@@ -1277,10 +1376,10 @@ footer {
 <div class="section-container">
     <div class="custom-section">
         <img src="1677.png" alt="Imagem Editável" class="custom-image">
-        <a href="materiais.html" class="button1">Saber Mais</a>
-    </div>
+        <a href="materiais.html" class="saiba-mais-buttona">Saiba Mais</a>
 </div>
 
+    
 
 
 
