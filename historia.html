@@ -397,43 +397,52 @@ footer {
     }
 
     .menu-toggle {
-        display: none;
         cursor: pointer;
-      }
-      
-      .menu-toggle span {
+        display: none;
+    }
+
+    .bar {
         display: block;
         width: 30px;
         height: 3px;
-        background-color: #293377;
+        background-color: #333;
         margin: 6px 0;
-      }
-      
-      .menu {
-        display: flex;
-        justify-content: flex-end;
-      }
-      
-      .menu ul {
-        list-style: none;
-        display: flex;
-      }
-      
-      .menu li {
-        margin: 0 15px;
-      }
-      
-      .menu a {
-        text-decoration: none;
-        color: #293377;
-        font-size: 16px;
-      }
-
-      .content h1 {
-        text-align: center; /* Centraliza o texto em telas de tamanho médio */
-        margin: 0 auto;
     }
-      
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f4f4f4;
+        padding: 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+
+        .menu {
+            position: relative;
+            top: 0;
+        }
+    }
 
     /* Consulta de mídia para telas menores */
 @media only screen and (max-width: 768px) {
@@ -447,7 +456,7 @@ footer {
       position: absolute;
       top: 60px;
       right: 0;
-      background-color: #ffffff;
+      background-color: #293377;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       z-index: 1;
     }
@@ -459,6 +468,9 @@ footer {
     .menu li {
       margin: 10px 0;
     }
+
+    
+  
 
     @media screen and (max-width: 480px) {
         .content h1 {
@@ -565,22 +577,29 @@ footer {
   
 
 <body>
-    <div class="menu-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-    
-      <nav class="menu">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    
-    
+    <section>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+      
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Quem Somos</a></li>
+                <li><a href="historia.html">Sobre Nós</a></li>
+                <li><a href="niveisdeensino.html">Ensinos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
 
 
 
