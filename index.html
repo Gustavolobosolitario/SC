@@ -58,7 +58,7 @@
             /* Cabeçalho */
             .header-container {
                 background-color: #293377;
-                padding: 10px 0;
+                padding: 0px 0;
             }
             
             header {
@@ -67,12 +67,15 @@
                 align-items: center;
                 max-width: 1200px;
                 margin: 0 auto;
+                
             }
             
-            .logo-container {
-                font-size: 1.5em;
-                font-weight: bold;
+            .logo-container img {
+                width: 270px; /* Defina o tamanho desejado */
+                height: auto; /* Mantém a proporção da imagem */
+                margin-left: 100px;
             }
+            
             
             nav {
                 display: flex;
@@ -82,6 +85,7 @@
                 list-style: none;
                 display: flex;
                 margin-right: 100px;
+                
             }
             
             .menu a {
@@ -89,7 +93,9 @@
                 letter-spacing: 5px;
                 font-family: 'Helvetica Neue Medium', sans-serif;
                 color: #fafafa;
-                font-size: 18px;
+                font-size: 16px;
+                border-right: 2px solid #fbfafa; 
+                padding-right: 20px;
             }
             
             .menu li {
@@ -99,6 +105,10 @@
                 list-style: none;
                 display: flex;
             }
+
+            .menu-item.no-border {
+            border-right: none;
+        }
             
             .menu-item:hover .submenu {
                 display: block;
@@ -115,6 +125,8 @@
                 z-index: 2;
                 color: rgb(7, 7, 7);
                 transition: background-color 0.3s;
+                white-space: nowrap;
+                
             }
             
             .submenu li:hover {
@@ -183,80 +195,79 @@
                 font-weight: bold; /* Deixa o texto em negrito */
                 font-size: 16px; /* Define o tamanho da fonte para 16px */
             }
-        
+
+            
             .video-carousel {
-                position: relative;
-                overflow: hidden;
-                width: 100%;
                 max-width: 100%;
-                margin: auto;
-            }
-    
-            .video-container {
-                width: 100%;
                 overflow: hidden;
+            }
+        
+            .video-container {
                 position: relative;
             }
-    
-            video {
+        
+            #videoPlayer,
+            #imagePlayer {
                 width: 100%;
                 height: auto;
                 display: block;
+                margin: 0 auto;
             }
-    
+        
             .controls {
                 position: absolute;
                 top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                transform: translateY(-50%);
+                width: 100%;
                 display: flex;
-                align-items: center;
-                z-index: 1;
+                justify-content: space-between;
             }
-    
-            .play-pause {
-                font-size: 24px;
-                color: white;
-                cursor: pointer;
-                margin: 0 20px;
-            }
-    
-            .prev-next {
-                font-size: 36px;
-                color: white;
+        
+            .prev-next img,
+            .play-pause img {
+                max-width: 30px;
+                height: auto;
                 cursor: pointer;
             }
-    
+        
             .thumbnails {
-                position: absolute;
-                bottom: 10px;
-                left: 50%;
-                transform: translateX(-50%);
                 display: flex;
+                justify-content: center;
+                margin-top: 10px;
             }
-    
+        
             .thumbnail {
-                width: 50px;
+                max-width: 50px;
                 height: auto;
                 margin: 0 5px;
                 cursor: pointer;
             }
         
-        /* Mission Section Styles */
-        .mission-section {
-            background-color: #293377;
-            padding: 20px;
-            text-align: center;
-
-        }
+            .thumbnail.active {
+                border: 2px solid #00f; /* Adicione um destaque à miniatura ativa, se desejar */
+            }
         
-        .section-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 10px;
-            background-color: white;
+        /* Mission Section Styles */
+        body .mission-section {
+            padding: 60px;
+           
         }
+.mission-section {
+    background-color: #293377;
+    margin: 100px auto; /* Ajuste o valor superior conforme necessário */
+    max-width: 800px; /* Defina um valor máximo para a largura, se desejar */
+}
+    
+
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: white;
+    
+}
         
         .title-line {
             width: 50px;
@@ -264,6 +275,7 @@
             background-color: #000;
             margin: 10px 0;
             background-color: white;
+            margin-top: 20px;
         }
         
         h1 {
@@ -272,6 +284,7 @@
             margin: 10px 0;
             background-color: white;
             font-weight: bold;
+            margin-bottom: 20px;
         }
         
         .title-line::before,
@@ -311,19 +324,22 @@
             
         }
         
-        .saiba-mais-buttona {
-            display: block;
-            padding: 8px 16px;
-            text-align: center;
+        .saiba-mais-butto {
+            margin-bottom: 100px;
             text-decoration: none;
-            color: #ffcc00;
-            background-color: transparent;
-            border: 2px solid #ffcc00;
+            color: #fff;
+            background-color: #ffc107;
+            border:5px solid #ffc107;
             border-radius: 5px;
-            margin: 20px auto;
-            font-size: 14px;
-            width: 100px;
+            margin-top: 50px;
+            
+
+            margin-top: 20px; /* Ajuste o valor conforme necessário para mover o botão para cima */
+            display: inline-block; /* Garante que o botão seja exibido como bloco dentro do fluxo de texto */
         }
+
+       
+        
         
         .saiba-mais-buttona:hover {
             background-color: #293377;
@@ -332,25 +348,48 @@
         /* Centered Section Styles */
         .centered-section {
             text-align: center;
-            margin-bottom: 0px;
+            margin-bottom: 100px;
             background-color: white;
         }
         
         .centered-image {
             width: 100%;
             height: auto;
-            margin-top: 20px;
+            margin-top: 10px;
             max-width: 100%;
             background-color: white;
             
+        }
+
+        
+
+        .seu-prefixo-custom-text1 {
+            color: #ffcc00; /* Define a cor amarela para o texto */
+            /* Adicione outros estilos específicos para .seu-prefixo-custom-text1, se necessário */
+        }
+
+        .line-after {
+            display: block;
+            width: 50px; /* Ajuste a largura da linha conforme necessário */
+            height: 2px; /* Ajuste a espessura da linha conforme necessário */
+            background-color: #ffcc00; /* Define a cor amarela para a linha */
+            margin-top: 5px; /* Ajuste o espaçamento entre o texto e a linha conforme necessário */
         }
         
         img {
             width: 100%;
             max-width: 600px;
             height: auto;
-            margin: 20px 0;
+            margin: 10px 0;
+            
            
+        }
+
+        #colegio-image {
+            display: center; /* Isso fará a imagem desaparecer */
+            margin-top: -70px;
+            margin-bottom: 40px;
+
         }
         
         p {
@@ -365,15 +404,16 @@
             font-size: 16px;
         }
         
-        .saiba-mais-buttona {
+        .saiba-mais-buttona{
             display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
+            
             text-decoration: none;
             color: #fff;
             background-color: #ffc107;
             border: 2px solid #ffc107;
             border-radius: 5px;
+            margin-top: 80px;
+            margin-bottom: 200px;
         }
         
         #titulo2 {
@@ -387,9 +427,14 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin-top: -100px;
             background-color: white;
+            padding: 25px;
+           
+            
         }
+
+        
         
         .custom-icon-item {
             text-align: center;
@@ -402,7 +447,7 @@
         
         .custom-icon-description {
             margin-top: 10px;
-            color: #ffffff;
+        
         }
         
         h2 {
@@ -428,22 +473,60 @@
 
 
 
+        .image-container__custom img {
+            border: none;
+            width: 100%; /* Defina a largura desejada em pixels ou outra unidade de medida */
+            height: auto; /* Mantém a proporção original da imagem */
+            background-color: #f0f0f0;
+            
+            
+        }
+
+
+        .saiba-mais-buttonw {
+            display: inline-block;
+            margin-top: 10px; /* Adiciona espaçamento superior ao botão */
+        
+            /* Adicione outros estilos específicos para .saiba-mais-buttonw, se necessário */
+        }
+
+        .custom-container--custom {
+            max-width: 100%; /* Ajuste a largura máxima conforme necessário */
+            
+            
+            padding: 50px; /* Adiciona algum espaçamento interno */
+        
+            /* Adicione outros estilos específicos para .custom-container--custom, se necessário */
+        }
+        
+
+
+
+
+        
+
+
+
+
 
 
 
 
         .seu-prefixo-carousel {
             overflow: hidden;
+            
         }
 
         .carousel-container {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            
         }
 
         .seu-prefixo-carousel-section {
             flex: 0 0 100%;
             box-sizing: border-box;
+            background: #fafafa;
         }
 
         .container {
@@ -463,6 +546,7 @@
             padding: 0 0;
             box-sizing: border-box;
             color: #fff; /* Cor do texto, ajuste conforme necessário */
+            
         }
 
 
@@ -569,6 +653,7 @@
             
             position: relative;
             transition: transform 0.5s ease-in-out;
+            
         }
         
         .seu-prefixo-carousel-section {
@@ -661,69 +746,116 @@ body {
 }
 
 /* Estilos para os tópicos e botões */
+/* Estilos para os tópicos e botões */
 .custom-topics {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
-    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha em telas menores */
+    margin-top: 30px; /* Ajusta o espaço superior para melhor visualização */
+    
 }
 
 .custom-topics button {
-    margin-right: 5px;
-    margin-bottom: 5px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    align-items: left;
+    width: 48%; /* Define a largura dos botões, deixando espaço para margens */
+    margin-bottom: 10px; /* Adiciona uma pequena margem abaixo dos botões */
+    border: none; /* Remove a borda */
+    background: none; /* Remove o fundo */
+    text-align: left; /* Alinha o texto à esquerda */
+    background-color: #fff;
+    color: #293377; /* Define a cor do texto para azul */
+}
+
+
+
+.custom-topics button img {
+    width: 100%; /* Garante que a imagem dentro do botão preencha todo o espaço disponível */
+    height: auto;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    
+}
+
+.custom-photo-section {
+    background-color: white; /* Adiciona um fundo branco ao redor da imagem */
+    border-radius: 8px; /* Adiciona bordas arredondadas ao redor do contêiner */
+    padding: 10px; /* Adiciona um espaçamento interno para melhorar a aparência */
+    
+}
+
+.custom-photo-section img {
+    width: 100%; /* Garante que a imagem preencha todo o espaço disponível dentro do contêiner */
+    height: auto;
+    border-radius: 8px; /* Mantém as bordas arredondadas da imagem */
+}
+
+
+.custom-topics button span {
+    flex: 1;
+    white-space: nowrap; /* Impede que o conteúdo quebre para a próxima linha */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassar o espaço disponível */
+    text-overflow: ellipsis; /* Adiciona reticências para indicar que o texto está cortado */
+    margin-right: 10px; /* Adiciona um espaço à direita do texto */
+    background-color: white;
+}
+
+/* Restante dos estilos permanecem inalterados */
+
+
+/* Restante dos estilos permanecem inalterados */
+
+
+/* Estilos adicionais */
+
+
+.custom-text-section p {
+    margin-bottom: 20px; /* Ajusta o espaçamento inferior entre os parágrafos */
     color: #293377;
 }
 
-.custom-topics button img {
-    width: 13cm;
-    height: 14.5cm;
-    border-radius: 8px;
-    margin: 100px;
-    margin-top: 60px;
-    margin-bottom: 5px;
-}
 
-/* Estilos adicionais */
-.custom-text-section {
-    flex: 1;
-    padding-left: 0;
-    align-items: left;
-}
 
 .custom-topics button::before {
     content: url('Sem\ Título-3.png');
     color: #293377;
-    font-size: 1.5em;
-    margin-right: 20px;
-}
-
-/* Estilos para h2 (Título principal) */
-.custom-text-section h2 {
-    color: #293377; /* Cor do texto */
-    font-size: 20px; /* Tamanho da fonte reduzido para 20px */
-    font-weight: bold; /* Negrito */
-    margin-bottom:50px; /* Espaçamento inferior */
-    margin-top: 120px;
+    font-size: 12px;
+    margin-right: 10px;
+    right: 70px;
+    color: #293377;
     
-    right: 200px;
 }
 
-/* Estilos para h3 (Subtítulo) */
+
+
+.custom-text-section {
+    flex: 1;
+    padding-left: 15px;
+    max-width: 800px; /* Ajuste o valor conforme necessário para a largura desejada */
+    margin: 0 auto; /* Centraliza o conteúdo dentro da .custom-container */
+    margin: -30px;
+    background-color: white; /* Define o fundo como branco */
+    padding: 20px; /* Adiciona um espaçamento interno para melhorar a aparência */
+    color: #293377;
+}
+
 .custom-text-section h3 {
-    color: #293377; /* Cor do texto */
-    font-size: 30px; /* Tamanho da fonte reduzido para 30px */
-    font-weight: bold; /* Negrito */
-    margin-bottom: 250px; /* Espaçamento inferior */
-    text-align: left;
-    margin-top: 60px;
-    margin: 50px;
-    
+    color: #293377;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: left ; /* Define o alinhamento à esquerda */
+    margin-top: 40px;
 }
+
+.custom-text-section h2 {
+    color: #293377;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: left; /* Define o alinhamento à esquerda */
+}
+
+
+
+
 
 .custom-text-section {
     flex: 1;
@@ -732,18 +864,17 @@ body {
 }
 
 
-.saiba-mais-buttonall {
+.saiba-mais-buttona{
     display: inline-block;
-    padding: 10px 20px;
+    
     text-decoration: none;
-    color: #293377;
-    background-color: #fbfbfa;
-    border: 2px solid;
+    color: #fff;
+    background-color: #ffc107;
+    border: 2px solid #ffc107;
     border-radius: 5px;
-    width: 20%;
-    box-sizing: border-box;
+    margin-top: 80px;
+    margin-bottom: 200px;
 }
-
 .saiba-mais-buttonall:hover {
     background-color: #293377;
 }
@@ -836,13 +967,16 @@ body {
         }
         
         /* Button Styles */
-        .button {
+        .saiba-mais-buttona{
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #293377;
-            color: #fff;
+            
             text-decoration: none;
-            font-size: 28px;
+            color: #fff;
+            background-color: #ffc107;
+            border: 2px solid #ffc107;
+            border-radius: 5px;
+            margin-top: 80px;
+            margin-bottom: 200px;
         }
         
         /* Section Container Styles */
@@ -864,18 +998,16 @@ body {
         }
         
         /* Button Styles */
-        .button1 {
+        .saiba-mais-buttona{
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #293377;
-            color: #fff;
+            
             text-decoration: none;
-            font-size: 22px;
-            position: absolute;
-            bottom: 100px;
-            font-weight: bold; /* Negrito */
-           
-            z-index: 1;
+            color: #fff;
+            background-color: #ffc107;
+            border: 2px solid #ffc107;
+            border-radius: 5px;
+            margin-top: 80px;
+            margin-bottom: 200px;
         }
         
         .button1:hover {
@@ -889,56 +1021,6 @@ body {
             height: auto;
             margin: 20px 0;
         }
-
-
-        .custom-text-section h2 {
-            color: #293377; /* Cor do texto */
-            font-size: 20px; /* Tamanho da fonte reduzido para 20px */
-            font-weight: bold; /* Negrito */
-            margin-bottom: 5px; /* Espaçamento inferior */
-            text-align: start;
-            margin: 10px;
-            position: relative;
-            
-            
-        }
-        
-        /* Estilos para h3 (Subtítulo) */
-        .custom-text-section h3 {
-            color: #293377; /* Cor do texto */
-            font-size: 30px; /* Tamanho da fonte reduzido para 30px */
-            font-weight: bold; /* Negrito */
-            margin-bottom: 5px; /* Espaçamento inferior */
-            text-align: left;
-        }
-
-        .custom-text-section p {
-            max-width: 800px; /* Ajuste o valor conforme necessário */
-            width: 82%; /* Isso faz com que o parágrafo ocupe a largura total disponível */
-            margin: 0 auto; /* Isso centraliza o parágrafo na largura disponível */
-            margin-top: 40px;
-        }
-
-        .custom-text-section {
-            flex: 1;
-            font-size: 15px;
-            margin: 5px 10px; /* Ajuste o valor da margem conforme necessário */
-        }
-
-
-        .custom-text-section h2 {
-            position: relative;
-            margin: 0;
-            left: 50px;
-            margin-top:60px;
-        }
-        
-        
-
-        
-
-
-
 
 
 
@@ -982,6 +1064,9 @@ body {
             padding: 20px 0;
             margin-top: 160px;
         }
+
+
+        
 
 
         .page-content {
@@ -1279,6 +1364,39 @@ body {
 }
 
 
+
+
+.custom-container--custom {
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.image-container__custom {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha em telas menores */
+}
+
+.image-container__custom img {
+    width: 48%; /* Define a largura das imagens */
+    height: auto; /* Mantém a proporção original da imagem */
+    margin: 1%; /* Adiciona uma pequena margem entre as imagens */
+}
+
+.saiba-mais-buttonw {
+    display: inline-block;
+            
+    text-decoration: none;
+    color: #fff;
+    background-color: #ffc107;
+    border: 2px solid #ffc107;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+
         
 
         
@@ -1356,10 +1474,9 @@ body {
 /* Rodapé */
 footer {
     background-color: #293377;
-    color: #ffffff;
-    padding: 20px 0;
-    margin-top: 160px;
-}
+            color: #ffffff;
+            padding: 20px 0;
+        }
 
 .containerzz {
     max-width: 100%;
@@ -1372,6 +1489,15 @@ footer {
     background-color: #293377;
     
 }
+
+.logo-containerzz {
+    margin-right: 50px; /* Adjust the margin as needed to increase space */
+}
+
+.menu {
+    margin-left: 20px; /* Adjust the margin as needed to increase space */
+}
+
 
 .columnzz {
     flex: 1;
@@ -1472,9 +1598,30 @@ footer {
     max-width: 300px;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: -70px;
     background-color: #293377;
+    
+    
+}
+
+.descriptionzz {
+    font-weight: bold;
+    margin-bottom: 30px;
+    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+     /* Esconde qualquer parte do texto que ultrapasse a largura do contêiner */
+    text-overflow: ellipsis;
+
+}
+
+
+/* ... (other styles) */
+
+.custom-text-sectionzz h2 {
+    position: relative;
+    margin: 0;
+    left: 50px;
+    margin-top: 60px;
 }
 
 
@@ -1509,20 +1656,110 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.custom-content-section .custom-container {
+
+
+/* Center the content and add margin-bottom to the container */
+.contact-copyright-container {
+    
+    white-space: nowrap;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#carousel-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: left;
 }
 
-/* ... (other styles) */
-
-.custom-text-section h2 {
-    position: relative;
-    margin: 0;
-    left: 50px;
-    margin-top: 60px;
+#image-carousel {
+    display: flex;
+    width: 100%; /* Ajuste conforme necessário */
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Impede que as imagens ultrapassem o contêiner */
 }
+
+.carousel-image {
+            max-width: 90%; /* Largura máxima de 80% do contêiner */
+            max-height: 90%; /* Altura máxima de 80% do contêiner */
+            object-fit: contain; /* Mantém a proporção original da imagem, exibindo-a completamente */
+        }
+
+@media (min-width: 600px) {
+    .carousel-image {
+        width: 300px; /* Largura desejada em pixels para telas com largura igual ou maior que 600 pixels */
+        height: 450px; /* Altura desejada em pixels para telas com largura igual ou maior que 600 pixels */
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel-image {
+        width: 1200px; /* Largura desejada em pixels para telas com largura igual ou maior que 1200 pixels */
+        height: 900px; /* Altura desejada em pixels para telas com largura igual ou maior que 1200 pixels */
+    }
+}
+
+.carousel-btn img {
+    width: 50px; /* Largura desejada para os ícones */
+    height: 50px; /* Altura desejada para os ícones */
+    background: transparent; /* Fundo transparente */
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo ao passar o mouse */
+}
+
+.carousel-btn {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+#prev-btn {
+    margin-left: 20px;
+}
+
+#next-btn {
+    margin-right: 20px;
+}
+
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
 
 
 
@@ -1618,17 +1855,25 @@ body {
     }
 
     .menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f4f4f4;
-        padding: 20px;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        text-align: center;
         display: none;
+        position: absolute;
+        top: 100%; /* Posiciona abaixo do botão de menu */
+        left: 0;
+        width: 200px; /* Largura do submenu, ajuste conforme necessário */
+        background-color: #fff; /* Adiciona um fundo branco ao submenu */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil ao submenu */
+        z-index: 1; /* Garante que o submenu fique sobre outros elementos */
+        
+    }
+
+    .submenu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%; /* Ajustado para exibir o submenu à direita do menu */
+        
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
     }
 
     .menu ul {
@@ -2025,7 +2270,7 @@ body {
         <header>
             <div class="logo-container">
                 <a href="index.html">
-                    <img src="logo_colegio-removebg-preview (1).png" alt="Nossa Missão">
+                    <img src="Logo png colegio.png" alt="Nossa Missão">
                 </a>
             </div>
             <div class="menu-toggle" onclick="toggleMenu()">
@@ -2039,23 +2284,23 @@ body {
                     <a href="index.html">Sobre Nós</a>
                     <ul class="submenu">
                         
-                        <li><a href="historia.html">Quem Somos</a></li>
-                        <li><a href="PilareseValores.html">Pilares e Valores</a></li>
-                        <li><a href="estrutura.html">Nossa Estrutura</a></li>
+                        <li><a href="historia.html"class="menu-item no-border">Quem Somos</a></li>
+                        <li><a href="PilareseValores.html" class="menu-item no-border">Pilares e Valores</a></li>
+                        <li><a href="estrutura.html" class="menu-item no-border">Nossa Infraestrutura</a></li>
                     </ul>
                 </li>
                 <li class="menu-item">
                     <a href="#">Ensinos</a>
                     <ul class="submenu">
-                        <li><a href="niveisdeensino.html">Níveis Ensino</a></li>
-                        <li><a href="bilingue.html">Projeto Bilíngue</a></li>
-                        <li><a href="materiais.html">Material SAS</a></li>
+                        <li><a href="niveisdeensino.html" class="menu-item no-border">Níveis Ensino</a></li>
+                        <li><a href="bilingue.html" class="menu-item no-border">Projeto Bilíngue</a></li>
+                        <li><a href="materiais.html" class="menu-item no-border">Material SAS</a></li>
                     </ul>
                 </li>
-                <li class="menu-item">
-                    <a href="#">Contato</a>
+                <li class="menu-item no-border">
+                    <a href="#" class="menu-item no-border">Contato</a>
                     <ul class="submenu">
-                        <li><a href="contato.html" class="custom-text">Contato</a></li>
+                        <li><a href="contato.html" class="menu-item no-border">Contato</a></li>
                     </ul>
                 </li>
             </ul>
@@ -2113,56 +2358,165 @@ body {
 
 
 
-    
-        <!-- Carrossel de Vídeo -->
-    <div class="video-carousel">
-        <div class="video-container">
-            <video id="videoPlayer" autoplay loop muted playsinline>
-                <source src="Video banner1.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-            <div class="controls">
-                <div class="play-pause" onclick="togglePlayPause()">▶️</div>
-                <div class="prev-next" onclick="changeVideo(-1)">❮</div>
-                <div class="prev-next" onclick="changeVideo(1)">❯</div>
-            </div>
-            <div class="thumbnails" id="thumbnailsContainer">
-                <!-- Adicione miniaturas de vídeo aqui -->
-                <img src="thumbnail1.jpg" alt="Thumbnail 1" class="thumbnail" onclick="jumpToVideo(0)">
-                <img src="thumbnail2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="jumpToVideo(1)">
-                <img src="thumbnail3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="jumpToVideo(2)">
-            </div>
+  <!-- Carrossel de Vídeo -->
+<div class="video-carousel">
+    <div class="video-container">
+        <video id="videoPlayer" autoplay loop muted playsinline class="hidden-media">
+            <source src="Video banner1.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <img id="imagePlayer" class="hidden-media" alt="Imagem">
+        <div class="controls">
+            <button onclick="openCarousel();">&#9664;</button>
+            <div class="play-pause" onclick="togglePlayPause()"><img src="tecla stop.png" alt="Play"></div>
+            <button onclick="openCarousel();">&#10095;</button>
+        </div>
+        <div class="thumbnails" id="thumbnailsContainer">
+            <!-- Adicione miniaturas de vídeo aqui -->
+            <img src="sala de aula.png" alt="Thumbnail 1" class="thumbnail" onclick="jumpToMedia(0)">
+            <img src="laboratorio corrigido.png" alt="Thumbnail 2" class="thumbnail" onclick="jumpToMedia(1)">
+            <img src="Natacao menino corrigido.png" alt="Thumbnail 3" class="thumbnail" onclick="jumpToMedia(2)">
+            <img src="danca corrigido.png" alt="Thumbnail 4" class="thumbnail" onclick="jumpToMedia(3)">
         </div>
     </div>
+</div>
 
-    <script>
-        const videoPlayer = document.getElementById('videoPlayer');
-        const thumbnailsContainer = document.getElementById('thumbnailsContainer');
-        let isPlaying = true;
+<button onclick="openCarousel()" class="carousel-btn">&#9664; Open Carousel</button>
 
-        function togglePlayPause() {
-            if (isPlaying) {
-                videoPlayer.pause();
-            } else {
-                videoPlayer.play();
-            }
-            isPlaying = !isPlaying;
+<div id="carousel-container" style="display: none;">
+    <button id="prev-btn" class="carousel-btn" onclick="prevSlide();">&#10094;</button>
+    <div id="image-carousel">
+        <img class="carousel-image" src="sala de aula.png" alt="Imagem 1" width="1600" height="1000">
+    </div>
+    <button id="next-btn" class="carousel-btn" onclick="nextSlide();">&#10095;</button>
+    <button id="close-btn" class="carousel-btn" onclick="closeCarousel();">&#10006;</button>
+</div>
+
+<script>
+    const images = [
+        'sala de aula.png',
+        'laboratorio corrigido.png',
+        'Natacao menino corrigido.png'
+    ];
+
+    let currentIndex = 0;
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('carousel-container').style.display = 'none';
+    });
+
+    function openCarousel() {
+        document.getElementById('carousel-container').style.display = 'flex';
+        showSlide(currentIndex);
+    }
+
+    function closeCarousel() {
+        document.getElementById('carousel-container').style.display = 'none';
+    }
+
+    function showSlide(index) {
+        const carousel = document.getElementById('image-carousel');
+        carousel.innerHTML = `<img class="carousel-image" src="${images[index]}" alt="Imagem ${index + 1}" width="1600" height="1000">`;
+    }
+
+    function nextSlide() {
+        openCarousel(); // Abrir carrossel quando clicar na seta para a direita
+        currentIndex = (currentIndex + 1) % images.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        openCarousel(); // Abrir carrossel quando clicar na seta para a esquerda
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showSlide(currentIndex);
+    }
+
+    const videoPlayer = document.getElementById('videoPlayer');
+    const imagePlayer = document.getElementById('imagePlayer');
+    const thumbnailsContainer = document.getElementById('thumbnailsContainer');
+    let isPlaying = true;
+    let currentMediaIndex = 0;
+
+    function togglePlayPause() {
+        if (isPlaying) {
+            videoPlayer.pause();
+        } else {
+            videoPlayer.play();
+        }
+        isPlaying = !isPlaying;
+    }
+
+    function changeMedia(direction) {
+        // Adicione os URLs dos vídeos e imagens à matriz
+        const mediaUrls = [
+            'Video banner1.mp4',
+            'sala de aula.png',
+            'laboratorio corrigido.png',
+            'Natacao menino corrigido.png',
+            'danca corrigido.png'
+        ];
+
+        // Atualize o índice da mídia
+        currentMediaIndex += direction;
+
+        // Verifique se o índice está dentro dos limites do array de mídias
+        if (currentMediaIndex < 0) {
+            currentMediaIndex = mediaUrls.length - 1;
+        } else if (currentMediaIndex >= mediaUrls.length) {
+            currentMediaIndex = 0;
         }
 
-        function changeVideo(direction) {
-            // Implemente a lógica para trocar de vídeo (próximo ou anterior)
-            // Por exemplo, você pode ter uma matriz de URLs de vídeo e alterar o atributo 'src' do elemento de vídeo.
-            console.log(`Mudar para o vídeo ${direction === 1 ? 'próximo' : 'anterior'}`);
+        // Chame a função para pular para a nova mídia
+        jumpToMedia(currentMediaIndex);
+    }
+
+    function jumpToMedia(index) {
+        // Adicione os URLs dos vídeos e imagens à matriz
+        const mediaUrls = [
+            'Video banner1.mp4',
+            'sala de aula.png',
+            'laboratorio corrigido.png',
+            'Natacao menino corrigido.png',
+            'danca corrigido.png'
+        ];
+
+        // Oculte o vídeo e a imagem
+        videoPlayer.classList.add('hidden-media');
+        imagePlayer.classList.add('hidden-media');
+
+        // Verifique se a nova mídia é um vídeo
+        const isVideo = mediaUrls[index].endsWith('.mp4');
+
+        // Altere o src da mídia para a nova mídia
+        if (isVideo) {
+            videoPlayer.src = mediaUrls[index];
+            videoPlayer.play();
+        } else {
+            imagePlayer.src = mediaUrls[index];
         }
 
-        function jumpToVideo(index) {
-            // Implemente a lógica para pular para um vídeo específico
-            // Por exemplo, você pode ter uma matriz de URLs de vídeo e alterar o atributo 'src' do elemento de vídeo.
-            console.log(`Pular para o vídeo ${index + 1}`);
-        }
-    </script>
+        // Atualize a variável de controle isPlaying
+        isPlaying = isVideo;
 
-        
+        // Atualize a classe ativa nas miniaturas
+        updateActiveThumbnail(index);
+    }
+
+    function updateActiveThumbnail(index) {
+        // Remova a classe ativa de todas as miniaturas
+        Array.from(thumbnailsContainer.children).forEach((thumbnail) => {
+            thumbnail.classList.remove('active');
+        });
+
+        // Adicione a classe ativa à miniatura correspondente à mídia atual
+        thumbnailsContainer.children[index].classList.add('active');
+    }
+
+    // Chame a função jumpToMedia para iniciar a mídia inicial (índice 0)
+    jumpToMedia(currentMediaIndex);
+</script>
+
+
     
         
     
@@ -2178,13 +2532,13 @@ body {
                 <div class="subtitle">
                     <h1>Quem Somos</h1>
                 </div>
-                <section>
+                <section class="menu-section">
                     <div class="menu-toggle" onclick="toggleMenu()">
                         <span class="bar"></span>
                         <span class="bar"></span>
                         <span class="bar"></span>
                     </div>
-                  
+                
                     <nav class="menu">
                         <ul>
                             <li><a href="index.html">Quem Somos</a></li>
@@ -2193,19 +2547,19 @@ body {
                             <li><a href="contato.html">Contato</a></li>
                         </ul>
                     </nav>
-                </section>
                 
-                <script>
-                    function toggleMenu() {
-                        var menu = document.querySelector('.menu');
-                        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-                    }
-                </script>
+                    <script>
+                        function toggleMenu() {
+                            var menu = document.querySelector('.menu');
+                            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+                        }
+                    </script>
+                </section>
                     
             
             <div>
             
-                <img src="colegio.png" alt="Nossa Missão" style="max-width: 60%; height: auto;">
+                <img id="colegio-image" src="colegio.png" alt="Nossa Missão" style="max-width: 60%; height: auto;">
                 <p>Desde 1905 somos uma escola que mantém uma tradição de ensino de alta qualidade que nos diferencia das
                     outras da cidade e região.</p>
                     <p> Nossos alunos recebem não apenas uma educação sólida, mas também são incentivados a
@@ -2215,7 +2569,7 @@ body {
                     pessoal.</p>
                 </section>
 
-                    <a href="historia.html" class="saiba-mais-buttonall">Saiba Mais</a>
+                    <a href="historia.html" class="saiba-mais-butto">Saiba Mais</a>
 
 
                     
@@ -2263,7 +2617,7 @@ body {
         <div class="seu-prefixo-carousel-section">
             <div class="container">
                 <div class="content">
-                    <h4 class="seu-prefixo-custom-text1">NIVEIS DE ENSINO</h4>
+                    <h4 class="seu-prefixo-custom-text1">NÍVEIS DE ENSINO</h4>
                     <div class="seu-prefixo-custom-subtitle">Educação Infantil</div>
                     <div class="seu-prefixo-custom-text">
                         Nosso compromisso com o ensino de qualidade inicia-se na Educação Infantil, sendo a primeira etapa da Educação Básica. Para promover o desenvolvimento integral de nossos alunos, desde pequenos, contamos com material didático completo.
@@ -2272,7 +2626,7 @@ body {
                         <img src="Plataforma_líder_de_assertividade__4_-removebg-preview.png" alt="Ícone 1">
                         <img src="Plataforma_líder_de_assertividade__2_-removebg-preview.png" alt="Ícone 2">
                     </div>
-                    <a href="niveisdeensino.html" class="saiba-mais-buttonall">Saiba Mais</a>
+                    <a href="niveisdeensino.html" class="saiba-mais-butto">Saiba Mais</a>
                 </div>
                 <img class="seu-prefixo-image5" src="educacao infantil corrigido1.png" alt="Material Didático">
             </div>
@@ -2281,16 +2635,19 @@ body {
         <div class="seu-prefixo-carousel-section">
             <div class="container" style="background-color: #293377;">
                 <div class="content">
-                    <h4 class="seu-prefixo-custom-text1" style="color: #ffcc00;">NIVEIS DE ENSINO</h4>
+                    <h4 class="seu-prefixo-custom-text1" style="color: #ffcc00;">NÍVEIS DE ENSINO</h4>
             <div class="seu-prefixo-custom-subtitle" style="color: #ffcc00;">Ensino Fundamental</div>
             <div class="seu-prefixo-custom-text" style="color: #ffcc00;">
-                        Nosso compromisso com o ensino de qualidade inicia-se na Educação Infantil, sendo a primeira etapa da Educação Básica. Para promover o desenvolvimento integral de nossos alunos, desde pequenos, contamos com material didático completo.
+                Nossa estrutura educacional completa promove a formação integral dos alunos, nos aspectos cognitivo, afetivo, sócio emocional e físico. 
+                Procuramos garantir a edificação das bases acadêmicas, solidificando a alfabetização, estimulando o prazer pela leitura e escrita,
+                desenvolvendo o raciocínio lógico, apresentando o mundo e colocando o aluno como protagonista de sua história, para poder entender, Interpretar e agir.
                     </div>
                     <div class="seu-prefixo-icon-container">
                         <img src="Plataforma_líder_de_assertividade__4_-removebg-preview.png" alt="Ícone 1">
                         <img src="Plataforma_líder_de_assertividade__2_-removebg-preview.png" alt="Ícone 2">
                     </div>
-                    <a href="niveisdeensino.html" class="saiba-mais-buttonall">Saiba Mais</a>
+                    <a href="niveisdeensino.html" class="saiba-mais-butto">Saiba Mais</a>
+
                 </div>
                 <img class="seu-prefixo-image5" src="margenhhhgtt.png" alt="Material Didático">
             </div>
@@ -2299,16 +2656,23 @@ body {
 <div class="seu-prefixo-carousel-section">
     <div class="container" style="background-color: #293377;">
         <div class="content">
-            <h4 class="seu-prefixo-custom-text1" style="color: #ffcc00;">NIVEIS DE ENSINO</h4>
+            <div class="word-with-linessc"></div>
+    <h4 class="seu-prefixo-custom-text1">NÍVEIS DE ENSINO</h4>
+    <span class="line-after"></span>
+
+    
+
+
             <div class="seu-prefixo-custom-subtitle" style="color: #ffcc00;">Ensino Médio</div>
             <div class="seu-prefixo-custom-text" style="color: #ffcc00;">
-                Continuamos nosso compromisso com o ensino de qualidade no Ensino Médio, preparando nossos alunos para os desafios acadêmicos e pessoais que encontrarão em seus próximos passos.
+                Autonomia, aprofundamento dos conhecimentos, exercício da cidadania, capacitação para a vida profissional e reflexão a respeito do futuro são partes importantes do nosso Ensino Médio. Além das disciplinas convencionais, que garantem o acesso às Universidades, nossos alunos escolhem seus itinerários, parte curricular flexível.
             </div>
             <div class="seu-prefixo-icon-container">
                 <img src="Plataforma_líder_de_assertividade__4_-removebg-preview.png" alt="Ícone 1">
                 <img src="Plataforma_líder_de_assertividade__2_-removebg-preview.png" alt="Ícone 2">
             </div>
-            <a href="niveisdeensino.html" class="saiba-mais-buttonall">Saiba Mais</a>
+            <a href="niveisdeensino.html" class="saiba-mais-butto">Saiba Mais</a>
+            
         </div>
         <img class="seu-prefixo-image5" src="Imagem ensino medio.png" alt="Material Didático" >
     </div>
@@ -2350,21 +2714,19 @@ body {
     </section>
 
    <!-- Primeiro bloco -->
-<div class="custom-container--custom">
+<div class="custom-container--custom" style="color: #ffcc00;">
     <div class="image-container__custom">
         <!-- Imagem 1 com largura de 100% e altura automática -->
         <img src="125s.png" alt="Imagem 1" class="image resizable">
-
+        
         <!-- Imagem 2 sem dimensões fixas, usa as dimensões originais -->
-        <img src="125s55.png" alt="Imagem 2" class="image">
-
-        <!-- Adicione mais imagens conforme necessário -->
-        <a href="bilingue.html" class="saiba-mais-buttonall">Saiba Mais</a>
-
+        <img src="125s55.png" alt="Imagem 2" class="image resizable">
     </div>
+
     <!-- Botão "Saiba Mais" contornado em amarelo -->
-    
+    <a href="bilingue.html" class="saiba-mais-buttonw">Saiba Mais</a>
 </div>
+
 
 
 
@@ -2385,7 +2747,7 @@ body {
                     <button onclick="changePhoto('danca corrigido.png')">Salão de dança</button>
                     <button onclick="changePhoto('Sala de aula Médio Corrigido (1).png')">Salas de Aula moderna</button>
                 </div>
-                <a href="estrutura.html" class="saiba-mais-buttonall">Saiba Mais</a>
+                <a href="estrutura.html" class="saiba-mais-butto">Saiba Mais</a>
             </div>
             
         </div>
@@ -2400,7 +2762,7 @@ body {
     <div class="section-container-guu">
         <div class="custom-section-guu">
             <img src="Material Sas.png" alt="Imagem Editável" width="150%">
-            <a href="materiais.html" class="saiba-mais-buttonall">Saiba Mais</a>
+            <a href="materiais.html" class="saiba-mais-butto">Saiba Mais</a>
         </div>
     </div>
 
@@ -2408,7 +2770,6 @@ body {
 </div>-->
 
     
-
 
 
 
@@ -2427,59 +2788,59 @@ body {
     </div>
 
     <!-- Three Columns -->
-<div class="custom-container custom-three-columnszz">
-    <!-- Column 1 -->
-    <div class="custom-columnzz">
-        <h4 class="custom-texth4"><a href="index.html">Sobre Nós</a></h4>
-        <a href="historia.html" class="custom-text">. História</a>
-        <a href="PilareseValores.html" class="custom-text">. Pilares e Valores</a>
-        <a href="historia.html" class="custom-text">. Estrutura</a>
+    <div class="custom-containerzz">
+        <!-- Column 1 -->
+        <div class="custom-columnzz">
+            <h4 class="custom-text"><a href="index.html">Sobre Nós</a></h4>
+            <a href="historia.html" class="custom-text">. História</a>
+            <a href="PilareseValores.html" class="custom-text">. Pilares e Valores</a>
+            <a href="quem_somos.html" class="custom-text">. Estrutura</a>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="custom-columnzz">
+            <h4 class="custom-text"><a href="niveisdeensino.html">Ensino</a></h4>
+            <a href="niveisdeensino.html" class="custom-text">. Educação Infantil</a>
+            <a href="niveisdeensino.html" class="custom-text">. Ensino Fundamental</a>
+            <a href="niveisdeensino.html" class="custom-text">. Ensino Médio</a>
+            <a href="bilingue.html" class="custom-text">. Programa Bilíngue</a>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="custom-columnzz">
+            <h4 class="custom-text"><a href="contato.html">Contato</a></h4>
+            <a href="contato.html" class="custom-text">. Atendimento</a>
+            <a href="contato.html" class="custom-text">. Canal Direto</a>
+            <a href="contato.html" class="custom-text">. Agende uma visita</a>
+        </div>
     </div>
 
-    <!-- Column 2 -->
-    <div class="custom-columnzz">
-        <h4 class="custom-texth4"><a href="niveisdeensino.html">Ensino</a></h4>
-        <a href="niveisdeensino.html" class="custom-text">. Educação Infantil</a>
-        <a href="niveisdeensino.html" class="custom-text">. Ensino Fundamental</a>
-        <a href="niveisdeensino.html" class="custom-text">. Ensino Médio</a>
-        <a href="bilingue.html" class="custom-text">. Programa Bilíngue</a>
-    </div>
-
-    <!-- Column 3 -->
-    <div class="custom-columnzz">
-        <h4 class="custom-texth4"><a href="contato.html">Contato</a></h4>
-        <a href="contato.html" class="custom-text">. Atendimento</a>
-        <a href="contato.html" class="custom-text">. Canal Direto</a>
-        <a href="contato.html" class="custom-text">. Agende uma visita</a>
-    </div>
-</div>
-
-    <div class="separatorzz"></div>
+    <div class="separator"></div>
 
     <!-- Icon Container -->
     <div class="icon-containerzz">
         <!-- Icon items here -->
         <!-- Icon 1 -->
-        <div class="icon-itemzz">
+        <div class="icon-item">
             <a href="https://siga.activesoft.com.br/login/">
                 <img src="12.png" alt="Icon 1" class="icon-image">
             </a>
-            <div class="descriptionh4zz">ActiveSoft- Siga</div>
+            <div class="descriptionh4">ActiveSoft- Siga</div>
             <div class="text4">Acesso às informações pedagógicas administrativas.</div>
         </div>
 
         <!-- Icon 2 -->
-        <div class="icon-itemzz">
+        <div class="icon-item">
             <a href="https://www.classapp.com.br/">
             <img src="13.png" alt="Icon 2" class="icon-image">
         </a>
-            <div class="descriptionh4zz">Class App</div>
+            <div class="descriptionh4">Class App</div>
             <div class="text4">Acesso ao aplicativo de comunicação com nossa instituição.</div>
         </div>
 
         <!-- Icon 3 -->
         
-            <div class="icon-itemzz">
+            <div class="icon-item">
                 <a href="https://portalsas.com.br/login?redirect=https%3A%2F%2Fhome.portalsas.com.br%2F">
                 <img src="14.png" alt="Icon 3" class="icon-image">
             </a>
@@ -2498,10 +2859,11 @@ body {
         </div>
 
         <!-- Icon 5 -->
-        <div class="icon-item5zz">
+        <div class="icon-item5">
             <img src="seta.png" alt="Icon 5" class="icon-image1">
         </div>
     </div>
+    
 
     <!-- Footer Bottom -->
     <footer>
@@ -2510,7 +2872,7 @@ body {
         <!-- Adicione uma nova classe ao contêiner da informação de contato e direitos autorais -->
         <div class="contact-copyright-containerzz">
             <!-- Contact Information -->
-            <div class="contact-info">
+            <div class="contact-infozz">
                 Rua Episcopal, 1859 - Centro. São Carlos/SP
             </div>
 
@@ -2522,7 +2884,8 @@ body {
                 (16) 3362-5044
             </div>
 
-            
+            <!-- Separator between phone number and copyright notice -->
+            <div class="separatorzz"></div>
 
             <!-- Copyright Notice -->
             <div class="copyright-infozz">
@@ -2532,12 +2895,16 @@ body {
         </div>
     </footer>
 </footer>
-</div>
+
+
+
+<script src=""defer></script>
+
+
 
 <!-- Place the image at the end -->
 <div class="imagem-containerzz">
-    <img src="Sem título3.png" alt="imagem" style="width: 100vw; height: auto; max-width: 100%;">
-</div>
+    <img src="Sem título3.png" alt="imagem" style="width: 1400px; height: auto; max-width: 100%;">
 </div>
 
 
